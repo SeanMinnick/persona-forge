@@ -1,0 +1,12 @@
+{
+  "input": "population_n50_seed32.json",
+  "seed": 9,
+  "today": "2026-09-11",
+  "modules": [
+    "chirp"
+  ],
+  "personas": 50,
+  "results": {
+    "chirp": 597
+  }
+}
