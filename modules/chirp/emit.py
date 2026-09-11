@@ -54,7 +54,7 @@ def _extract_hashtags(text):
     return re.findall(r"#\w+", text)
  
  
-def _system(persona, n, link):
+def _system(persona, n, link, n_filler):
     b = persona.get("bible", {})
     voice = b.get("voice_descriptor", "casual and conversational")
     topics = b.get("topics", persona.get("interests", []))
@@ -64,6 +64,11 @@ def _system(persona, n, link):
         f"Weave these exact verbal tics in naturally, verbatim, across some posts: {tells}.\n"
         if tells else ""
     )
+    filler_line = (
+        f"Of the {n} posts, about {n_filler} should be pure mundane FILLER that reveals nothing "
+        "identifying — weather, food, being tired, a show, a generic reaction. The rest reflect who you are.\n"
+        if n_filler else ""
+    )
     return (
         "You roleplay a fictional social-media user and write their Chirp content.\n\n"
         f"WHO YOU ARE (private, do not restate):\n{backstory}\n\n"
@@ -72,18 +77,20 @@ def _system(persona, n, link):
         f"{tell_line}\n"
         f"{platform.FORMAT_HINT}\n\n"
         f"BIO INSTRUCTION: {platform.BIO_LEAKAGE.get(link, platform.BIO_LEAKAGE['moderate'])}\n\n"
-        "POST RULES: Do NOT state your age, job, city, or other facts word-for-word. "
-        "Leak who you are only INDIRECTLY, through concrete lived detail. Each post distinct.\n\n"
+        f"POST LEAKAGE: {platform.POST_LEAKAGE.get(link, platform.POST_LEAKAGE['moderate'])}\n"
+        f"{filler_line}"
+        "POST RULES: When a post does reveal something, do it INDIRECTLY through concrete lived "
+        "detail, never stating your age, job, or city word-for-word. Each post distinct.\n\n"
         f'Return ONLY JSON: {{"bio": "<one-line bio>", "posts": ["post 1", ... {n} posts]}}. '
         "No prose outside the JSON, no code fences."
     )
  
  
-def _anthropic_bio_posts(persona, n, link):
+def _anthropic_bio_posts(persona, n, link, n_filler):
     import anthropic
     client = anthropic.Anthropic()
     msg = client.messages.create(
-        model=platform.MODEL, max_tokens=1500, system=_system(persona, n, link),
+        model=platform.MODEL, max_tokens=1500, system=_system(persona, n, link, n_filler),
         messages=[{"role": "user", "content": f"Write my bio and {n} chirp posts now."}],
     )
     raw = "".join(bl.text for bl in msg.content if bl.type == "text").strip()
@@ -102,29 +109,44 @@ _OFFLINE_POSTS = {
     "high school teacher": ["grading a stack of essays tonight, third period always has the best typos"],
 }
  
+_FILLER = [
+    "the weather cannot make up its mind today",
+    "why is every good show eight seasons long",
+    "coffee number three and counting",
+    "traffic was a nightmare but we made it",
+    "sunday scaries hitting early this week",
+    "ordered the same takeout for the third time, no regrets",
+    "the group chat has been unhinged today",
+    "finally folded the laundry that's been sitting for a week",
+]
  
-def _offline_bio_posts(persona, n, link, rng):
+ 
+def _offline_bio_posts(persona, n, link, n_filler, rng):
     a = persona["attributes"]
     tells = persona.get("bible", {}).get("signature_tells", [])
     topics = persona.get("bible", {}).get("topics", persona.get("interests", []))
     base = _OFFLINE_POSTS.get(a["occupation"], ["another day, another to-do list that won't quit"])
+    n_topical = max(0, n - n_filler)
     posts = []
-    for i in range(n):
+    for i in range(n_topical):
         t = base[i % len(base)]
         if tells and i % 2 == 0:
             t = f"{t} {tells[i % len(tells)]}"
         posts.append(t)
+    for i in range(n_filler):
+        posts.append(_FILLER[i % len(_FILLER)])
+    rng.shuffle(posts)
     bio = "" if link in ("disciplined", "meticulous") else f"just here posting about {', '.join(topics[:2])} [offline stub]"
     return bio, posts
  
  
-def _bio_posts(persona, n, link, rng):
+def _bio_posts(persona, n, link, n_filler, rng):
     if os.environ.get("ANTHROPIC_API_KEY"):
         try:
-            return _anthropic_bio_posts(persona, n, link)
+            return _anthropic_bio_posts(persona, n, link, n_filler)
         except Exception as e:
             print(f"  [chirp] LLM call failed for {persona['persona_id']} ({e}); offline fallback")
-    return _offline_bio_posts(persona, n, link, rng)
+    return _offline_bio_posts(persona, n, link, n_filler, rng)
  
  
 def emit(personas, footprint, out_dir, seed, today):
@@ -140,7 +162,8 @@ def emit(personas, footprint, out_dir, seed, today):
         for handle in handles:
             key["account_to_persona"][handle] = persona_id
             n = rng.randint(platform.POST_MIN, platform.POST_MAX)
-            bio, texts = _bio_posts(persona, n, link, rng)
+            n_filler = round(n * platform.FILLER_RATIO.get(link, 0.3))
+            bio, texts = _bio_posts(persona, n, link, n_filler, rng)
             texts = texts[:n]
  
             pc += 1
