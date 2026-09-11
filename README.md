@@ -7,10 +7,10 @@ Modular generator of layered synthetic OSINT datasets.
 ```
 population_gen/   persona-generation code
 populations/      frozen population files (population_n<N>_seed<S>.json)
-modules/          contract.py · footprint.py · <module>/ (chirp)
+modules/          contract.py footprint.py <module>/ (chirp)
 compose.py        orchestrator (flags → footprint → module emit)
 verify.py         boundary check (no identity in observations)
-output/<run>/     observations/ · answer_key/ · manifest.json
+output/{run}/     observations/ answer_key/ manifest.json
 ```
  
 ## Setup
@@ -20,7 +20,7 @@ pip install -r requirements.txt
 echo "ANTHROPIC_API_KEY=sk-ant-..." > .env   # omit to run offline (template stubs)
 ```
  
-## 1 · Build a population
+## 1. build a population
  
 ```bash
 cd population_gen
@@ -29,20 +29,13 @@ python build_bibles.py --n {population size} --seed {rng} --model claude-haiku-4
 python validate_population.py --n {population size} --seed {rng} --today {current date}
 ```
  
-Script
-`build_personas.py` | seeded skeletons: identity, attributes, geo, schedule, linkability |
-`build_bibles.py` | LLM enrich in place: backstory, voice, tells, topics, timeline |
-`validate_population.py` | gate: vocab / consistency / bible integrity |
- 
-## 2 · Compose a dataset
+## 2. compose a dataset
  
 ```bash
 cd ..
-python compose.py --input populations/population_n50_seed42.json --chirp --seed 7 --today 2026-09-11
-python verify.py output/run_seed7_chirp
+python compose.py --input populations/population_n{pop size}_seed{seed num}.json --chirp --seed {new seed for composition} --today {date}
+python verify.py output/run_seed{compose seed}_chirp
 ```
- 
-Output per run: `observations/` (adversary sees), `answer_key/` (scorer only, incl. `footprint.json`), `manifest.json`.
  
 ## Modules
  
@@ -53,7 +46,3 @@ Output per run: `observations/` (adversary sees), `answer_key/` (scorer only, in
 ## Reproducibility
  
 A dataset = **population seed + compose seed + `--today`**. Record all three.
- 
-## Principle
- 
-Observations carry **no identity**. Truth lives only in `answer_key/`. `verify.py` enforces
