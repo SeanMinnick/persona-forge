@@ -1,23 +1,14 @@
-"""
-emitter.py — writing engine
- 
-given a persona (ground truth), it produces in-character social-media comments that leak the persona's traits indirectly 
- 
-offline-first: if no ANTHROPIC_API_KEY is set (or the SDK isn't installed, ora call fails) it falls back to a deterministic template so the pipeline always runs
-
-"""
- 
 import json
 import os
-
+import random
+ 
 from dotenv import load_dotenv
 load_dotenv()
-
-# set this to a model your API key can access
-MODEL = "claude-haiku-4-5"
  
-
-# offline fallback, used when no API key
+from .. import contract
+from . import platform
+ 
+ 
 _TEMPLATES = {
     "occupation": {
         "registered nurse": [
@@ -54,7 +45,7 @@ _TEMPLATES = {
 }
  
  
-def _offline_posts(attributes, platform, n, rng):
+def _offline_posts(attributes, n, rng):
     out, keys = [], ["occupation", "city_country", "relationship_status", "age"]
     for i in range(n):
         attr = keys[i % len(keys)]
@@ -90,17 +81,17 @@ _SYSTEM = (
 )
  
  
-def _anthropic_posts(attributes, platform, n):
+def _anthropic_posts(attributes, n):
     import anthropic
     client = anthropic.Anthropic()
     system = _SYSTEM.format(
         profile=_profile_description(attributes),
-        platform_hint=platform.format_hint,
-        n=n, min_w=platform.min_words, max_w=platform.max_words,
+        platform_hint=platform.FORMAT_HINT,
+        n=n, min_w=platform.MIN_WORDS, max_w=platform.MAX_WORDS,
     )
     msg = client.messages.create(
-        model=MODEL, max_tokens=1000, system=system,
-        messages=[{"role": "user", "content": f"Write my {n} {platform.id} posts now."}],
+        model=platform.MODEL, max_tokens=1000, system=system,
+        messages=[{"role": "user", "content": f"Write my {n} chirp posts now."}],
     )
     raw = "".join(b.text for b in msg.content if b.type == "text").strip()
     if raw.startswith("```"):
@@ -111,10 +102,39 @@ def _anthropic_posts(attributes, platform, n):
     return [str(p) for p in posts[:n]]
  
  
-def generate_posts(attributes, platform, n, rng):
+def _posts(attributes, n, rng):
     if os.environ.get("ANTHROPIC_API_KEY"):
         try:
-            return _anthropic_posts(attributes, platform, n)
+            return _anthropic_posts(attributes, n)
         except Exception as e:
-            print(f"  [emitter] LLM call failed ({e}); using offline fallback")
-    return _offline_posts(attributes, platform, n, rng)
+            print(f"  [chirp] LLM call failed ({e}); using offline fallback")
+    return _offline_posts(attributes, n, rng)
+ 
+ 
+def emit(personas, footprint, out_dir, seed, today):
+    rng = random.Random(seed)
+    observations = []
+    key = contract.new_module_key(platform.ID)
+    counter = 0
+ 
+    for persona_id, accounts in footprint.get(platform.ID, {}).items():
+        attributes = personas[persona_id]["attributes"]
+        for handle in accounts:
+            key["account_to_persona"][handle] = persona_id
+            texts = _posts(attributes, platform.POSTS_PER_ACCOUNT, rng)
+            for text in texts:
+                counter += 1
+                obs_id = f"{platform.ID}_{counter:05d}"
+                observations.append(contract.make_observation(
+                    obs_id, platform.ID, handle,
+                    channel=platform.CHANNEL,
+                    timestamp=f"2026-03-{rng.randint(1,28):02d}T{rng.randint(0,23):02d}:00Z",
+                    thread_id=f"{platform.ID}_feed",
+                    text=text,
+                ))
+                key["obs_to_persona"][obs_id] = persona_id
+ 
+    obs_path = contract.write_observations(out_dir, platform.ID, observations)
+    key_path = contract.write_module_key(out_dir, platform.ID, key)
+    print(f"  [chirp] {len(observations)} posts -> {obs_path}")
+    return {"observations": len(observations), "obs_path": obs_path, "key_path": key_path}

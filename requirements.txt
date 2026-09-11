@@ -1,3 +1,2 @@
-# LLM emitter (src/emitter.py). Needed only when you set ANTHROPIC_API_KEY.
-# Offline mode runs on the standard library alone.
 anthropic>=0.40
+python-dotenv>=1.0
