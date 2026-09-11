@@ -1,7 +1,15 @@
 {
   "pers_001": {
+    "linkability": "careless",
     "accounts": [
-      "QuietHarbor"
+      {
+        "platform": "chirp",
+        "handle": "QuietHarbor"
+      },
+      {
+        "platform": "chirp",
+        "handle": "pdx_nightshift"
+      }
     ],
     "attributes": {
       "age": 34,
@@ -15,8 +23,12 @@
     }
   },
   "pers_002": {
+    "linkability": "single_account",
     "accounts": [
-      "ByteWrangler"
+      {
+        "platform": "chirp",
+        "handle": "ByteWrangler"
+      }
     ],
     "attributes": {
       "age": 27,
@@ -30,8 +42,12 @@
     }
   },
   "pers_003": {
+    "linkability": "single_account",
     "accounts": [
-      "MapleAndMortar"
+      {
+        "platform": "chirp",
+        "handle": "MapleAndMortar"
+      }
     ],
     "attributes": {
       "age": 52,
