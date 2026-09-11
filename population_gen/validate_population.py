@@ -4,8 +4,8 @@ import json
 import os
 import vocab
  
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PERSONAS_DIR = os.path.join(HERE, "personas")
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(REPO_ROOT, "populations")
  
 ATTR_KEYS = ["age", "sex", "city_country", "birth_city_country", "education", "occupation", "income_level", "relationship_status"]
  
@@ -20,7 +20,7 @@ TELLS_BY_LINKABILITY = {"careless": 4, "moderate": 2, "disciplined": 1, "meticul
  
  
 def default_pop_path(n, seed):
-    return os.path.join(PERSONAS_DIR, f"population_n{n}_seed{seed}.json")
+    return os.path.join(DATA_DIR, f"population_n{n}_seed{seed}.json")
  
  
 def check_persona(pid, p, today, errors, warnings):

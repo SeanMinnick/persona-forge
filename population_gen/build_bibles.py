@@ -3,20 +3,21 @@ import datetime
 import json
 import os
 import random
-import vocab
-
+ 
 from dotenv import load_dotenv
 load_dotenv()
  
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PERSONAS_DIR = os.path.join(HERE, "personas")
+import vocab
+ 
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(REPO_ROOT, "populations")
  
 MODEL_DEFAULT = "claude-haiku-4-5"
 TELLS_BY_LINKABILITY = {"careless": 4, "moderate": 2, "disciplined": 1, "meticulous": 0}
  
  
 def default_pop_path(n, seed):
-    return os.path.join(PERSONAS_DIR, f"population_n{n}_seed{seed}.json")
+    return os.path.join(DATA_DIR, f"population_n{n}_seed{seed}.json")
  
  
 def _skeleton_brief(p):

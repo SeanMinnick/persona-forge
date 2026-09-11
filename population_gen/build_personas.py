@@ -11,17 +11,18 @@ import os
 import random
 import vocab
  
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PERSONAS_DIR = os.path.join(HERE, "personas")
-
-def default_out_path(n, seed):
-    return os.path.join(PERSONAS_DIR, f"population_n{n}_seed{seed}.json")
-
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(REPO_ROOT, "populations")
+ 
 DEFAULT_SEED = 42
 DEFAULT_N = 50
 PROTECTED_FRACTION = 0.2
 LINKABILITY_WEIGHTS = [0.3, 0.35, 0.25, 0.1]
-SEX_WEIGHTS = [0.49, 0.49, 0.01]
+SEX_WEIGHTS = [0.49, 0.49, 0.02]
+ 
+ 
+def default_out_path(n, seed):
+    return os.path.join(DATA_DIR, f"population_n{n}_seed{seed}.json")
  
  
 def sample_age(rng, occ):
@@ -34,10 +35,10 @@ def sample_age(rng, occ):
  
 def sample_relationship(rng, age):
     if age < 25:
-        return rng.choices(vocab.RELATIONSHIP_STATUS, weights=[45, 20, 9, 3, 1, 22])[0]
+        return rng.choices(vocab.RELATIONSHIP_STATUS, weights=[45, 33, 9, 3, 1, 9])[0]
     if age < 40:
         return rng.choices(vocab.RELATIONSHIP_STATUS, weights=[27, 23, 33, 8, 1, 8])[0]
-    return rng.choices(vocab.RELATIONSHIP_STATUS, weights=[14, 14, 43, 21, 8, 0])[0]
+    return rng.choices(vocab.RELATIONSHIP_STATUS, weights=[14, 9, 43, 21, 8, 5])[0]
  
  
 def sample_name(rng, sex):
@@ -55,6 +56,7 @@ def sample_birth_city(rng, home):
     if rng.random() < 0.45:
         return home
     return rng.choice(vocab.CITIES)
+ 
  
 def make_schedule(rng, occ):
     early = occ["occupation"] in (
@@ -139,8 +141,8 @@ def main():
     ap.add_argument("--seed", type=int, default=DEFAULT_SEED)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
-    out_path = args.out or default_out_path(args.n, args.seed)
  
+    out_path = args.out or default_out_path(args.n, args.seed)
     population = build_population(args.n, args.seed)
     meta = {
         "_meta": {
