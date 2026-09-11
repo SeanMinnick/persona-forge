@@ -1,0 +1,53 @@
+{
+  "account_to_persona": {
+    "QuietHarbor": "pers_001",
+    "ByteWrangler": "pers_002",
+    "MapleAndMortar": "pers_003"
+  },
+  "obs_to_persona": {
+    "obs_0001": "pers_001",
+    "obs_0002": "pers_001",
+    "obs_0003": "pers_001",
+    "obs_0004": "pers_001",
+    "obs_0005": "pers_002",
+    "obs_0006": "pers_002",
+    "obs_0007": "pers_002",
+    "obs_0008": "pers_002",
+    "obs_0009": "pers_003",
+    "obs_0010": "pers_003",
+    "obs_0011": "pers_003",
+    "obs_0012": "pers_003"
+  },
+  "persona_attributes": {
+    "pers_001": {
+      "age": 34,
+      "sex": "female",
+      "city_country": "Portland, USA",
+      "birth_city_country": "Boise, USA",
+      "education": "Bachelors in Nursing",
+      "occupation": "registered nurse",
+      "income_level": "middle",
+      "relationship_status": "married"
+    },
+    "pers_002": {
+      "age": 27,
+      "sex": "male",
+      "city_country": "Austin, USA",
+      "birth_city_country": "Austin, USA",
+      "education": "Bachelors in Computer Science",
+      "occupation": "software engineer",
+      "income_level": "high",
+      "relationship_status": "single"
+    },
+    "pers_003": {
+      "age": 52,
+      "sex": "male",
+      "city_country": "Ottawa, Canada",
+      "birth_city_country": "Ottawa, Canada",
+      "education": "Masters in Education",
+      "occupation": "high school teacher",
+      "income_level": "middle",
+      "relationship_status": "divorced"
+    }
+  }
+}
