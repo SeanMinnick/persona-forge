@@ -7,28 +7,27 @@ ATTRIBUTES = [
 ]
  
 ALLOWED_OBS_FIELDS = {
-    "obs_id", "module", "channel", "account_id", "timestamp",
-    "thread_id", "parent_id", "geotag", "text", "body",
+    "obs_id", "module", "channel", "record_type", "account_id",
+    "timestamp", "thread_id", "parent_id", "geotag", "text", "body",
+    "handle", "display_name", "bio", "location", "join_date",
+    "post_count", "follower_count", "following_count",
+    "post_type", "hashtags", "mentions", "like_count", "repost_count", "client",
 }
  
  
-def make_observation(obs_id, module, account_id, *, channel, timestamp="",
-                     thread_id="", parent_id=None, geotag=None, text=None, body=None):
-    obs = {
+def make_record(obs_id, module, account_id, channel, record_type, **fields):
+    rec = {
         "obs_id": obs_id,
         "module": module,
         "channel": channel,
+        "record_type": record_type,
         "account_id": account_id,
-        "timestamp": timestamp,
-        "thread_id": thread_id,
-        "parent_id": parent_id,
-        "geotag": geotag,
     }
-    if text is not None:
-        obs["text"] = text
-    if body is not None:
-        obs["body"] = body
-    return obs
+    for k, v in fields.items():
+        if k not in ALLOWED_OBS_FIELDS:
+            raise ValueError(f"field '{k}' not allowed in an observation record")
+        rec[k] = v
+    return rec
  
  
 def new_module_key(module):
@@ -39,13 +38,13 @@ def new_module_key(module):
     }
  
  
-def write_observations(out_dir, module, observations):
+def write_observation_file(out_dir, filename, records):
     obs_dir = os.path.join(out_dir, "observations")
     os.makedirs(obs_dir, exist_ok=True)
-    path = os.path.join(obs_dir, f"{module}.jsonl")
+    path = os.path.join(obs_dir, filename)
     with open(path, "w") as f:
-        for obs in observations:
-            f.write(json.dumps(obs) + "\n")
+        for r in records:
+            f.write(json.dumps(r) + "\n")
     return path
  
  
@@ -56,14 +55,3 @@ def write_module_key(out_dir, module, key):
     with open(path, "w") as f:
         json.dump(key, f, indent=2)
     return path
- 
- 
-class Module:
-    id = None
-    channel = None
- 
-    def accounts_per_persona(self, persona, rng):
-        raise NotImplementedError
- 
-    def emit(self, personas, footprint, out_dir, seed, today):
-        raise NotImplementedError

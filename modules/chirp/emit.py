@@ -1,6 +1,8 @@
+import datetime
 import json
 import os
 import random
+import re
  
 from dotenv import load_dotenv
 load_dotenv()
@@ -9,132 +11,177 @@ from .. import contract
 from . import platform
  
  
-_TEMPLATES = {
-    "occupation": {
-        "registered nurse": [
-            "long shift again, on my feet all day, coffee is the only thing keeping me upright",
-            "charting till midnight bc the floor was slammed, my back is done",
-            "family brought us donuts on the unit today and honestly it made the double worth it",
-        ],
-        "software engineer": [
-            "chased a race condition all morning, merged the fix, ci broke anyway lol",
-            "40 comments on a two-line PR, love this job",
-            "finally killed the flaky test that's haunted our pipeline for a month",
-        ],
-        "high school teacher": [
-            "grading a stack of essays tonight, third period always has the best typos",
-            "kid asked if the final was cumulative like it was a personal attack, it's june my guy",
-            "parent night ran three hours, my voice is gone",
-        ],
-    },
-    "city_country": [
-        "the rain here never really stops but the food carts downtown make up for it",
-        "traffic in from the suburbs was brutal, still worth it for the taco spots",
-        "shoveled the driveway twice this week already, winter came early up here",
-    ],
-    "relationship_status": {
-        "married": ["spouse keeps stealing the good blanket, marriage is a negotiation"],
-        "single": ["solo apartment life means the dishes can wait, no judgment"],
-        "divorced": ["since the split i actually cook for myself now, small wins"],
-    },
-    "age": [
-        "back in my twenties i'd pull all-nighters no problem, now one wrecks me for days",
-        "old enough to remember dial-up, young enough to still rage at slow wifi",
-        "half my coworkers weren't born when my favorite band broke up",
-    ],
+def _display_name(persona, link, handle, rng):
+    first = persona["identity"]["first_name"]
+    last = persona["identity"]["last_name"]
+    if link == "careless":
+        return rng.choice([first, f"{first} {last[0]}.", f"{first} {last}"])
+    if link == "moderate":
+        return rng.choice([first, f"{first.lower()}", handle.rstrip("0123456789")])
+    return handle.rstrip("0123456789")
+ 
+ 
+def _location_field(persona, link, rng):
+    city_full = persona["attributes"]["city_country"]
+    city = city_full.split(",")[0].strip()
+    state = persona["geo"].get("home_state", "")
+    if link == "careless":
+        return rng.choice([city_full.replace(", USA", ""), f"{city}", f"{city}, {state}"])
+    if link == "moderate":
+        return rng.choice([state, f"{state}, USA", ""])
+    if link == "disciplined":
+        return rng.choice(["", "USA", "somewhere"])
+    return rng.choice(["", "the internet", "here and there"])
+ 
+ 
+def _timestamps(schedule, count, today, rng):
+    out = []
+    jitter = schedule.get("post_hour_jitter", 1.0)
+    for _ in range(count):
+        day = today - datetime.timedelta(days=rng.randint(0, platform.WINDOW_DAYS))
+        weekend = day.weekday() >= 5
+        windows = schedule.get("weekend_online_windows" if weekend else "weekday_online_windows", [[9, 22]])
+        w = rng.choice(windows) if windows else [9, 22]
+        base = rng.uniform(w[0], max(w[0] + 0.5, w[1]))
+        hour = int(min(23, max(0, base + rng.gauss(0, jitter))))
+        dt = datetime.datetime(day.year, day.month, day.day, hour, rng.randint(0, 59), rng.randint(0, 59))
+        out.append(dt)
+    out.sort()
+    return [dt.strftime("%Y-%m-%dT%H:%M:%S") for dt in out]
+ 
+ 
+def _extract_hashtags(text):
+    return re.findall(r"#\w+", text)
+ 
+ 
+def _system(persona, n, link):
+    b = persona.get("bible", {})
+    voice = b.get("voice_descriptor", "casual and conversational")
+    topics = b.get("topics", persona.get("interests", []))
+    tells = b.get("signature_tells", [])
+    backstory = b.get("backstory", "")
+    tell_line = (
+        f"Weave these exact verbal tics in naturally, verbatim, across some posts: {tells}.\n"
+        if tells else ""
+    )
+    return (
+        "You roleplay a fictional social-media user and write their Chirp content.\n\n"
+        f"WHO YOU ARE (private, do not restate):\n{backstory}\n\n"
+        f"YOUR VOICE: {voice}\n"
+        f"YOU POST ABOUT: {', '.join(topics)}\n"
+        f"{tell_line}\n"
+        f"{platform.FORMAT_HINT}\n\n"
+        f"BIO INSTRUCTION: {platform.BIO_LEAKAGE.get(link, platform.BIO_LEAKAGE['moderate'])}\n\n"
+        "POST RULES: Do NOT state your age, job, city, or other facts word-for-word. "
+        "Leak who you are only INDIRECTLY, through concrete lived detail. Each post distinct.\n\n"
+        f'Return ONLY JSON: {{"bio": "<one-line bio>", "posts": ["post 1", ... {n} posts]}}. '
+        "No prose outside the JSON, no code fences."
+    )
+ 
+ 
+def _anthropic_bio_posts(persona, n, link):
+    import anthropic
+    client = anthropic.Anthropic()
+    msg = client.messages.create(
+        model=platform.MODEL, max_tokens=1500, system=_system(persona, n, link),
+        messages=[{"role": "user", "content": f"Write my bio and {n} chirp posts now."}],
+    )
+    raw = "".join(bl.text for bl in msg.content if bl.type == "text").strip()
+    if raw.startswith("```"):
+        raw = raw.split("```")[1].lstrip("json").strip()
+    data = json.loads(raw)
+    posts = [str(p) for p in data.get("posts", [])][:n]
+    if not posts:
+        raise ValueError("model returned no posts")
+    return str(data.get("bio", "")), posts
+ 
+ 
+_OFFLINE_POSTS = {
+    "registered nurse": ["long shift again, on my feet all day, coffee is the only thing keeping me upright"],
+    "software engineer": ["chased a race condition all morning, merged the fix, ci broke anyway lol"],
+    "high school teacher": ["grading a stack of essays tonight, third period always has the best typos"],
 }
  
  
-def _offline_posts(attributes, n, rng):
-    out, keys = [], ["occupation", "city_country", "relationship_status", "age"]
+def _offline_bio_posts(persona, n, link, rng):
+    a = persona["attributes"]
+    tells = persona.get("bible", {}).get("signature_tells", [])
+    topics = persona.get("bible", {}).get("topics", persona.get("interests", []))
+    base = _OFFLINE_POSTS.get(a["occupation"], ["another day, another to-do list that won't quit"])
+    posts = []
     for i in range(n):
-        attr = keys[i % len(keys)]
-        bank = _TEMPLATES[attr]
-        if isinstance(bank, dict):
-            choices = bank.get(attributes.get(attr), []) or next(iter(bank.values()))
-        else:
-            choices = bank
-        out.append(choices[i % len(choices)])
-    return out
+        t = base[i % len(base)]
+        if tells and i % 2 == 0:
+            t = f"{t} {tells[i % len(tells)]}"
+        posts.append(t)
+    bio = "" if link in ("disciplined", "meticulous") else f"just here posting about {', '.join(topics[:2])} [offline stub]"
+    return bio, posts
  
  
-def _profile_description(a):
-    return (
-        f"You are a {a['age']} year old {a['sex']}, working as a {a['occupation']} "
-        f"living in {a['city_country']}. You were born in {a['birth_city_country']}. "
-        f"Your education: {a['education']}. Your income level is {a['income_level']}. "
-        f"You are {a['relationship_status']}."
-    )
- 
- 
-_SYSTEM = (
-    "{profile}\n\n"
-    "{platform_hint}\n\n"
-    "Write {n} posts of {min_w}-{max_w} words each.\n"
-    "Rules:\n"
-    "- DO NOT state your age, job, city, or other facts word-for-word. Never write "
-    "'I am a nurse' or 'here in Portland'. Leak these traits only INDIRECTLY, through "
-    "concrete personal detail, slang, and lived experience.\n"
-    "- Each post should reflect who you are and feel distinct from the others.\n"
-    'Return ONLY a JSON array of {n} strings, nothing else. '
-    'Example: ["post one", "post two"]'
-)
- 
- 
-def _anthropic_posts(attributes, n):
-    import anthropic
-    client = anthropic.Anthropic()
-    system = _SYSTEM.format(
-        profile=_profile_description(attributes),
-        platform_hint=platform.FORMAT_HINT,
-        n=n, min_w=platform.MIN_WORDS, max_w=platform.MAX_WORDS,
-    )
-    msg = client.messages.create(
-        model=platform.MODEL, max_tokens=1000, system=system,
-        messages=[{"role": "user", "content": f"Write my {n} chirp posts now."}],
-    )
-    raw = "".join(b.text for b in msg.content if b.type == "text").strip()
-    if raw.startswith("```"):
-        raw = raw.split("```")[1].lstrip("json").strip()
-    posts = json.loads(raw)
-    if not isinstance(posts, list) or not posts:
-        raise ValueError("model did not return a non-empty JSON array")
-    return [str(p) for p in posts[:n]]
- 
- 
-def _posts(attributes, n, rng):
+def _bio_posts(persona, n, link, rng):
     if os.environ.get("ANTHROPIC_API_KEY"):
         try:
-            return _anthropic_posts(attributes, n)
+            return _anthropic_bio_posts(persona, n, link)
         except Exception as e:
-            print(f"  [chirp] LLM call failed ({e}); using offline fallback")
-    return _offline_posts(attributes, n, rng)
+            print(f"  [chirp] LLM call failed for {persona['persona_id']} ({e}); offline fallback")
+    return _offline_bio_posts(persona, n, link, rng)
  
  
 def emit(personas, footprint, out_dir, seed, today):
     rng = random.Random(seed)
-    observations = []
+    profiles, posts = [], []
     key = contract.new_module_key(platform.ID)
-    counter = 0
+    pc = 0
  
-    for persona_id, accounts in footprint.get(platform.ID, {}).items():
-        attributes = personas[persona_id]["attributes"]
-        for handle in accounts:
+    for persona_id, handles in footprint.get(platform.ID, {}).items():
+        persona = personas[persona_id]
+        link = persona.get("linkability", "moderate")
+        schedule = persona.get("schedule", {})
+        for handle in handles:
             key["account_to_persona"][handle] = persona_id
-            texts = _posts(attributes, platform.POSTS_PER_ACCOUNT, rng)
-            for text in texts:
-                counter += 1
-                obs_id = f"{platform.ID}_{counter:05d}"
-                observations.append(contract.make_observation(
-                    obs_id, platform.ID, handle,
-                    channel=platform.CHANNEL,
-                    timestamp=f"2026-03-{rng.randint(1,28):02d}T{rng.randint(0,23):02d}:00Z",
-                    thread_id=f"{platform.ID}_feed",
-                    text=text,
-                ))
-                key["obs_to_persona"][obs_id] = persona_id
+            n = rng.randint(platform.POST_MIN, platform.POST_MAX)
+            bio, texts = _bio_posts(persona, n, link, rng)
+            texts = texts[:n]
  
-    obs_path = contract.write_observations(out_dir, platform.ID, observations)
-    key_path = contract.write_module_key(out_dir, platform.ID, key)
-    print(f"  [chirp] {len(observations)} posts -> {obs_path}")
-    return {"observations": len(observations), "obs_path": obs_path, "key_path": key_path}
+            pc += 1
+            prof_id = f"chirp_prof_{pc:05d}"
+            profiles.append(contract.make_record(
+                prof_id, platform.ID, handle, channel=platform.CHANNEL, record_type="profile",
+                handle=f"@{handle}",
+                display_name=_display_name(persona, link, handle, rng),
+                bio=bio,
+                location=_location_field(persona, link, rng),
+                join_date=f"{rng.randint(2015, 2024)}-{rng.randint(1, 12):02d}",
+                post_count=rng.randint(len(texts), 4000),
+                follower_count=rng.randint(20, 3000),
+                following_count=rng.randint(30, 1500),
+            ))
+            key["obs_to_persona"][prof_id] = persona_id
+ 
+            stamps = _timestamps(schedule, len(texts), today, rng)
+            geo_chance = platform.GEOTAG_CHANCE.get(link, 0.0)
+            for text, ts in zip(texts, stamps):
+                pc += 1
+                post_id = f"chirp_post_{pc:05d}"
+                geotag = None
+                if rng.random() < geo_chance:
+                    lat = persona["geo"]["home_lat"] + rng.gauss(0, 0.03)
+                    lon = persona["geo"]["home_lon"] + rng.gauss(0, 0.03)
+                    geotag = f"{lat:.4f},{lon:.4f}"
+                posts.append(contract.make_record(
+                    post_id, platform.ID, handle, channel=platform.CHANNEL, record_type="post",
+                    text=text, timestamp=ts, post_type="original",
+                    hashtags=_extract_hashtags(text), mentions=[],
+                    like_count=rng.randint(0, 200), repost_count=rng.randint(0, 40),
+                    client=rng.choice(platform.CLIENTS), geotag=geotag,
+                    thread_id=None, parent_id=None,
+                ))
+                key["obs_to_persona"][post_id] = persona_id
+ 
+    prof_path = contract.write_observation_file(out_dir, "chirp_profiles.jsonl", profiles)
+    post_path = contract.write_observation_file(out_dir, "chirp_posts.jsonl", posts)
+    contract.write_module_key(out_dir, platform.ID, key)
+    print(f"  [chirp] {len(profiles)} profiles, {len(posts)} posts")
+    return {"observations": len(profiles) + len(posts),
+            "profiles": len(profiles), "posts": len(posts),
+            "prof_path": prof_path, "post_path": post_path}

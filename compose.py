@@ -10,10 +10,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
  
 AVAILABLE_MODULES = ["chirp"]
  
- 
 def load_module(module_id):
     return importlib.import_module(f"modules.{module_id}")
- 
  
 def main():
     ap = argparse.ArgumentParser()
