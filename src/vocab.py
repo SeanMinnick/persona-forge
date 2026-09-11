@@ -39,6 +39,15 @@ CITIES = [
     {"city": "Cleveland", "state": "OH", "city_country": "Cleveland, OH, USA", "lat": 41.4993, "lon": -81.6944, "tz": "America/New_York"},
     {"city": "Colorado Springs", "state": "CO", "city_country": "Colorado Springs, CO, USA", "lat": 38.8339, "lon": -104.8214, "tz": "America/Denver"},
     {"city": "Arlington", "state": "VA", "city_country": "Arlington, VA, USA", "lat": 38.8799, "lon": -77.1068, "tz": "America/New_York"},
+    {"city": "St. Louis", "state": "MO", "city_country": "St. Louis, MO, USA", "lat": 38.6270, "lon": -90.1994, "tz": "America/Chicago"},
+    {"city": "Cheyenne", "state": "WY", "city_country": "Cheyenne, WY, USA", "lat": 41.1400, "lon": -104.8202, "tz": "America/Denver"},
+    {"city": "Brownsville", "state": "TX", "city_country": "Brownsville, TX, USA", "lat": 25.9016, "lon": -97.4975, "tz": "America/Chicago"},
+    {"city": "Roanoke", "state": "VA", "city_country": "Roanoke, VA, USA", "lat": 37.2712, "lon": -79.9405, "tz": "America/New_York"},
+    {"city": "Pittsburgh", "state": "PA", "city_country": "Pittsburgh, PA, USA", "lat": 40.4406, "lon": -79.9959, "tz": "America/New_York"},
+    {"city": "Kannapolis", "state": "NC", "city_country": "Kannapolis, NC, USA", "lat": 35.4963, "lon": -80.6250, "tz": "America/New_York"},
+    {"city": "Fargo", "state": "ND", "city_country": "Fargo, ND, USA", "lat": 46.8769, "lon": -96.7877, "tz": "America/Chicago"},
+    {"city": "Tulsa", "state": "OK", "city_country": "Tulsa, OK, USA", "lat": 36.1540, "lon": -95.9928, "tz": "America/Chicago"},
+    {"city": "Billings", "state": "MT", "city_country": "Billings, MT, USA", "lat": 45.7833, "lon": -108.5000, "tz": "America/Denver"},
 ]
  
 OCCUPATIONS = [
@@ -132,8 +141,27 @@ INTEREST_TAGS = [
     "graphic design", "web development", "app development", "cybersecurity",
     "cloud computing", "thrifting", "stand-up comedy", "wine tasting",
     "marathon training", "scuba diving", "beekeeping", "pottery", "calligraphy",
-    "genealogy", "urban gardening", "van life", "disc golf", "mixology",
+    "urban gardening", "van life", "disc golf", "mixology", "trivia", "video games",
+    "birdwatching", "geocaching", "kiteboarding", "paragliding", "rock balancing",
+    "calligraphy", "origami", "juggling", "magic tricks", "lockpicking", "sailing",
+    "snowboarding", "skiing", "ice skating", "rollerblading", "skateboarding", "bouldering",
+    "fencing", "paintball", "laser tag", "escape rooms", "trivia nights",
+    "chess", "collecting", "poker", "crossword puzzles", "sudoku", "diving", "darts",
+    "decorating", "fishing", "golfing", "gardening", "glassblowing", "hunting", "jewelry making",
+    "jigsaw puzzles", "sculpting", "stargazing", "tabletop games", "yoga", "zumba", "baseball", 
 ]
  
 LINKABILITY = ["careless", "moderate", "disciplined", "meticulous"]
 TIER = ["protected", "background"]
+
+TELLS = {
+    "filler": ["ngl", "tbh", "honestly", "lowkey", "fr", "imo", "idk man", "not gonna lie", "real talk", "hehehe", "hahaha", "lol", "lmao", "smh", "bruh", "omg", "omw", "ttyl", "btw", "fwiw", "dw", "ikr"],
+    "opener": ["hot take:", "unpopular opinion:", "psa:", "reminder:", "ok but", "plot twist:", "so anyway", "lol", "hehe", "haha", "ngl", "tbh", "imo", "idk man"],
+    "closer": ["...anyway", "anyways", "just saying", "we move", "it is what it is", "/rant", "back to work", "back to the grind", "end of story", "that's all folks", "over and out", "peace out", "catch you later", "talk soon", "bye for now"],
+    "rhetorical": ["just me?", "right?", "change my mind", "anyone else?", "thoughts?", "asking for a friend", "not sure if anyone cares", "not sure if anyone asked", "not sure if anyone will read this", "not sure if anyone will see this", "not sure if anyone will respond", "not sure if anyone will reply", "not sure if anyone will comment", "not sure if anyone will like this", "not sure if anyone will share this", "not sure if anyone will retweet this", "not sure if anyone will repost this"],
+    "emoji": ["\U0001F643", "\U0001F605", "\U0001F480", "\U0001F937", "\U0001FAE0", "\U0001F644", "\U0001F440", "\u2615"],
+    "typography": ["lowercase-everything", "trailing ellipsis on everything...", "no apostrophes (dont, cant, wont)", "em-dash overuse", "double exclamation marks!!", "replacing you with u", "& instead of and", "sm instead of so much", "omg instead of oh my god", "idk instead of I don't know", "brb instead of be right back", "lmao instead of laughing my ass off", "omw instead of on my way", "ttyl instead of talk to you later", "btw instead of by the way", "fwiw instead of for what it's worth", "dw instead of don't worry", "ikr instead of I know right", "smh instead of shaking my head", "tbh instead of to be honest", "tho instead of though", "bc instead of because", "cuz instead of because", "pls instead of please", "thx instead of thanks", "np instead of no problem"],
+    "spelling": ["prolly", "def", "obvi", "bruh", "y'all", "folks", "cheers"],
+    "reaction": ["obsessed", "living for this", "here for it", "chef's kiss", "10/10 no notes", "this \u2191", "i can't", "YAY", "omg", "wow", "ugh", "same"],
+    "domain": ["ship it", "works on my machine", "on shift", "mise en place", "per my last email", "circle back", "EOD", "send it"],
+}
