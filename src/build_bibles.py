@@ -1,8 +1,12 @@
 import argparse
+import datetime
 import json
 import os
 import random
 import vocab
+
+from dotenv import load_dotenv
+load_dotenv()
  
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PERSONAS_DIR = os.path.join(HERE, "personas")
@@ -33,13 +37,14 @@ def _skeleton_brief(p):
     )
  
  
-def _system(p, n_tells, tells):
+def _system(p, n_tells, tells, today):
     compartment = {
         "careless": "They are careless about privacy: the same voice, habits, and phrases bleed across all their accounts.",
         "moderate": "They are somewhat privacy-aware: accounts share some habits but they vary tone a little.",
         "disciplined": "They are privacy-disciplined: they keep a fairly different voice per account.",
         "meticulous": "They are meticulous about privacy: each account has a deliberately distinct persona with almost no shared tells.",
     }[p["linkability"]]
+    born_year = today.year - p["attributes"]["age"]
     return (
         "You write a private character bible for a fictional social-media user, used to keep their "
         "posts consistent across a long history. Build ONLY on the fixed facts below. Do not change "
@@ -47,6 +52,12 @@ def _system(p, n_tells, tells):
         "You add texture: backstory, voice, topics, life events.\n\n"
         f"FIXED FACTS:\n{_skeleton_brief(p)}\n\n"
         f"PRIVACY POSTURE: {compartment}\n\n"
+        f"TODAY'S DATE: {today.strftime('%B %d, %Y')}. Anchor every time reference to this date. "
+        f"This person is {p['attributes']['age']} now, so they were born around {born_year}. "
+        "Any year you state for a life event must be consistent with their current age and with "
+        "today's date (e.g. graduating high school around age 18, not later). Prefer absolute years "
+        "('in 2019') over relative phrases; if you use a relative phrase like 'X years ago', it must "
+        f"be correct relative to {today.year}. Do not place any event in the future.\n\n"
         "Return ONLY a JSON object with these keys:\n"
         '  "backstory": a 2-3 paragraph life story consistent with the fixed facts (how they got '
         "from their birth city to now, career arc, family/relationship situation).\n"
@@ -54,16 +65,17 @@ def _system(p, n_tells, tells):
         f'  "signature_tells": use EXACTLY these {n_tells} habits, copied verbatim: {tells}. '
         "These are recurring verbal tics that show up across their posts.\n"
         '  "topics": 4-6 concrete recurring things they post about, grounded in their interests and life.\n'
-        '  "timeline": 3-5 objects like {"month": "2026-03", "event": "..."} for the past year.\n'
+        f'  "timeline": 3-5 objects like {{"month": "{today.strftime("%Y-%m")}", "event": "..."}} '
+        "for the past 12 months, each month at or before today.\n"
         "No prose outside the JSON, no code fences."
     )
  
  
-def _anthropic_bible(p, model, n_tells, tells):
+def _anthropic_bible(p, model, n_tells, tells, today):
     import anthropic
     client = anthropic.Anthropic()
     msg = client.messages.create(
-        model=model, max_tokens=1500, system=_system(p, n_tells, tells),
+        model=model, max_tokens=1500, system=_system(p, n_tells, tells, today),
         messages=[{"role": "user", "content": "Write the bible now as JSON."}],
     )
     raw = "".join(b.text for b in msg.content if b.type == "text").strip()
@@ -88,7 +100,9 @@ def pick_tells(rng, n):
     for cat in cats:
         if len(chosen) >= n:
             break
-        chosen.append(rng.choice(vocab.TELLS[cat]))
+        pick = rng.choice(vocab.TELLS[cat])
+        if pick not in chosen:
+            chosen.append(pick)
     while len(chosen) < n:
         pick = rng.choice(rng.choice(list(vocab.TELLS.values())))
         if pick not in chosen:
@@ -113,12 +127,12 @@ def _offline_bible(p, rng, n_tells, tells=None):
     }
  
  
-def generate_bible(p, model, rng, use_llm):
+def generate_bible(p, model, rng, use_llm, today):
     n_tells = TELLS_BY_LINKABILITY[p["linkability"]]
     tells = pick_tells(rng, n_tells)
     if use_llm:
         try:
-            return _anthropic_bible(p, model, n_tells, tells)
+            return _anthropic_bible(p, model, n_tells, tells, today)
         except Exception as e:
             print(f"  [bible] LLM failed for {p['persona_id']} ({e}); offline fallback")
     return _offline_bible(p, rng, n_tells, tells)
@@ -132,7 +146,10 @@ def main():
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--today", default=None)
     args = ap.parse_args()
+ 
+    today = datetime.date.fromisoformat(args.today) if args.today else datetime.date.today()
  
     use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
     if not use_llm:
@@ -151,7 +168,7 @@ def main():
         if args.limit is not None and done >= args.limit:
             break
         rng = random.Random(args.seed + idx)
-        p["bible"] = generate_bible(p, args.model, rng, use_llm)
+        p["bible"] = generate_bible(p, args.model, rng, use_llm, today)
         with open(path, "w") as f:
             json.dump(pop, f, indent=2)
         done += 1

@@ -19,11 +19,11 @@
       "age": 40,
       "sex": "female",
       "city_country": "San Francisco, CA, USA",
-      "birth_city_country": "Omaha, NE, USA",
+      "birth_city_country": "Roanoke, VA, USA",
       "education": "Bachelors in Computer Science",
       "occupation": "software engineer",
       "income_level": "high",
-      "relationship_status": "single"
+      "relationship_status": "divorced"
     },
     "geo": {
       "home_city": "San Francisco, CA, USA",
@@ -33,144 +33,10 @@
       "timezone": "America/Los_Angeles"
     },
     "interests": [
-      "cycling",
-      "houseplants",
-      "hiking"
-    ],
-    "schedule": {
-      "wake_hour": 8,
-      "sleep_hour": 22,
-      "work_start_hour": 9,
-      "work_hours": 10,
-      "weekday_online_windows": [
-        [
-          8,
-          9
-        ],
-        [
-          12,
-          13
-        ],
-        [
-          19,
-          22
-        ]
-      ],
-      "weekend_online_windows": [
-        [
-          10,
-          12
-        ],
-        [
-          15,
-          18
-        ],
-        [
-          20,
-          23
-        ]
-      ],
-      "post_hour_jitter": 1.5
-    }
-  },
-  "pers_002": {
-    "persona_id": "pers_002",
-    "tier": "protected",
-    "linkability": "moderate",
-    "identity": {
-      "first_name": "Isabella",
-      "last_name": "Perez",
-      "sex": "female",
-      "age": 49
-    },
-    "attributes": {
-      "age": 49,
-      "sex": "female",
-      "city_country": "Cleveland, OH, USA",
-      "birth_city_country": "Cleveland, OH, USA",
-      "education": "High School Diploma",
-      "occupation": "firefighter",
-      "income_level": "middle",
-      "relationship_status": "divorced"
-    },
-    "geo": {
-      "home_city": "Cleveland, OH, USA",
-      "home_state": "OH",
-      "home_lat": 41.4993,
-      "home_lon": -81.6944,
-      "timezone": "America/New_York"
-    },
-    "interests": [
-      "genealogy",
-      "psychology"
-    ],
-    "schedule": {
-      "wake_hour": 5,
-      "sleep_hour": 22,
-      "work_start_hour": 6,
-      "work_hours": 9,
-      "weekday_online_windows": [
-        [
-          5,
-          6
-        ],
-        [
-          12,
-          13
-        ],
-        [
-          15,
-          18
-        ]
-      ],
-      "weekend_online_windows": [
-        [
-          9,
-          12
-        ],
-        [
-          15,
-          18
-        ],
-        [
-          20,
-          23
-        ]
-      ],
-      "post_hour_jitter": 0.5
-    }
-  },
-  "pers_003": {
-    "persona_id": "pers_003",
-    "tier": "protected",
-    "linkability": "disciplined",
-    "identity": {
-      "first_name": "Quentin",
-      "last_name": "Anderson",
-      "sex": "male",
-      "age": 45
-    },
-    "attributes": {
-      "age": 45,
-      "sex": "male",
-      "city_country": "Austin, TX, USA",
-      "birth_city_country": "Omaha, NE, USA",
-      "education": "High School Diploma",
-      "occupation": "construction worker",
-      "income_level": "low",
-      "relationship_status": "single"
-    },
-    "geo": {
-      "home_city": "Austin, TX, USA",
-      "home_state": "TX",
-      "home_lat": 30.2672,
-      "home_lon": -97.7431,
-      "timezone": "America/Chicago"
-    },
-    "interests": [
-      "vinyl records",
-      "podcasting",
-      "knitting"
+      "kayaking",
+      "ice skating",
+      "birdwatching",
+      "woodworking"
     ],
     "schedule": {
       "wake_hour": 6,
@@ -205,59 +71,99 @@
           23
         ]
       ],
-      "post_hour_jitter": 0.5
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Mia grew up in Roanoke, VA in a tech-curious household\u2014her dad was an early IT enthusiast who taught her to code at 12. She stayed in-state through undergrad at Virginia Tech, earned her BS in Computer Science in 2006, then took a leap west to San Francisco in her mid-20s to join a startup boom. She built a solid career as a software engineer, climbing through senior roles at a few Bay Area companies, which positioned her in the high-income bracket. She was married for 11 years (2009\u20132020) to a graphic designer she met in SF; the divorce was amicable but marked a pivot toward reclaiming solo hobbies. Since then she's thrown herself into kayaking on the Bay, ice skating at local rinks, and weekend birdwatching trips in Marin. Woodworking started three years ago as pandemic lockdown therapy and stuck.",
+      "voice_descriptor": "Mia posts with a casual, conversational directness\u2014no filter between thought and upload. She's enthusiastic but self-aware, prone to exaggeration and tangents. Her tone swings between wry self-deprecation and genuine excitement, often mid-sentence. She uses lowercase frequently, peppers posts with mild profanity, and isn't precious about oversharing mundane life details.",
+      "signature_tells": [
+        "over and out",
+        "change my mind",
+        "wow",
+        "bruh"
+      ],
+      "topics": [
+        "Recent kayak trips on the Bay\u2014water conditions, wildlife spotted, minor capsizes or triumphs",
+        "Woodworking projects (cutting boards, birdhouses, furniture repairs) with progress photos and frustration venting",
+        "Birdwatching sightings and species identification, especially raptors and herons around SF and Marin",
+        "Tech industry observations and software engineering war stories from her day job",
+        "Ice skating adventures\u2014new moves attempted, rink drama, falls and recoveries",
+        "Casual personal life updates: dating attempts, friend hangouts, what she's cooking or eating"
+      ],
+      "timeline": [
+        {
+          "month": "2025-11",
+          "event": "Mia posted photos of a rare Great Blue Heron sighting near Coyote Point; got excited about a new paddle technique on the Bay."
+        },
+        {
+          "month": "2025-09",
+          "event": "Completed a walnut cutting board project after six weeks of sanding and staining; shared before-and-after pics with self-deprecating captions."
+        },
+        {
+          "month": "2025-07",
+          "event": "Attempted a new spin on ice skates at a local rink, fell hard, joked about it on social media the next day."
+        },
+        {
+          "month": "2025-05",
+          "event": "Posted about a frustrating code review at work and a kayak trip that afternoon as 'therapy'; mentioned changing her mind about taking a work sabbatical."
+        },
+        {
+          "month": "2025-03",
+          "event": "Built and installed three birdhouses in her yard; posted updates as the project unfolded, with tool pics and complaints about wood grain."
+        }
+      ],
+      "_source": "llm",
+      "_model": "claude-haiku-4-5"
     }
   },
-  "pers_004": {
-    "persona_id": "pers_004",
+  "pers_002": {
+    "persona_id": "pers_002",
     "tier": "protected",
     "linkability": "careless",
     "identity": {
-      "first_name": "Anna",
-      "last_name": "Flores",
+      "first_name": "Isabella",
+      "last_name": "Perez",
       "sex": "female",
-      "age": 41
+      "age": 49
     },
     "attributes": {
-      "age": 41,
+      "age": 49,
       "sex": "female",
-      "city_country": "Salt Lake City, UT, USA",
-      "birth_city_country": "Minneapolis, MN, USA",
-      "education": "Bachelors in Finance",
-      "occupation": "financial advisor",
-      "income_level": "high",
-      "relationship_status": "in a relationship"
+      "city_country": "Cleveland, OH, USA",
+      "birth_city_country": "Cleveland, OH, USA",
+      "education": "High School Diploma",
+      "occupation": "firefighter",
+      "income_level": "middle",
+      "relationship_status": "divorced"
     },
     "geo": {
-      "home_city": "Salt Lake City, UT, USA",
-      "home_state": "UT",
-      "home_lat": 40.7608,
-      "home_lon": -111.891,
-      "timezone": "America/Denver"
+      "home_city": "Cleveland, OH, USA",
+      "home_state": "OH",
+      "home_lat": 41.4993,
+      "home_lon": -81.6944,
+      "timezone": "America/New_York"
     },
     "interests": [
-      "sports",
-      "yoga",
-      "crafts",
-      "music"
+      "ice skating",
+      "pottery"
     ],
     "schedule": {
-      "wake_hour": 7,
-      "sleep_hour": 0,
-      "work_start_hour": 8,
-      "work_hours": 10,
+      "wake_hour": 5,
+      "sleep_hour": 22,
+      "work_start_hour": 7,
+      "work_hours": 8,
       "weekday_online_windows": [
         [
-          7,
-          8
+          5,
+          6
         ],
         [
           12,
           13
         ],
         [
-          18,
-          21
+          15,
+          18
         ]
       ],
       "weekend_online_windows": [
@@ -274,26 +180,175 @@
           23
         ]
       ],
-      "post_hour_jitter": 0.5
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Isabella was born and raised in Cleveland, never left. She took the firefighter entrance exam at 24, right after high school, and spent the last 25 years working at Station 18 on the East Side. She was married for 18 years to Mark, a contractor; they divorced in 2019 after he took a job in Phoenix and she refused to leave Cleveland. No kids\u2014something they fought about early on. The divorce was messy but final. She's lived in the same modest two-bedroom house in Collinwood since 1998, where she's converted the garage into a pottery studio. Ice skating came back into her life about five years ago when a coworker dragged her to a rink; she goes nearly every Saturday morning now, even though her knees aren't what they used to be.",
+      "voice_descriptor": "Isabella writes like she talks\u2014direct, a little scattered, peppered with informal phrases and internet slang. She overshares details about her shifts, pottery projects, and personal frustrations. Her tone ranges from wry and self-deprecating to genuinely enthusiastic, often in the same post. She uses all caps for emphasis and isn't careful about what she says across platforms.",
+      "signature_tells": [
+        "not sure if anyone will share this",
+        "send it",
+        "wow",
+        "ngl"
+      ],
+      "topics": [
+        "Stories from her firefighter shifts (false alarms, funny calls, camaraderie with crew)",
+        "Pottery projects\u2014glazes she's experimenting with, pieces she's thrown, local pottery classes and studios",
+        "Ice skating sessions, ankle injuries, nostalgia for skating as a kid in the '80s",
+        "Local Cleveland restaurants and bars she frequents, neighborhood complaints and observations",
+        "Venting about her ex-husband and dating at 49, mixed with self-aware humor",
+        "Fitness struggles, aging body complaints, and attempts to stay active"
+      ],
+      "timeline": [
+        {
+          "month": "2025-09",
+          "event": "Posted about a 14-hour shift dealing with a three-car pileup on I-90; made a joke about her back"
+        },
+        {
+          "month": "2025-11",
+          "event": "Shared photos of a pottery kiln opening with glazes that didn't come out as expected; vented about the wasted clay"
+        },
+        {
+          "month": "2025-12",
+          "event": "Posted multiple times about taking a nasty fall at the ice rink but returning the next week anyway"
+        },
+        {
+          "month": "2026-01",
+          "event": "Went on a rant about a bad date she went on; implied she's back on a dating app but frustrated with it"
+        },
+        {
+          "month": "2026-02",
+          "event": "Shared a photo of a successful raku firing; mentioned thinking about selling pieces at a local craft market"
+        }
+      ],
+      "_source": "llm",
+      "_model": "claude-haiku-4-5"
     }
   },
-  "pers_005": {
-    "persona_id": "pers_005",
-    "tier": "background",
-    "linkability": "disciplined",
+  "pers_003": {
+    "persona_id": "pers_003",
+    "tier": "protected",
+    "linkability": "moderate",
     "identity": {
-      "first_name": "Layla",
-      "last_name": "Clark",
-      "sex": "female",
-      "age": 33
+      "first_name": "Quentin",
+      "last_name": "Anderson",
+      "sex": "male",
+      "age": 45
     },
     "attributes": {
-      "age": 33,
+      "age": 45,
+      "sex": "male",
+      "city_country": "Austin, TX, USA",
+      "birth_city_country": "Omaha, NE, USA",
+      "education": "High School Diploma",
+      "occupation": "landscaper",
+      "income_level": "low",
+      "relationship_status": "single"
+    },
+    "geo": {
+      "home_city": "Austin, TX, USA",
+      "home_state": "TX",
+      "home_lat": 30.2672,
+      "home_lon": -97.7431,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "yoga",
+      "videography",
+      "mixology"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 0,
+      "work_start_hour": 9,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    },
+    "bible": {
+      "backstory": "Quentin grew up in Omaha in a working-class household where his dad did manual labor and his mom worked retail. He was never a strong student, and high school felt like going through the motions\u2014he graduated in 1997 but had no clear direction. He drifted through his twenties doing various entry-level jobs around the Midwest before landing in landscaping around age 25, which stuck because the work was straightforward and he could be outside. In 2010, he made the move to Austin chasing a fresh start and the promise of steady work in a growing city. He's been running small residential landscaping jobs ever since, building a modest but stable clientele. His romantic life never solidified into anything permanent, and he's made peace with being single\u2014he focuses his energy on refining his hobbies instead. Over the past decade, he picked up yoga as a way to manage back pain from the physical work, then videography as a creative outlet to document sunsets and nature around Austin, and more recently mixology as a weekend hobby and small side hustle making cocktails for friends at gatherings.",
+      "voice_descriptor": "Quentin posts with a laid-back, conversational tone\u2014he's friendly but not overly polished. He uses casual internet speak, drops his g's and contracts frequently, and leans toward genuine observation over hype. He's self-aware enough to laugh at himself and his choices, but he doesn't perform for clout. His posts mix practical work updates, philosophical wellness musings, and goofy personal moments, all filtered through someone who's learned to find contentment in a simple life.",
+      "signature_tells": [
+        "prolly",
+        "haha"
+      ],
+      "topics": [
+        "Landscape design and seasonal yard transformations\u2014before/after photos, client feedback, native plants for Central Texas",
+        "Yoga practice and flexibility milestones, plus recovery tips for manual laborers",
+        "Sunset and nature videography\u2014clips from around Austin parks, the Colorado River, backyard time-lapses",
+        "Cocktail recipes and home bar experiments, often riffing on classic drinks with local ingredients",
+        "Low-key life reflections about aging, staying independent, and finding joy in routine"
+      ],
+      "timeline": [
+        {
+          "month": "2025-09",
+          "event": "Started a new client relationship managing a large drought-resistant garden transformation; posted progress photos and behind-the-scenes setup"
+        },
+        {
+          "month": "2025-11",
+          "event": "Shared a yoga flexibility milestone (deeper forward fold); posted motivational note about consistency over intensity"
+        },
+        {
+          "month": "2025-12",
+          "event": "Holiday season\u2014hosted small gathering where he mixed cocktails for friends; posted about experimenting with spiced eggnog variations"
+        },
+        {
+          "month": "2026-01",
+          "event": "Captured a time-lapse video of morning frost melting in a client's yard; got moderate engagement and a few new followers"
+        },
+        {
+          "month": "2026-03",
+          "event": "Spring cleanup season ramping up; posted about early morning work ethic and posted sunset videography from a high-profile park job"
+        }
+      ],
+      "_source": "llm",
+      "_model": "claude-haiku-4-5"
+    }
+  },
+  "pers_004": {
+    "persona_id": "pers_004",
+    "tier": "protected",
+    "linkability": "moderate",
+    "identity": {
+      "first_name": "Mei",
+      "last_name": "Clark",
+      "sex": "female",
+      "age": 37
+    },
+    "attributes": {
+      "age": 37,
       "sex": "female",
       "city_country": "San Antonio, TX, USA",
-      "birth_city_country": "Tucson, AZ, USA",
-      "education": "Bachelors in Architecture",
-      "occupation": "architect",
+      "birth_city_country": "Nashville, TN, USA",
+      "education": "Bachelors in Accounting",
+      "occupation": "accountant",
       "income_level": "high",
       "relationship_status": "single"
     },
@@ -305,9 +360,76 @@
       "timezone": "America/Chicago"
     },
     "interests": [
-      "woodworking",
-      "language learning",
-      "cycling"
+      "philosophy",
+      "gaming",
+      "board games"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 23,
+      "work_start_hour": 7,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    }
+  },
+  "pers_005": {
+    "persona_id": "pers_005",
+    "tier": "background",
+    "linkability": "disciplined",
+    "identity": {
+      "first_name": "Nathaniel",
+      "last_name": "Gonzalez",
+      "sex": "male",
+      "age": 63
+    },
+    "attributes": {
+      "age": 63,
+      "sex": "male",
+      "city_country": "Roanoke, VA, USA",
+      "birth_city_country": "Roanoke, VA, USA",
+      "education": "Bachelors in Music",
+      "occupation": "musician",
+      "income_level": "low",
+      "relationship_status": "divorced"
+    },
+    "geo": {
+      "home_city": "Roanoke, VA, USA",
+      "home_state": "VA",
+      "home_lat": 37.2712,
+      "home_lon": -79.9405,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "marketing",
+      "birdwatching"
     ],
     "schedule": {
       "wake_hour": 7,
@@ -348,7 +470,7 @@
   "pers_006": {
     "persona_id": "pers_006",
     "tier": "background",
-    "linkability": "moderate",
+    "linkability": "careless",
     "identity": {
       "first_name": "Bella",
       "last_name": "Allen",
@@ -359,11 +481,11 @@
       "age": 43,
       "sex": "female",
       "city_country": "Pittsburgh, PA, USA",
-      "birth_city_country": "Boise, ID, USA",
+      "birth_city_country": "Cheyenne, WY, USA",
       "education": "Doctorate in Education",
       "occupation": "professor",
       "income_level": "high",
-      "relationship_status": "in a relationship"
+      "relationship_status": "married"
     },
     "geo": {
       "home_city": "Pittsburgh, PA, USA",
@@ -373,8 +495,9 @@
       "timezone": "America/New_York"
     },
     "interests": [
-      "running",
-      "blogging"
+      "music festivals",
+      "data science",
+      "baseball"
     ],
     "schedule": {
       "wake_hour": 8,
@@ -425,25 +548,25 @@
     "attributes": {
       "age": 55,
       "sex": "male",
-      "city_country": "Columbus, OH, USA",
-      "birth_city_country": "Las Vegas, NV, USA",
+      "city_country": "Billings, MT, USA",
+      "birth_city_country": "Billings, MT, USA",
       "education": "Associates Degree",
       "occupation": "retail manager",
       "income_level": "middle",
-      "relationship_status": "married"
+      "relationship_status": "single"
     },
     "geo": {
-      "home_city": "Columbus, OH, USA",
-      "home_state": "OH",
-      "home_lat": 39.9612,
-      "home_lon": -82.9988,
-      "timezone": "America/New_York"
+      "home_city": "Billings, MT, USA",
+      "home_state": "MT",
+      "home_lat": 45.7833,
+      "home_lon": -108.5,
+      "timezone": "America/Denver"
     },
     "interests": [
-      "psychology",
-      "graphic design",
-      "birdwatching",
-      "technology"
+      "reading",
+      "ice skating",
+      "coffee",
+      "paragliding"
     ],
     "schedule": {
       "wake_hour": 7,
@@ -494,47 +617,46 @@
     "attributes": {
       "age": 57,
       "sex": "female",
-      "city_country": "Atlanta, GA, USA",
-      "birth_city_country": "Atlanta, GA, USA",
+      "city_country": "Cheyenne, WY, USA",
+      "birth_city_country": "Cheyenne, WY, USA",
       "education": "Masters in Library Science",
       "occupation": "librarian",
       "income_level": "middle",
       "relationship_status": "married"
     },
     "geo": {
-      "home_city": "Atlanta, GA, USA",
-      "home_state": "GA",
-      "home_lat": 33.749,
-      "home_lon": -84.388,
-      "timezone": "America/New_York"
+      "home_city": "Cheyenne, WY, USA",
+      "home_state": "WY",
+      "home_lat": 41.14,
+      "home_lon": -104.8202,
+      "timezone": "America/Denver"
     },
     "interests": [
-      "home cooking",
-      "disc golf",
-      "camping"
+      "trivia nights",
+      "home cooking"
     ],
     "schedule": {
-      "wake_hour": 6,
-      "sleep_hour": 23,
-      "work_start_hour": 7,
+      "wake_hour": 8,
+      "sleep_hour": 22,
+      "work_start_hour": 10,
       "work_hours": 10,
       "weekday_online_windows": [
         [
-          6,
-          7
+          8,
+          9
         ],
         [
           12,
           13
         ],
         [
-          17,
-          20
+          20,
+          23
         ]
       ],
       "weekend_online_windows": [
         [
-          9,
+          10,
           12
         ],
         [
@@ -552,39 +674,37 @@
   "pers_009": {
     "persona_id": "pers_009",
     "tier": "background",
-    "linkability": "meticulous",
+    "linkability": "moderate",
     "identity": {
-      "first_name": "Victoria",
-      "last_name": "Turner",
+      "first_name": "Evelyn",
+      "last_name": "Stewart",
       "sex": "female",
-      "age": 32
+      "age": 63
     },
     "attributes": {
-      "age": 32,
+      "age": 63,
       "sex": "female",
-      "city_country": "Buffalo, NY, USA",
-      "birth_city_country": "Milwaukee, WI, USA",
-      "education": "Bachelors in Computer Science",
-      "occupation": "cybersecurity analyst",
-      "income_level": "high",
-      "relationship_status": "widowed"
+      "city_country": "St. Louis, MO, USA",
+      "birth_city_country": "New Orleans, LA, USA",
+      "education": "Associates Degree",
+      "occupation": "IT support specialist",
+      "income_level": "middle",
+      "relationship_status": "in a relationship"
     },
     "geo": {
-      "home_city": "Buffalo, NY, USA",
-      "home_state": "NY",
-      "home_lat": 42.8864,
-      "home_lon": -78.8784,
-      "timezone": "America/New_York"
+      "home_city": "St. Louis, MO, USA",
+      "home_state": "MO",
+      "home_lat": 38.627,
+      "home_lon": -90.1994,
+      "timezone": "America/Chicago"
     },
     "interests": [
-      "writing",
-      "machine learning",
-      "indie games",
-      "local politics"
+      "yoga",
+      "home cooking"
     ],
     "schedule": {
       "wake_hour": 7,
-      "sleep_hour": 22,
+      "sleep_hour": 23,
       "work_start_hour": 8,
       "work_hours": 8,
       "weekday_online_windows": [
@@ -615,7 +735,7 @@
           23
         ]
       ],
-      "post_hour_jitter": 1.5
+      "post_hour_jitter": 1.0
     }
   },
   "pers_010": {
@@ -623,37 +743,105 @@
     "tier": "background",
     "linkability": "moderate",
     "identity": {
-      "first_name": "Maria",
-      "last_name": "Turner",
-      "sex": "female",
-      "age": 54
+      "first_name": "Marcus",
+      "last_name": "Kim",
+      "sex": "male",
+      "age": 59
     },
     "attributes": {
-      "age": 54,
-      "sex": "female",
-      "city_country": "Omaha, NE, USA",
-      "birth_city_country": "San Francisco, CA, USA",
-      "education": "Bachelors in Accounting",
-      "occupation": "accountant",
+      "age": 59,
+      "sex": "male",
+      "city_country": "Fargo, ND, USA",
+      "birth_city_country": "Denver, CO, USA",
+      "education": "Bachelors in Architecture",
+      "occupation": "architect",
       "income_level": "high",
-      "relationship_status": "married"
+      "relationship_status": "widowed"
     },
     "geo": {
-      "home_city": "Omaha, NE, USA",
-      "home_state": "NE",
-      "home_lat": 41.2565,
-      "home_lon": -95.9345,
+      "home_city": "Fargo, ND, USA",
+      "home_state": "ND",
+      "home_lat": 46.8769,
+      "home_lon": -96.7877,
       "timezone": "America/Chicago"
     },
     "interests": [
-      "painting",
-      "camping",
-      "augmented reality",
-      "web development"
+      "fishing",
+      "sudoku",
+      "puzzles",
+      "augmented reality"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 0,
+      "work_start_hour": 10,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    }
+  },
+  "pers_011": {
+    "persona_id": "pers_011",
+    "tier": "background",
+    "linkability": "careless",
+    "identity": {
+      "first_name": "Luna",
+      "last_name": "Campbell",
+      "sex": "female",
+      "age": 42
+    },
+    "attributes": {
+      "age": 42,
+      "sex": "female",
+      "city_country": "Cheyenne, WY, USA",
+      "birth_city_country": "Cheyenne, WY, USA",
+      "education": "Fitness Certification",
+      "occupation": "personal trainer",
+      "income_level": "low",
+      "relationship_status": "divorced"
+    },
+    "geo": {
+      "home_city": "Cheyenne, WY, USA",
+      "home_state": "WY",
+      "home_lat": 41.14,
+      "home_lon": -104.8202,
+      "timezone": "America/Denver"
+    },
+    "interests": [
+      "dancing",
+      "data science",
+      "entrepreneurship"
     ],
     "schedule": {
       "wake_hour": 6,
-      "sleep_hour": 23,
+      "sleep_hour": 22,
       "work_start_hour": 7,
       "work_hours": 10,
       "weekday_online_windows": [
@@ -684,75 +872,7 @@
           23
         ]
       ],
-      "post_hour_jitter": 1.0
-    }
-  },
-  "pers_011": {
-    "persona_id": "pers_011",
-    "tier": "background",
-    "linkability": "careless",
-    "identity": {
-      "first_name": "Kai",
-      "last_name": "Wright",
-      "sex": "non-binary",
-      "age": 46
-    },
-    "attributes": {
-      "age": 46,
-      "sex": "non-binary",
-      "city_country": "Detroit, MI, USA",
-      "birth_city_country": "Detroit, MI, USA",
-      "education": "Trade Certification",
-      "occupation": "auto mechanic",
-      "income_level": "middle",
-      "relationship_status": "in a relationship"
-    },
-    "geo": {
-      "home_city": "Detroit, MI, USA",
-      "home_state": "MI",
-      "home_lat": 42.3314,
-      "home_lon": -83.0458,
-      "timezone": "America/New_York"
-    },
-    "interests": [
-      "indie games",
-      "videography",
-      "podcasting"
-    ],
-    "schedule": {
-      "wake_hour": 6,
-      "sleep_hour": 0,
-      "work_start_hour": 7,
-      "work_hours": 8,
-      "weekday_online_windows": [
-        [
-          6,
-          7
-        ],
-        [
-          12,
-          13
-        ],
-        [
-          15,
-          18
-        ]
-      ],
-      "weekend_online_windows": [
-        [
-          9,
-          12
-        ],
-        [
-          15,
-          18
-        ],
-        [
-          20,
-          23
-        ]
-      ],
-      "post_hour_jitter": 1.5
+      "post_hour_jitter": 0.5
     }
   },
   "pers_012": {
@@ -760,54 +880,55 @@
     "tier": "background",
     "linkability": "disciplined",
     "identity": {
-      "first_name": "Thomas",
+      "first_name": "Mason",
       "last_name": "Garcia",
       "sex": "male",
-      "age": 25
+      "age": 26
     },
     "attributes": {
-      "age": 25,
+      "age": 26,
       "sex": "male",
-      "city_country": "Tampa, FL, USA",
-      "birth_city_country": "Tampa, FL, USA",
-      "education": "High School Diploma",
-      "occupation": "line cook",
+      "city_country": "Austin, TX, USA",
+      "birth_city_country": "Denver, CO, USA",
+      "education": "Cosmetology License",
+      "occupation": "hair stylist",
       "income_level": "low",
       "relationship_status": "married"
     },
     "geo": {
-      "home_city": "Tampa, FL, USA",
-      "home_state": "FL",
-      "home_lat": 27.9506,
-      "home_lon": -82.4572,
-      "timezone": "America/New_York"
+      "home_city": "Austin, TX, USA",
+      "home_state": "TX",
+      "home_lat": 30.2672,
+      "home_lon": -97.7431,
+      "timezone": "America/Chicago"
     },
     "interests": [
-      "streaming",
-      "coffee"
+      "decorating",
+      "psychology",
+      "camping"
     ],
     "schedule": {
-      "wake_hour": 6,
+      "wake_hour": 8,
       "sleep_hour": 23,
-      "work_start_hour": 7,
-      "work_hours": 9,
+      "work_start_hour": 10,
+      "work_hours": 8,
       "weekday_online_windows": [
         [
-          6,
-          7
+          8,
+          9
         ],
         [
           12,
           13
         ],
         [
-          16,
-          19
+          18,
+          21
         ]
       ],
       "weekend_online_windows": [
         [
-          9,
+          10,
           12
         ],
         [
@@ -819,13 +940,13 @@
           23
         ]
       ],
-      "post_hour_jitter": 0.5
+      "post_hour_jitter": 1.0
     }
   },
   "pers_013": {
     "persona_id": "pers_013",
     "tier": "background",
-    "linkability": "moderate",
+    "linkability": "disciplined",
     "identity": {
       "first_name": "Aalap",
       "last_name": "Walker",
@@ -836,11 +957,11 @@
       "age": 50,
       "sex": "male",
       "city_country": "Kansas City, MO, USA",
-      "birth_city_country": "Columbus, OH, USA",
+      "birth_city_country": "Fargo, ND, USA",
       "education": "Trade Certification",
-      "occupation": "HVAC technician",
+      "occupation": "electrician",
       "income_level": "middle",
-      "relationship_status": "married"
+      "relationship_status": "single"
     },
     "geo": {
       "home_city": "Kansas City, MO, USA",
@@ -850,10 +971,10 @@
       "timezone": "America/Chicago"
     },
     "interests": [
-      "baking",
-      "woodworking",
-      "history",
-      "mixology"
+      "volunteering",
+      "fitness",
+      "magic tricks",
+      "beekeeping"
     ],
     "schedule": {
       "wake_hour": 6,
@@ -894,7 +1015,7 @@
   "pers_014": {
     "persona_id": "pers_014",
     "tier": "background",
-    "linkability": "disciplined",
+    "linkability": "meticulous",
     "identity": {
       "first_name": "Benjamin",
       "last_name": "Hall",
@@ -919,16 +1040,16 @@
       "timezone": "America/Los_Angeles"
     },
     "interests": [
+      "volunteering",
       "baking",
-      "craft beer",
-      "wine tasting",
-      "streaming"
+      "houseplants",
+      "rock climbing"
     ],
     "schedule": {
       "wake_hour": 6,
       "sleep_hour": 23,
       "work_start_hour": 7,
-      "work_hours": 8,
+      "work_hours": 9,
       "weekday_online_windows": [
         [
           6,
@@ -939,8 +1060,8 @@
           13
         ],
         [
-          15,
-          18
+          16,
+          19
         ]
       ],
       "weekend_online_windows": [
@@ -963,40 +1084,109 @@
   "pers_015": {
     "persona_id": "pers_015",
     "tier": "background",
-    "linkability": "meticulous",
+    "linkability": "careless",
     "identity": {
-      "first_name": "Priya",
-      "last_name": "Martinez",
-      "sex": "female",
-      "age": 48
+      "first_name": "Sean",
+      "last_name": "Clark",
+      "sex": "male",
+      "age": 26
     },
     "attributes": {
-      "age": 48,
-      "sex": "female",
-      "city_country": "Minneapolis, MN, USA",
-      "birth_city_country": "Minneapolis, MN, USA",
-      "education": "Associates Degree",
-      "occupation": "IT support specialist",
+      "age": 26,
+      "sex": "male",
+      "city_country": "Portland, OR, USA",
+      "birth_city_country": "Sacramento, CA, USA",
+      "education": "Masters in Social Work",
+      "occupation": "social worker",
       "income_level": "middle",
-      "relationship_status": "married"
+      "relationship_status": "it's complicated"
     },
     "geo": {
-      "home_city": "Minneapolis, MN, USA",
-      "home_state": "MN",
-      "home_lat": 44.9778,
-      "home_lon": -93.265,
-      "timezone": "America/Chicago"
+      "home_city": "Portland, OR, USA",
+      "home_state": "OR",
+      "home_lat": 45.5152,
+      "home_lon": -122.6784,
+      "timezone": "America/Los_Angeles"
     },
     "interests": [
-      "astronomy",
-      "psychology",
-      "genealogy"
+      "social media",
+      "ice skating",
+      "decorating"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 0,
+      "work_start_hour": 8,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    }
+  },
+  "pers_016": {
+    "persona_id": "pers_016",
+    "tier": "background",
+    "linkability": "moderate",
+    "identity": {
+      "first_name": "Priya",
+      "last_name": "Johnson",
+      "sex": "female",
+      "age": 43
+    },
+    "attributes": {
+      "age": 43,
+      "sex": "female",
+      "city_country": "Cleveland, OH, USA",
+      "birth_city_country": "Milwaukee, WI, USA",
+      "education": "Bachelors in Human-Computer Interaction",
+      "occupation": "UX designer",
+      "income_level": "high",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Cleveland, OH, USA",
+      "home_state": "OH",
+      "home_lat": 41.4993,
+      "home_lon": -81.6944,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "yoga",
+      "crafts",
+      "gardening",
+      "networking"
     ],
     "schedule": {
       "wake_hour": 8,
-      "sleep_hour": 22,
-      "work_start_hour": 10,
-      "work_hours": 8,
+      "sleep_hour": 0,
+      "work_start_hour": 9,
+      "work_hours": 10,
       "weekday_online_windows": [
         [
           8,
@@ -1007,8 +1197,8 @@
           13
         ],
         [
-          18,
-          21
+          19,
+          22
         ]
       ],
       "weekend_online_windows": [
@@ -1025,27 +1215,27 @@
           23
         ]
       ],
-      "post_hour_jitter": 1.0
+      "post_hour_jitter": 0.5
     }
   },
-  "pers_016": {
-    "persona_id": "pers_016",
+  "pers_017": {
+    "persona_id": "pers_017",
     "tier": "background",
     "linkability": "careless",
     "identity": {
-      "first_name": "Malik",
-      "last_name": "Johnson",
-      "sex": "male",
+      "first_name": "Savannah",
+      "last_name": "Wright",
+      "sex": "female",
       "age": 60
     },
     "attributes": {
       "age": 60,
-      "sex": "male",
+      "sex": "female",
       "city_country": "Boston, MA, USA",
-      "birth_city_country": "Boston, MA, USA",
-      "education": "Bachelors in Design",
-      "occupation": "graphic designer",
-      "income_level": "middle",
+      "birth_city_country": "Sturgis, SD, USA",
+      "education": "Culinary School Certification",
+      "occupation": "chef",
+      "income_level": "high",
       "relationship_status": "married"
     },
     "geo": {
@@ -1056,14 +1246,215 @@
       "timezone": "America/New_York"
     },
     "interests": [
+      "AI",
       "augmented reality",
-      "yoga",
-      "woodworking",
-      "cryptocurrency"
+      "origami"
     ],
     "schedule": {
       "wake_hour": 6,
       "sleep_hour": 22,
+      "work_start_hour": 8,
+      "work_hours": 9,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    }
+  },
+  "pers_018": {
+    "persona_id": "pers_018",
+    "tier": "background",
+    "linkability": "careless",
+    "identity": {
+      "first_name": "Daniel",
+      "last_name": "King",
+      "sex": "male",
+      "age": 29
+    },
+    "attributes": {
+      "age": 29,
+      "sex": "male",
+      "city_country": "Sturgis, SD, USA",
+      "birth_city_country": "San Francisco, CA, USA",
+      "education": "Bachelors in Civil Engineering",
+      "occupation": "civil engineer",
+      "income_level": "high",
+      "relationship_status": "it's complicated"
+    },
+    "geo": {
+      "home_city": "Sturgis, SD, USA",
+      "home_state": "SD",
+      "home_lat": 44.4097,
+      "home_lon": -103.5091,
+      "timezone": "America/Denver"
+    },
+    "interests": [
+      "machine learning",
+      "video games"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 0,
+      "work_start_hour": 9,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          19,
+          22
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    }
+  },
+  "pers_019": {
+    "persona_id": "pers_019",
+    "tier": "background",
+    "linkability": "careless",
+    "identity": {
+      "first_name": "Henry",
+      "last_name": "Campbell",
+      "sex": "male",
+      "age": 58
+    },
+    "attributes": {
+      "age": 58,
+      "sex": "male",
+      "city_country": "Fairfax, VA, USA",
+      "birth_city_country": "San Francisco, CA, USA",
+      "education": "Associates Degree",
+      "occupation": "medical technician",
+      "income_level": "middle",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Fairfax, VA, USA",
+      "home_state": "VA",
+      "home_lat": 38.8462,
+      "home_lon": -77.3064,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "archery",
+      "streaming"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 0,
+      "work_start_hour": 8,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    }
+  },
+  "pers_020": {
+    "persona_id": "pers_020",
+    "tier": "background",
+    "linkability": "disciplined",
+    "identity": {
+      "first_name": "Charlotte",
+      "last_name": "Flores",
+      "sex": "female",
+      "age": 54
+    },
+    "attributes": {
+      "age": 54,
+      "sex": "female",
+      "city_country": "Columbus, OH, USA",
+      "birth_city_country": "Columbus, OH, USA",
+      "education": "Associates Degree",
+      "occupation": "paramedic",
+      "income_level": "middle",
+      "relationship_status": "married"
+    },
+    "geo": {
+      "home_city": "Columbus, OH, USA",
+      "home_state": "OH",
+      "home_lat": 39.9612,
+      "home_lon": -82.9988,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "hiking",
+      "home cooking",
+      "scuba diving"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 23,
       "work_start_hour": 7,
       "work_hours": 10,
       "weekday_online_windows": [
@@ -1095,279 +1486,6 @@
         ]
       ],
       "post_hour_jitter": 1.5
-    }
-  },
-  "pers_017": {
-    "persona_id": "pers_017",
-    "tier": "background",
-    "linkability": "meticulous",
-    "identity": {
-      "first_name": "Savannah",
-      "last_name": "Wilson",
-      "sex": "female",
-      "age": 30
-    },
-    "attributes": {
-      "age": 30,
-      "sex": "female",
-      "city_country": "Cleveland, OH, USA",
-      "birth_city_country": "Arlington, VA, USA",
-      "education": "Masters in Social Work",
-      "occupation": "social worker",
-      "income_level": "middle",
-      "relationship_status": "single"
-    },
-    "geo": {
-      "home_city": "Cleveland, OH, USA",
-      "home_state": "OH",
-      "home_lat": 41.4993,
-      "home_lon": -81.6944,
-      "timezone": "America/New_York"
-    },
-    "interests": [
-      "content creation",
-      "vlogging",
-      "virtual reality",
-      "reading"
-    ],
-    "schedule": {
-      "wake_hour": 6,
-      "sleep_hour": 23,
-      "work_start_hour": 8,
-      "work_hours": 8,
-      "weekday_online_windows": [
-        [
-          6,
-          7
-        ],
-        [
-          12,
-          13
-        ],
-        [
-          16,
-          19
-        ]
-      ],
-      "weekend_online_windows": [
-        [
-          9,
-          12
-        ],
-        [
-          15,
-          18
-        ],
-        [
-          20,
-          23
-        ]
-      ],
-      "post_hour_jitter": 1.0
-    }
-  },
-  "pers_018": {
-    "persona_id": "pers_018",
-    "tier": "background",
-    "linkability": "moderate",
-    "identity": {
-      "first_name": "Harrison",
-      "last_name": "Jackson",
-      "sex": "male",
-      "age": 42
-    },
-    "attributes": {
-      "age": 42,
-      "sex": "male",
-      "city_country": "Denver, CO, USA",
-      "birth_city_country": "Denver, CO, USA",
-      "education": "Trade Certification",
-      "occupation": "auto mechanic",
-      "income_level": "middle",
-      "relationship_status": "married"
-    },
-    "geo": {
-      "home_city": "Denver, CO, USA",
-      "home_state": "CO",
-      "home_lat": 39.7392,
-      "home_lon": -104.9903,
-      "timezone": "America/Denver"
-    },
-    "interests": [
-      "baking",
-      "fantasy football",
-      "gaming",
-      "cooking classes"
-    ],
-    "schedule": {
-      "wake_hour": 6,
-      "sleep_hour": 22,
-      "work_start_hour": 8,
-      "work_hours": 8,
-      "weekday_online_windows": [
-        [
-          6,
-          7
-        ],
-        [
-          12,
-          13
-        ],
-        [
-          16,
-          19
-        ]
-      ],
-      "weekend_online_windows": [
-        [
-          9,
-          12
-        ],
-        [
-          15,
-          18
-        ],
-        [
-          20,
-          23
-        ]
-      ],
-      "post_hour_jitter": 1.0
-    }
-  },
-  "pers_019": {
-    "persona_id": "pers_019",
-    "tier": "background",
-    "linkability": "careless",
-    "identity": {
-      "first_name": "Henry",
-      "last_name": "Nelson",
-      "sex": "male",
-      "age": 57
-    },
-    "attributes": {
-      "age": 57,
-      "sex": "male",
-      "city_country": "Milwaukee, WI, USA",
-      "birth_city_country": "Milwaukee, WI, USA",
-      "education": "Trade Certification",
-      "occupation": "truck driver",
-      "income_level": "middle",
-      "relationship_status": "divorced"
-    },
-    "geo": {
-      "home_city": "Milwaukee, WI, USA",
-      "home_state": "WI",
-      "home_lat": 43.0389,
-      "home_lon": -87.9065,
-      "timezone": "America/Chicago"
-    },
-    "interests": [
-      "marathon training",
-      "photography",
-      "gardening"
-    ],
-    "schedule": {
-      "wake_hour": 5,
-      "sleep_hour": 23,
-      "work_start_hour": 6,
-      "work_hours": 9,
-      "weekday_online_windows": [
-        [
-          5,
-          6
-        ],
-        [
-          12,
-          13
-        ],
-        [
-          15,
-          18
-        ]
-      ],
-      "weekend_online_windows": [
-        [
-          9,
-          12
-        ],
-        [
-          15,
-          18
-        ],
-        [
-          20,
-          23
-        ]
-      ],
-      "post_hour_jitter": 1.5
-    }
-  },
-  "pers_020": {
-    "persona_id": "pers_020",
-    "tier": "background",
-    "linkability": "moderate",
-    "identity": {
-      "first_name": "Samuel",
-      "last_name": "Flores",
-      "sex": "male",
-      "age": 36
-    },
-    "attributes": {
-      "age": 36,
-      "sex": "male",
-      "city_country": "Sacramento, CA, USA",
-      "birth_city_country": "Sacramento, CA, USA",
-      "education": "Trade Certification",
-      "occupation": "bus driver",
-      "income_level": "low",
-      "relationship_status": "divorced"
-    },
-    "geo": {
-      "home_city": "Sacramento, CA, USA",
-      "home_state": "CA",
-      "home_lat": 38.5816,
-      "home_lon": -121.4944,
-      "timezone": "America/Los_Angeles"
-    },
-    "interests": [
-      "hiking",
-      "thrifting"
-    ],
-    "schedule": {
-      "wake_hour": 6,
-      "sleep_hour": 23,
-      "work_start_hour": 7,
-      "work_hours": 8,
-      "weekday_online_windows": [
-        [
-          6,
-          7
-        ],
-        [
-          12,
-          13
-        ],
-        [
-          15,
-          18
-        ]
-      ],
-      "weekend_online_windows": [
-        [
-          9,
-          12
-        ],
-        [
-          15,
-          18
-        ],
-        [
-          20,
-          23
-        ]
-      ],
-      "post_hour_jitter": 0.5
     }
   }
 }

@@ -10,6 +10,9 @@ offline-first: if no ANTHROPIC_API_KEY is set (or the SDK isn't installed, ora c
 import json
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # set this to a model your API key can access
 MODEL = "claude-haiku-4-5"
  

@@ -151,8 +151,8 @@ def main():
         }
     }
     out = {**meta, **population}
-    os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    with open(args.out, "w") as f:
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w") as f:
         json.dump(out, f, indent=2)
     print(f"wrote {len(population)} personas (seed={args.seed}) -> {out_path}")
  
