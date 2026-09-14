@@ -1,3 +1,10 @@
+"""
+verify.py - this verifies the composed dataset does not leak data directly to the profiler
+
+    python verify.py
+ 
+"""
+
 import argparse
 import json
 import os

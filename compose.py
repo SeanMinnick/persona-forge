@@ -1,3 +1,11 @@
+"""
+compose.py - composes the dataset based on a population file within /populations
+    this will kick off any modules that are flagged creating dataset output files for each within /output
+ 
+    python compose.py
+ 
+"""
+
 import argparse
 import datetime
 import importlib
