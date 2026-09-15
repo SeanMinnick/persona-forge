@@ -9,27 +9,28 @@ load_dotenv()
  
 from .. import contract
 from . import platform
+import opsec as opsec_mod
  
  
-def _display_name(persona, link, handle, rng):
+def _display_name(persona, mode, handle, rng):
     first = persona["identity"]["first_name"]
     last = persona["identity"]["last_name"]
-    if link == "careless":
+    if mode == "identity":
         return rng.choice([first, f"{first} {last[0]}.", f"{first} {last}"])
-    if link == "moderate":
+    if mode == "hint":
         return rng.choice([first, f"{first.lower()}", handle.rstrip("0123456789")])
     return handle.rstrip("0123456789")
  
  
-def _location_field(persona, link, rng):
+def _location_field(persona, mode, rng):
     city_full = persona["attributes"]["city_country"]
     city = city_full.split(",")[0].strip()
     state = persona["geo"].get("home_state", "")
-    if link == "careless":
+    if mode == "identity":
         return rng.choice([city_full.replace(", USA", ""), f"{city}", f"{city}, {state}"])
-    if link == "moderate":
+    if mode == "hint":
         return rng.choice([state, f"{state}, USA", ""])
-    if link == "disciplined":
+    if mode == "generic_hint":
         return rng.choice(["", "USA", "somewhere"])
     return rng.choice(["", "the internet", "here and there"])
  
@@ -54,7 +55,25 @@ def _extract_hashtags(text):
     return re.findall(r"#\w+", text)
  
  
-def _system(persona, n, link, n_filler):
+def _leakage_lines(opsec_score):
+    lp = opsec_mod.leakage_profile(opsec_score)
+    sd = lp["self_disclosure"]
+    loc = lp["location_leak"]
+    return (
+        f"PRIVACY POSTURE: on a 0-100 scale where 100 is maximally guarded, this "
+        f"person is {opsec_score}. Match this exactly; do not round toward a "
+        f"stereotype.\n"
+        f"BIO INSTRUCTION: write a bio whose identifiability is about "
+        f"{round(lp['handle_identifiability'] * 100)}% — they {opsec_mod.freq_phrase(lp['handle_identifiability'])} "
+        f"signal their real job, city, or name in a bio.\n"
+        f"POST LEAKAGE: across posts they {opsec_mod.freq_phrase(sd)} let something "
+        f"identifying about their job, city, routine, or relationships slip "
+        f"(roughly {round(sd * 100)}% of substantive posts). Location specifics they "
+        f"{opsec_mod.freq_phrase(loc)} reveal.\n"
+    )
+ 
+ 
+def _system(persona, n, opsec_score, n_filler):
     b = persona.get("bible", {})
     voice = b.get("voice_descriptor", "casual and conversational")
     topics = b.get("topics", persona.get("interests", []))
@@ -76,8 +95,7 @@ def _system(persona, n, link, n_filler):
         f"YOU POST ABOUT: {', '.join(topics)}\n"
         f"{tell_line}\n"
         f"{platform.FORMAT_HINT}\n\n"
-        f"BIO INSTRUCTION: {platform.BIO_LEAKAGE.get(link, platform.BIO_LEAKAGE['moderate'])}\n\n"
-        f"POST LEAKAGE: {platform.POST_LEAKAGE.get(link, platform.POST_LEAKAGE['moderate'])}\n"
+        f"{_leakage_lines(opsec_score)}"
         f"{filler_line}"
         "POST RULES: When a post does reveal something, do it INDIRECTLY through concrete lived "
         "detail, never stating your age, job, or city word-for-word. Each post distinct.\n\n"
@@ -86,11 +104,11 @@ def _system(persona, n, link, n_filler):
     )
  
  
-def _anthropic_bio_posts(persona, n, link, n_filler):
+def _anthropic_bio_posts(persona, n, opsec_score, n_filler):
     import anthropic
     client = anthropic.Anthropic()
     msg = client.messages.create(
-        model=platform.MODEL, max_tokens=1500, system=_system(persona, n, link, n_filler),
+        model=platform.MODEL, max_tokens=1500, system=_system(persona, n, opsec_score, n_filler),
         messages=[{"role": "user", "content": f"Write my bio and {n} chirp posts now."}],
     )
     raw = "".join(bl.text for bl in msg.content if bl.type == "text").strip()
@@ -121,7 +139,7 @@ _FILLER = [
 ]
  
  
-def _offline_bio_posts(persona, n, link, n_filler, rng):
+def _offline_bio_posts(persona, n, mode, n_filler, rng):
     a = persona["attributes"]
     tells = persona.get("bible", {}).get("signature_tells", [])
     topics = persona.get("bible", {}).get("topics", persona.get("interests", []))
@@ -136,17 +154,17 @@ def _offline_bio_posts(persona, n, link, n_filler, rng):
     for i in range(n_filler):
         posts.append(_FILLER[i % len(_FILLER)])
     rng.shuffle(posts)
-    bio = "" if link in ("disciplined", "meticulous") else f"just here posting about {', '.join(topics[:2])} [offline stub]"
+    bio = "" if mode in ("generic_hint", "random") else f"just here posting about {', '.join(topics[:2])} [offline stub]"
     return bio, posts
  
  
-def _bio_posts(persona, n, link, n_filler, rng):
+def _bio_posts(persona, n, mode, opsec_score, n_filler, rng):
     if os.environ.get("ANTHROPIC_API_KEY"):
         try:
-            return _anthropic_bio_posts(persona, n, link, n_filler)
+            return _anthropic_bio_posts(persona, n, opsec_score, n_filler)
         except Exception as e:
             print(f"  [chirp] LLM call failed for {persona['persona_id']} ({e}); offline fallback")
-    return _offline_bio_posts(persona, n, link, n_filler, rng)
+    return _offline_bio_posts(persona, n, mode, n_filler, rng)
  
  
 def emit(personas, footprint, out_dir, seed, today):
@@ -157,13 +175,14 @@ def emit(personas, footprint, out_dir, seed, today):
  
     for persona_id, handles in footprint.get(platform.ID, {}).items():
         persona = personas[persona_id]
-        link = persona.get("linkability", "moderate")
+        o = persona.get("opsec", 50)
+        mode = opsec_mod.handle_mode(o)
         schedule = persona.get("schedule", {})
         for handle in handles:
             key["account_to_persona"][handle] = persona_id
             n = rng.randint(platform.POST_MIN, platform.POST_MAX)
-            n_filler = round(n * platform.FILLER_RATIO.get(link, 0.3))
-            bio, texts = _bio_posts(persona, n, link, n_filler, rng)
+            n_filler = round(n * opsec_mod.filler_ratio(o))
+            bio, texts = _bio_posts(persona, n, mode, o, n_filler, rng)
             texts = texts[:n]
  
             pc += 1
@@ -171,9 +190,9 @@ def emit(personas, footprint, out_dir, seed, today):
             profiles.append(contract.make_record(
                 prof_id, platform.ID, handle, channel=platform.CHANNEL, record_type="profile",
                 handle=f"@{handle}",
-                display_name=_display_name(persona, link, handle, rng),
+                display_name=_display_name(persona, mode, handle, rng),
                 bio=bio,
-                location=_location_field(persona, link, rng),
+                location=_location_field(persona, mode, rng),
                 join_date=f"{rng.randint(2015, 2024)}-{rng.randint(1, 12):02d}",
                 post_count=rng.randint(len(texts), 4000),
                 follower_count=rng.randint(20, 3000),
@@ -182,7 +201,7 @@ def emit(personas, footprint, out_dir, seed, today):
             key["obs_to_persona"][prof_id] = persona_id
  
             stamps = _timestamps(schedule, len(texts), today, rng)
-            geo_chance = platform.GEOTAG_CHANCE.get(link, 0.0)
+            geo_chance = opsec_mod.geotag_chance(o)
             for text, ts in zip(texts, stamps):
                 pc += 1
                 post_id = f"chirp_post_{pc:05d}"

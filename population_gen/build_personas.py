@@ -4,12 +4,15 @@ build_personas.py - creates the ground truth personas based on vocab.py. This is
     python src/build_personas.py
  
 """
-
+ 
 import argparse
 import json
 import os
 import random
 import vocab
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import opsec as opsec_mod
  
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(REPO_ROOT, "populations")
@@ -17,7 +20,6 @@ DATA_DIR = os.path.join(REPO_ROOT, "populations")
 DEFAULT_SEED = 42
 DEFAULT_N = 50
 PROTECTED_FRACTION = 0.2
-LINKABILITY_WEIGHTS = [0.3, 0.35, 0.25, 0.1]
 SEX_WEIGHTS = [0.49, 0.49, 0.02]
  
  
@@ -98,13 +100,13 @@ def build_population(n, seed):
         born = sample_birth_city(rng, home)
         rel = sample_relationship(rng, age)
         interests = rng.sample(vocab.INTEREST_TAGS, k=rng.randint(2, 4))
-        linkability = rng.choices(vocab.LINKABILITY, weights=LINKABILITY_WEIGHTS)[0]
         tier = "protected" if i < n_protected else "background"
+        opsec_score = opsec_mod.sample_opsec(rng, tier)
  
         personas[pid] = {
             "persona_id": pid,
             "tier": tier,
-            "linkability": linkability,
+            "opsec": opsec_score,
             "identity": {
                 "first_name": first,
                 "last_name": last,

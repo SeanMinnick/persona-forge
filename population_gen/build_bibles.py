@@ -8,12 +8,14 @@ from dotenv import load_dotenv
 load_dotenv()
  
 import vocab
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import opsec as opsec_mod
  
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(REPO_ROOT, "populations")
  
 MODEL_DEFAULT = "claude-haiku-4-5"
-TELLS_BY_LINKABILITY = {"careless": 4, "moderate": 2, "disciplined": 1, "meticulous": 0}
  
  
 def default_pop_path(n, seed):
@@ -34,17 +36,19 @@ def _skeleton_brief(p):
         f"income_level: {a['income_level']}\n"
         f"relationship_status: {a['relationship_status']}\n"
         f"interests: {', '.join(p['interests'])}\n"
-        f"linkability: {p['linkability']}"
+        f"opsec: {p['opsec']}"
     )
  
  
 def _system(p, n_tells, tells, today):
-    compartment = {
-        "careless": "They are careless about privacy: the same voice, habits, and phrases bleed across all their accounts.",
-        "moderate": "They are somewhat privacy-aware: accounts share some habits but they vary tone a little.",
-        "disciplined": "They are privacy-disciplined: they keep a fairly different voice per account.",
-        "meticulous": "They are meticulous about privacy: each account has a deliberately distinct persona with almost no shared tells.",
-    }[p["linkability"]]
+    lp = opsec_mod.leakage_profile(p["opsec"])
+    vc = lp["voice_consistency"]
+    compartment = (
+        f"On a 0-100 privacy scale (100 = maximally guarded) this person is {p['opsec']}. "
+        f"Their voice consistency across accounts is about {round(vc * 100)}%: they "
+        f"{opsec_mod.freq_phrase(vc)} carry the same habits, phrases, and tone from one "
+        f"account to another. Higher consistency means easier to link across platforms."
+    )
     born_year = today.year - p["attributes"]["age"]
     return (
         "You write a private character bible for a fictional social-media user, used to keep their "
@@ -119,7 +123,7 @@ def _offline_bible(p, rng, n_tells, tells=None):
             f"in {a['city_country']}, originally from {a['birth_city_country']}. "
             f"Currently {a['relationship_status']}. [offline stub backstory]"
         ),
-        "voice_descriptor": f"Casual, {p['linkability']} about privacy. [offline stub voice]",
+        "voice_descriptor": f"Casual, opsec {p['opsec']}/100. [offline stub voice]",
         "signature_tells": tells if tells is not None else pick_tells(rng, n_tells),
         "topics": list(p["interests"]),
         "timeline": [{"month": "2026-03", "event": "[offline stub event]"}],
@@ -129,7 +133,7 @@ def _offline_bible(p, rng, n_tells, tells=None):
  
  
 def generate_bible(p, model, rng, use_llm, today):
-    n_tells = TELLS_BY_LINKABILITY[p["linkability"]]
+    n_tells = opsec_mod.tells_count(p["opsec"])
     tells = pick_tells(rng, n_tells)
     if use_llm:
         try:
@@ -173,7 +177,7 @@ def main():
         with open(path, "w") as f:
             json.dump(pop, f, indent=2)
         done += 1
-        print(f"  bible for {pid} ({p['linkability']}, {p['bible']['_source']})")
+        print(f"  bible for {pid} (opsec {p['opsec']}, {p['bible']['_source']})")
  
     print(f"generated {done} bibles -> {path}")
  

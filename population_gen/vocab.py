@@ -150,7 +150,6 @@ INTEREST_TAGS = [
     "jigsaw puzzles", "sculpting", "stargazing", "tabletop games", "zumba", "baseball",
 ]
  
-LINKABILITY = ["careless", "moderate", "disciplined", "meticulous"]
 TIER = ["protected", "background"]
  
 TELLS = {

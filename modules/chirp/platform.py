@@ -11,26 +11,8 @@ WINDOW_DAYS = 90
  
 CLIENTS = ["Chirp for iPhone", "Chirp for Android", "Chirp Web", "Chirp for iPad"]
  
-GEOTAG_CHANCE = {"careless": 0.15, "moderate": 0.03, "disciplined": 0.0, "meticulous": 0.0}
- 
-POST_LEAKAGE = {
-    "careless": "Most posts should casually reveal identifying detail — your job, city, routine, relationships.",
-    "moderate": "Some posts hint at your life and work; many are ordinary and reveal little.",
-    "disciplined": "Rarely reveal anything identifying. Keep most posts generic and unlocatable.",
-    "meticulous": "Almost never reveal anything identifying about your job, city, or life. Stay generic.",
-}
- 
-FILLER_RATIO = {"careless": 0.3, "moderate": 0.5, "disciplined": 0.7, "meticulous": 0.9}
- 
 FORMAT_HINT = (
     "This is Chirp, a Twitter-like microblog. Each post is a SHORT standalone thought "
     "(5-30 words), no replies or threading. Punchy and casual; lowercase is fine, an "
     "occasional hashtag is fine. Do not @mention real people or brands."
 )
- 
-BIO_LEAKAGE = {
-    "careless": "Write a lively bio that openly signals your job and city and a hobby or two. You are not privacy-conscious.",
-    "moderate": "Write a bio that hints at your interests and maybe vaguely at what you do, but not your city.",
-    "disciplined": "Write a short, guarded bio that reveals no job, city, or identifying detail.",
-    "meticulous": "Write a generic, near-empty bio that reveals nothing personal at all.",
-}

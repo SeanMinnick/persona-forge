@@ -3,6 +3,9 @@ import datetime
 import json
 import os
 import vocab
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import opsec as opsec_mod
  
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(REPO_ROOT, "populations")
@@ -16,7 +19,6 @@ EDU_BY_OCC = {o["occupation"]: o["edu"] for o in vocab.OCCUPATIONS}
 INC_BY_OCC = {o["occupation"]: o["income_level"] for o in vocab.OCCUPATIONS}
 INTEREST_SET = set(vocab.INTEREST_TAGS)
 ALL_TELLS = {t for cat in vocab.TELLS.values() for t in cat}
-TELLS_BY_LINKABILITY = {"careless": 4, "moderate": 2, "disciplined": 1, "meticulous": 0}
  
  
 def default_pop_path(n, seed):
@@ -42,8 +44,9 @@ def check_persona(pid, p, today, errors, warnings):
         err(f"sex '{a.get('sex')}' not in vocab.SEX")
     if a.get("relationship_status") not in vocab.RELATIONSHIP_STATUS:
         err(f"relationship_status '{a.get('relationship_status')}' not in vocab")
-    if p.get("linkability") not in vocab.LINKABILITY:
-        err(f"linkability '{p.get('linkability')}' not in vocab")
+    o = p.get("opsec")
+    if not isinstance(o, int) or not (opsec_mod.OPSEC_MIN <= o <= opsec_mod.OPSEC_MAX):
+        err(f"opsec '{o}' not an int in [{opsec_mod.OPSEC_MIN},{opsec_mod.OPSEC_MAX}]")
     if p.get("tier") not in vocab.TIER:
         err(f"tier '{p.get('tier')}' not in vocab")
  
@@ -94,10 +97,10 @@ def check_persona(pid, p, today, errors, warnings):
         warn("no bible yet")
         return
  
-    n_expected = TELLS_BY_LINKABILITY.get(p.get("linkability"))
+    n_expected = opsec_mod.tells_count(o) if isinstance(o, int) else None
     tells = bible.get("signature_tells", [])
     if n_expected is not None and len(tells) != n_expected:
-        err(f"bible has {len(tells)} tells, expected {n_expected} for linkability '{p.get('linkability')}'")
+        err(f"bible has {len(tells)} tells, expected {n_expected} for opsec {o}")
     for t in tells:
         if t not in ALL_TELLS:
             err(f"bible tell '{t}' not in vocab.TELLS (invented?)")
