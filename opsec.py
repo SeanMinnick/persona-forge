@@ -33,6 +33,54 @@ def sample_opsec(rng, tier):
     return clamp(100 * rng.betavariate(a, b))
 
 
+SIGNAL_MEAN_FLOOR = 0.03
+SIGNAL_MEAN_SPAN = 0.72
+SIGNAL_MEAN_CURVE = 1.2
+SIGNAL_CONC_FLOOR = 3.0
+SIGNAL_CONC_SPAN = 9.0
+
+SUBSTANCE_MEAN = 0.5
+SUBSTANCE_CONC = 4.0
+
+SIGNAL_HI = 55
+SUBSTANCE_HI = 50
+
+
+def _beta_from_mean_conc(mu, kappa):
+    mu = min(max(mu, 1e-3), 1 - 1e-3)
+    return mu * kappa, (1 - mu) * kappa
+
+
+def signal_mean(opsec):
+    return SIGNAL_MEAN_FLOOR + SIGNAL_MEAN_SPAN * (1 - norm(opsec)) ** SIGNAL_MEAN_CURVE
+
+
+def signal_conc(opsec):
+    return SIGNAL_CONC_FLOOR + SIGNAL_CONC_SPAN * norm(opsec)
+
+
+def sample_signal(rng, opsec):
+    a, b = _beta_from_mean_conc(signal_mean(opsec), signal_conc(opsec))
+    return clamp(100 * rng.betavariate(a, b))
+
+
+def sample_substance(rng):
+    a, b = _beta_from_mean_conc(SUBSTANCE_MEAN, SUBSTANCE_CONC)
+    return clamp(100 * rng.betavariate(a, b))
+
+
+def route_post(signal, substance):
+    if signal >= SIGNAL_HI:
+        return "signal"
+    if substance >= SUBSTANCE_HI:
+        return "decoy"
+    return "filler"
+
+
+def topic_decoupling(opsec):
+    return round(norm(opsec) ** 2.5, 3)
+
+
 def leakage_profile(opsec):
     o = norm(opsec)
     return {

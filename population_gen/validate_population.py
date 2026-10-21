@@ -2,9 +2,9 @@ import argparse
 import datetime
 import json
 import os
-import vocab
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import vocab
 import opsec as opsec_mod
  
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
