@@ -63,6 +63,20 @@ def _tell_line(persona):
     return f"Weave these exact verbal tics in naturally, verbatim, across some posts: {tells}.\n"
 
 
+def _facts(persona):
+    a = persona["attributes"]
+    g = persona.get("geo", {})
+    interests = ", ".join(persona.get("interests", [])) or "none in particular"
+    return (
+        f"- you are {a['age']} years old\n"
+        f"- your job: {a['occupation']}\n"
+        f"- you live in {a['city_country']} (state: {g.get('home_state', '')})\n"
+        f"- you are originally from {a['birth_city_country']}\n"
+        f"- relationship status: {a['relationship_status']}\n"
+        f"- your real hobbies/interests: {interests}\n"
+    )
+
+
 def _system_signal(persona, n):
     b = persona.get("bible", {})
     voice = b.get("voice_descriptor", "casual and conversational")
@@ -70,14 +84,17 @@ def _system_signal(persona, n):
     backstory = b.get("backstory", "")
     return (
         "You roleplay a fictional social-media user and write their Chirp content.\n\n"
-        f"WHO YOU ARE (private, do not restate):\n{backstory}\n\n"
+        "GROUND TRUTH ABOUT YOU (fixed and true — never contradict, replace, or invent around these):\n"
+        f"{_facts(persona)}\n"
+        f"WHO YOU ARE (private backstory, do not restate):\n{backstory}\n\n"
         f"YOUR VOICE: {voice}\n"
         f"YOU POST ABOUT: {', '.join(topics)}\n"
         f"{_tell_line(persona)}"
         f"{platform.FORMAT_HINT}\n\n"
-        f"Write {n} posts that each reveal something real about your job, city, routine, "
-        "household, or relationships, always INDIRECTLY through concrete lived detail, never "
-        "stating your age, job, or city word-for-word. Each post distinct.\n\n"
+        f"Write {n} posts that each let something real from the GROUND TRUTH above slip INDIRECTLY, "
+        "through concrete lived detail of your actual job, city, commute, household, hobbies, or "
+        "relationships. Do NOT invent a different job, city, or lifestyle than the ground truth. "
+        "Never state your age, job, or city word-for-word. Each post distinct.\n\n"
         'Return ONLY JSON: {"bio": "<one-line bio>", "posts": ["post 1", ...]}. '
         "No prose outside the JSON, no code fences."
     )
