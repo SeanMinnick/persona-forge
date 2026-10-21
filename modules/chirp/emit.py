@@ -56,11 +56,22 @@ def _extract_hashtags(text):
     return re.findall(r"#\w+", text)
 
 
-def _tell_line(persona):
+_STYLE_TELLS = set(vocab.TELLS["typography"])
+
+
+def _tell_lines(persona):
     tells = persona.get("bible", {}).get("signature_tells", [])
-    if not tells:
-        return ""
-    return f"Weave these exact verbal tics in naturally, verbatim, across some posts: {tells}.\n"
+    phrase = [t for t in tells if t not in _STYLE_TELLS]
+    style = [t for t in tells if t in _STYLE_TELLS]
+    out = ""
+    if phrase:
+        out += f"Weave these exact verbal tics in naturally, verbatim, across some posts: {phrase}.\n"
+    if style:
+        out += (
+            "Also write in the following style habits consistently — apply them to how you type, "
+            f"never name or quote them in a post: {style}.\n"
+        )
+    return out
 
 
 def _facts(persona):
@@ -89,7 +100,7 @@ def _system_signal(persona, n):
         f"WHO YOU ARE (private backstory, do not restate):\n{backstory}\n\n"
         f"YOUR VOICE: {voice}\n"
         f"YOU POST ABOUT: {', '.join(topics)}\n"
-        f"{_tell_line(persona)}"
+        f"{_tell_lines(persona)}"
         f"{platform.FORMAT_HINT}\n\n"
         f"Write {n} posts that each let something real from the GROUND TRUTH above slip INDIRECTLY, "
         "through concrete lived detail of your actual job, city, commute, household, hobbies, or "
@@ -125,7 +136,7 @@ def _system_cover(persona, n_decoy, n_filler, decoys):
     return (
         "You roleplay a fictional social-media user and write their Chirp content.\n\n"
         f"YOUR VOICE: {voice}\n"
-        f"{_tell_line(persona)}"
+        f"{_tell_lines(persona)}"
         f"{platform.FORMAT_HINT}\n\n"
         "Write the following sets of posts:\n"
         + "\n".join(sections) + "\n\n"
