@@ -12,6 +12,8 @@ import importlib
 import json
 import os
  
+import llm
+
 from modules import footprint as footprint_planner
  
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -28,10 +30,23 @@ def main():
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--today", default=None)
     ap.add_argument("--strict", action="store_true")
+    ap.add_argument("--model", action="append", default=[], metavar="ROLE=NAME",
+                    help="pin a role to a model alias, e.g. --model writer=sonnet-4.6")
     for m in AVAILABLE_MODULES:
         ap.add_argument(f"--{m}", action="store_true")
     args = ap.parse_args()
  
+    for spec in args.model:
+        role, sep, name = spec.partition("=")
+        if not sep:
+            raise SystemExit(f"--model expects ROLE=NAME, got '{spec}'")
+        if role not in llm.roles():
+            raise SystemExit(f"unknown role '{role}'; have {llm.roles()}")
+        try:
+            llm.pin(role, name)
+        except ValueError as e:
+            raise SystemExit(str(e))
+
     today = datetime.date.fromisoformat(args.today) if args.today else datetime.date.today()
     requested = [m for m in AVAILABLE_MODULES if getattr(args, m)]
     if not requested:
@@ -61,6 +76,7 @@ def main():
         "seed": args.seed,
         "today": today.isoformat(),
         "strict": args.strict,
+        "llm": llm.describe(),
         "modules": requested,
         "personas": len(personas),
         "results": {k: v["observations"] for k, v in results.items()},

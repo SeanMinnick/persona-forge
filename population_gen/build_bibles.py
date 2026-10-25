@@ -4,18 +4,16 @@ import json
 import os
 import random
  
-from dotenv import load_dotenv
-load_dotenv()
- 
 import sys as _sys, os as _os
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+import llm
 import vocab
 import opsec as opsec_mod
  
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(REPO_ROOT, "populations")
  
-MODEL_DEFAULT = "claude-haiku-4-5"
+ROLE = "bible"
  
  
 def default_pop_path(n, seed):
@@ -76,20 +74,15 @@ def _system(p, n_tells, tells, today):
     )
  
  
-def _anthropic_bible(p, model, n_tells, tells, today):
-    import anthropic
-    client = anthropic.Anthropic()
-    msg = client.messages.create(
-        model=model, max_tokens=1500, system=_system(p, n_tells, tells, today),
-        messages=[{"role": "user", "content": "Write the bible now as JSON."}],
-    )
-    raw = "".join(b.text for b in msg.content if b.type == "text").strip()
-    if raw.startswith("```"):
-        raw = raw.split("```")[1].lstrip("json").strip()
-    bible = json.loads(raw)
+def _llm_bible(p, model, n_tells, tells, today):
+    spec = llm.resolve(role=ROLE, model=model)
+    bible = llm.complete_json(_system(p, n_tells, tells, today),
+                              "Write the bible now as JSON.", 1500,
+                              role=ROLE, model=model)
     bible["signature_tells"] = tells
     bible["_source"] = "llm"
-    bible["_model"] = model
+    bible["_model"] = spec["id"]
+    bible["_model_alias"] = spec["name"]
     return bible
  
  
@@ -137,7 +130,7 @@ def generate_bible(p, model, rng, use_llm, today):
     tells = pick_tells(rng, n_tells)
     if use_llm:
         try:
-            return _anthropic_bible(p, model, n_tells, tells, today)
+            return _llm_bible(p, model, n_tells, tells, today)
         except Exception as e:
             print(f"  [bible] LLM failed for {p['persona_id']} ({e}); offline fallback")
     return _offline_bible(p, rng, n_tells, tells)
@@ -145,7 +138,7 @@ def generate_bible(p, model, rng, use_llm, today):
  
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default=MODEL_DEFAULT)
+    ap.add_argument("--model", default=None, help="model alias; default is the bible role")
     ap.add_argument("--n", type=int, default=20)
     ap.add_argument("--path", default=None)
     ap.add_argument("--force", action="store_true")
@@ -156,9 +149,13 @@ def main():
  
     today = datetime.date.fromisoformat(args.today) if args.today else datetime.date.today()
  
-    use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    if args.model and args.model not in llm.names():
+        raise SystemExit(f"unknown model '{args.model}'; have {llm.names()}")
+    use_llm = llm.available()
     if not use_llm:
-        print("no ANTHROPIC_API_KEY set -> offline stub bibles")
+        print("no PATAI credentials (or LLM_OFFLINE=1) -> offline stub bibles")
+    else:
+        print(f"bibles via {llm.resolve(role=ROLE, model=args.model)['id']}")
  
     path = args.path or default_pop_path(args.n, args.seed)
     with open(path) as f:

@@ -3,10 +3,8 @@ import json
 import os
 import random
 import re
-import time
 
-from dotenv import load_dotenv
-load_dotenv()
+import llm
 
 from .. import contract
 from . import platform
@@ -148,27 +146,6 @@ def _system_cover(persona, n_decoy, n_filler, decoys):
     )
 
 
-def _call(system, user, attempts=platform.MAX_ATTEMPTS):
-    import anthropic
-    client = anthropic.Anthropic()
-    last = None
-    for i in range(attempts):
-        try:
-            msg = client.messages.create(
-                model=platform.MODEL, max_tokens=2000, system=system,
-                messages=[{"role": "user", "content": user}],
-            )
-            raw = "".join(bl.text for bl in msg.content if bl.type == "text").strip()
-            if raw.startswith("```"):
-                raw = raw.split("```")[1].lstrip("json").strip()
-            return json.loads(raw)
-        except Exception as e:
-            last = e
-            if i + 1 < attempts:
-                time.sleep(platform.RETRY_BACKOFF * (2 ** i))
-    raise last
-
-
 def _texts(data, n):
     out = [str(p).strip() for p in data.get("posts", []) if str(p).strip()]
     return out[:n]
@@ -248,24 +225,28 @@ def _offline_filler(persona, n):
     return [_FILLER[i % len(_FILLER)] for i in range(n)]
 
 
-def _gen_cover(persona, n_decoy, n_filler, decoys):
-    data = _call(_system_cover(persona, n_decoy, n_filler, decoys), "Write the posts now.")
+def _gen_cover(persona, n_decoy, n_filler, decoys, model=None):
+    data = llm.complete_json(_system_cover(persona, n_decoy, n_filler, decoys),
+                             "Write the posts now.", 2000,
+                             role=platform.MODEL_ROLE, model=model)
     dec = [str(p).strip() for p in data.get("decoy", []) if str(p).strip()][:n_decoy]
     fil = [str(p).strip() for p in data.get("filler", []) if str(p).strip()][:n_filler]
     return dec, fil
 
 
-def _generate(persona, counts, decoy_tags, use_llm, strict):
+def _generate(persona, counts, decoy_tags, use_llm, strict, model=None):
     n_signal, n_decoy, n_filler = counts
     meta = {"source": "llm", "short": {"signal": 0, "decoy": 0, "filler": 0}}
     if use_llm:
         try:
             bio, sig, dec, fil = "", [], [], []
             if n_signal:
-                data = _call(_system_signal(persona, n_signal), f"Write my bio and {n_signal} chirp posts now.")
+                data = llm.complete_json(_system_signal(persona, n_signal),
+                                         f"Write my bio and {n_signal} chirp posts now.", 2000,
+                                         role=platform.MODEL_ROLE, model=model)
                 bio, sig = str(data.get("bio", "")), _texts(data, n_signal)
             if n_decoy or n_filler:
-                dec, fil = _gen_cover(persona, n_decoy, n_filler, decoy_tags)
+                dec, fil = _gen_cover(persona, n_decoy, n_filler, decoy_tags, model=model)
             meta["short"] = {"signal": n_signal - len(sig),
                              "decoy": n_decoy - len(dec),
                              "filler": n_filler - len(fil)}
@@ -274,7 +255,7 @@ def _generate(persona, counts, decoy_tags, use_llm, strict):
             if strict:
                 raise RuntimeError(
                     f"chirp generation failed for {persona['persona_id']} after "
-                    f"{platform.MAX_ATTEMPTS} attempts: {e}") from e
+                    f"{llm.MAX_ATTEMPTS} attempts: {e}") from e
             print(f"  [chirp] LLM failed for {persona['persona_id']} ({e}); offline fallback")
             meta["source"] = "offline"
             meta["error"] = str(e)
@@ -287,9 +268,9 @@ def _generate(persona, counts, decoy_tags, use_llm, strict):
     return bio, {"signal": sig, "decoy": dec, "filler": fil}, meta
 
 
-def emit(personas, footprint, out_dir, seed, today, strict=False):
+def emit(personas, footprint, out_dir, seed, today, strict=False, model=None):
     rng = random.Random(seed)
-    use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    use_llm = llm.available()
     profiles, posts = [], []
     key = contract.new_module_key(platform.ID)
     pc = 0
@@ -318,7 +299,8 @@ def emit(personas, footprint, out_dir, seed, today, strict=False):
             decoys = _decoys(persona, 3, rng, o) if counts[1] else []
             decoy_tags = [t for t, _ in decoys]
 
-            bio, by_kind, gen_meta = _generate(persona, counts, decoy_tags, use_llm, strict)
+            bio, by_kind, gen_meta = _generate(persona, counts, decoy_tags, use_llm, strict,
+                                               model=model)
             if not bio and mode in ("identity", "hint"):
                 gen_meta["bio_missing"] = True
 

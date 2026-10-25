@@ -1,16 +1,11 @@
 import os
 import random
 import re
-import time
  
+import llm
 import opsec as opsec_mod
  
-from dotenv import load_dotenv
-load_dotenv()
- 
-MODEL = "claude-haiku-4-5"
-MAX_ATTEMPTS = 3
-RETRY_BACKOFF = 1.5
+ROLE = "handle"
  
  
 FALLBACK_WORDS = [
@@ -24,21 +19,7 @@ def _sanitize(h):
     return h[:15]
  
  
-def _kit_llm(persona, mode, attempts=MAX_ATTEMPTS):
-    last = None
-    for i in range(attempts):
-        try:
-            return _kit_llm_once(persona, mode)
-        except Exception as e:
-            last = e
-            if i + 1 < attempts:
-                time.sleep(RETRY_BACKOFF * (2 ** i))
-    raise last
-
-
-def _kit_llm_once(persona, mode):
-    import anthropic
-    client = anthropic.Anthropic()
+def _kit_llm(persona, mode, model=None):
     ident = persona["identity"]
     interests = ", ".join(persona.get("interests", [])) or "general"
     voice = persona.get("bible", {}).get("voice_descriptor", "casual")
@@ -55,15 +36,8 @@ def _kit_llm_once(persona, mode):
         '"unrelated": ["<3 generic handles that reveal nothing>"]}. '
         "Handles: lowercase, 3-15 chars, only letters/numbers/underscore/period, no @, no spaces."
     )
-    msg = client.messages.create(
-        model=MODEL, max_tokens=300, system=system,
-        messages=[{"role": "user", "content": "Generate the handles now."}],
-    )
-    raw = "".join(b.text for b in msg.content if b.type == "text").strip()
-    if raw.startswith("```"):
-        raw = raw.split("```")[1].lstrip("json").strip()
-    import json
-    data = json.loads(raw)
+    data = llm.complete_json(system, "Generate the handles now.", 300,
+                             role=ROLE, model=model)
     return {
         "primary": _sanitize(data["primary"]),
         "variants": [_sanitize(v) for v in data.get("variants", []) if _sanitize(v)],
@@ -109,17 +83,17 @@ def _kit_offline(persona, mode, rng):
     }
  
  
-def _kit(persona, mode, rng, use_llm, strict):
+def _kit(persona, mode, rng, use_llm, strict, model=None):
     if mode == "random":
         return _kit_offline(persona, mode, rng)
     if use_llm:
         try:
-            return _kit_llm(persona, mode)
+            return _kit_llm(persona, mode, model=model)
         except Exception as e:
             if strict:
                 raise RuntimeError(
                     f"footprint handle generation failed for {persona['persona_id']} after "
-                    f"{MAX_ATTEMPTS} attempts: {e}") from e
+                    f"{llm.MAX_ATTEMPTS} attempts: {e}") from e
             print(f"  [footprint] handle LLM failed for {persona['persona_id']} ({e}); offline")
     return _kit_offline(persona, mode, rng)
  
@@ -146,9 +120,9 @@ def _assign(kit, mode, module_counts, claim_unique, claim_core, pid):
     return result
  
  
-def plan(personas, module_ids, seed, strict=False):
+def plan(personas, module_ids, seed, strict=False, model=None):
     rng = random.Random(seed)
-    use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    use_llm = llm.available()
     footprint = {m: {} for m in module_ids}
     used = {}
  
@@ -182,7 +156,7 @@ def plan(personas, module_ids, seed, strict=False):
             module_counts[m] = 2 if rng.random() < multi else 1
         if not module_counts:
             continue
-        kit = _kit(p, mode, rng, use_llm, strict)
+        kit = _kit(p, mode, rng, use_llm, strict, model=model)
         assigned = _assign(kit, mode, module_counts, claim_unique, claim_core, persona_id)
         for m, handles in assigned.items():
             footprint[m][persona_id] = handles
