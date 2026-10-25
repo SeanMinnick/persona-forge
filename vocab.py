@@ -150,6 +150,39 @@ INTEREST_TAGS = [
     "jigsaw puzzles", "sculpting", "stargazing", "tabletop games", "zumba", "baseball",
 ]
  
+TOPIC_FAMILIES = {
+    "tech": ["technology", "AI", "machine learning", "data science", "blockchain",
+             "cryptocurrency", "virtual reality", "augmented reality", "web development",
+             "app development", "cybersecurity", "cloud computing"],
+    "creative": ["graphic design", "videography", "photography", "content creation",
+                 "podcasting", "blogging", "vlogging", "streaming", "social media", "writing"],
+    "business": ["economics", "finance", "entrepreneurship", "marketing", "networking",
+                 "public speaking"],
+    "food": ["home cooking", "baking", "cooking classes", "homebrewing", "craft beer",
+             "mixology", "wine tasting", "coffee"],
+    "fitness": ["fitness", "running", "marathon training", "trail running", "yoga"],
+    "trades": ["woodworking", "home improvement"],
+    "academic": ["science", "astronomy", "history", "philosophy", "psychology", "reading"],
+}
+
+OCCUPATION_FAMILIES = {
+    "tech": ["software engineer", "cybersecurity analyst", "data analyst",
+             "network administrator", "IT support specialist", "UX designer"],
+    "creative": ["graphic designer", "content creator", "freelance writer", "photographer",
+                 "journalist", "graphic illustrator"],
+    "business": ["marketing specialist", "business owner", "financial advisor",
+                 "insurance agent", "accountant", "real estate agent", "product manager"],
+    "food": ["chef", "line cook", "part-time barista", "waiter"],
+    "fitness": ["personal trainer", "physical therapist"],
+    "trades": ["electrician", "plumber", "HVAC technician", "auto mechanic", "welder",
+               "construction worker", "landscaper"],
+    "academic": ["research scientist", "epidemiologist", "professor", "high school teacher",
+                 "librarian"],
+}
+
+TAG_TO_FAMILY = {tag: fam for fam, tags in TOPIC_FAMILIES.items() for tag in tags}
+OCCUPATION_TO_FAMILY = {occ: fam for fam, occs in OCCUPATION_FAMILIES.items() for occ in occs}
+
 TIER = ["protected", "background"]
  
 TELLS = {

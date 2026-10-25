@@ -1,6 +1,7 @@
 import os
 import random
 import re
+import time
  
 import opsec as opsec_mod
  
@@ -8,6 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
  
 MODEL = "claude-haiku-4-5"
+MAX_ATTEMPTS = 3
+RETRY_BACKOFF = 1.5
  
  
 FALLBACK_WORDS = [
@@ -21,7 +24,19 @@ def _sanitize(h):
     return h[:15]
  
  
-def _kit_llm(persona, mode):
+def _kit_llm(persona, mode, attempts=MAX_ATTEMPTS):
+    last = None
+    for i in range(attempts):
+        try:
+            return _kit_llm_once(persona, mode)
+        except Exception as e:
+            last = e
+            if i + 1 < attempts:
+                time.sleep(RETRY_BACKOFF * (2 ** i))
+    raise last
+
+
+def _kit_llm_once(persona, mode):
     import anthropic
     client = anthropic.Anthropic()
     ident = persona["identity"]
@@ -94,13 +109,17 @@ def _kit_offline(persona, mode, rng):
     }
  
  
-def _kit(persona, mode, rng, use_llm):
+def _kit(persona, mode, rng, use_llm, strict):
     if mode == "random":
         return _kit_offline(persona, mode, rng)
     if use_llm:
         try:
             return _kit_llm(persona, mode)
         except Exception as e:
+            if strict:
+                raise RuntimeError(
+                    f"footprint handle generation failed for {persona['persona_id']} after "
+                    f"{MAX_ATTEMPTS} attempts: {e}") from e
             print(f"  [footprint] handle LLM failed for {persona['persona_id']} ({e}); offline")
     return _kit_offline(persona, mode, rng)
  
@@ -127,7 +146,7 @@ def _assign(kit, mode, module_counts, claim_unique, claim_core, pid):
     return result
  
  
-def plan(personas, module_ids, seed):
+def plan(personas, module_ids, seed, strict=False):
     rng = random.Random(seed)
     use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
     footprint = {m: {} for m in module_ids}
@@ -163,7 +182,7 @@ def plan(personas, module_ids, seed):
             module_counts[m] = 2 if rng.random() < multi else 1
         if not module_counts:
             continue
-        kit = _kit(p, mode, rng, use_llm)
+        kit = _kit(p, mode, rng, use_llm, strict)
         assigned = _assign(kit, mode, module_counts, claim_unique, claim_core, persona_id)
         for m, handles in assigned.items():
             footprint[m][persona_id] = handles

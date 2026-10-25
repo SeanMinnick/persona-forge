@@ -27,6 +27,7 @@ def main():
     ap.add_argument("--out", default=None)
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--today", default=None)
+    ap.add_argument("--strict", action="store_true")
     for m in AVAILABLE_MODULES:
         ap.add_argument(f"--{m}", action="store_true")
     args = ap.parse_args()
@@ -44,7 +45,7 @@ def main():
     out_dir = os.path.join(HERE, "output", run_name)
     os.makedirs(out_dir, exist_ok=True)
  
-    footprint = footprint_planner.plan(personas, requested, args.seed)
+    footprint = footprint_planner.plan(personas, requested, args.seed, strict=args.strict)
     key_dir = os.path.join(out_dir, "answer_key")
     os.makedirs(key_dir, exist_ok=True)
     with open(os.path.join(key_dir, "footprint.json"), "w") as f:
@@ -53,12 +54,13 @@ def main():
     results = {}
     for module_id in requested:
         mod = load_module(module_id)
-        results[module_id] = mod.emit(personas, footprint, out_dir, args.seed, today)
+        results[module_id] = mod.emit(personas, footprint, out_dir, args.seed, today, strict=args.strict)
  
     manifest = {
         "input": os.path.basename(args.input),
         "seed": args.seed,
         "today": today.isoformat(),
+        "strict": args.strict,
         "modules": requested,
         "personas": len(personas),
         "results": {k: v["observations"] for k, v in results.items()},

@@ -36,6 +36,7 @@ def new_module_key(module):
         "account_to_persona": {},
         "obs_to_persona": {},
         "obs_signal": {},
+        "account_meta": {},
     }
  
  

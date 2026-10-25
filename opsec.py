@@ -119,8 +119,16 @@ def filler_ratio(opsec):
     return 0.3 + 0.6 * norm(opsec)
  
  
+GEOTAG_PEAK = 0.09
+GEOTAG_CUTOFF = 60
+GEOTAG_CURVE = 2.0
+
+
 def geotag_chance(opsec):
-    return max(0.0, 0.18 * (1 - norm(opsec)) - 0.03)
+    o = clamp(opsec)
+    if o >= GEOTAG_CUTOFF:
+        return 0.0
+    return GEOTAG_PEAK * (1 - o / GEOTAG_CUTOFF) ** GEOTAG_CURVE
  
  
 def presence(opsec):

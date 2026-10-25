@@ -37,6 +37,17 @@ python compose.py --input populations/population_n{pop size}_seed{seed num}.json
 python verify.py output/run_seed{compose seed}_chirp
 ```
  
+Add `--strict` to abort the run on any LLM failure instead of silently falling back to
+offline template stubs. Use it for any dataset you intend to freeze as a benchmark.
+ 
+```bash
+python compose.py --input populations/population_n50_seed32.json --chirp --seed 13 --today 2026-10-25 --strict
+python verify.py output/run_seed13_chirp --freeze
+```
+ 
+`verify.py` alone is the identity-boundary check. `--freeze` additionally requires that every
+account was LLM-generated, carries no template-stub text, and is not short on posts.
+ 
 ## Modules
  
 | Flag | Module | Output |

@@ -3,6 +3,7 @@ import json
 import os
 import random
 import re
+import time
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -147,17 +148,25 @@ def _system_cover(persona, n_decoy, n_filler, decoys):
     )
 
 
-def _call(system, user):
+def _call(system, user, attempts=platform.MAX_ATTEMPTS):
     import anthropic
     client = anthropic.Anthropic()
-    msg = client.messages.create(
-        model=platform.MODEL, max_tokens=2000, system=system,
-        messages=[{"role": "user", "content": user}],
-    )
-    raw = "".join(bl.text for bl in msg.content if bl.type == "text").strip()
-    if raw.startswith("```"):
-        raw = raw.split("```")[1].lstrip("json").strip()
-    return json.loads(raw)
+    last = None
+    for i in range(attempts):
+        try:
+            msg = client.messages.create(
+                model=platform.MODEL, max_tokens=2000, system=system,
+                messages=[{"role": "user", "content": user}],
+            )
+            raw = "".join(bl.text for bl in msg.content if bl.type == "text").strip()
+            if raw.startswith("```"):
+                raw = raw.split("```")[1].lstrip("json").strip()
+            return json.loads(raw)
+        except Exception as e:
+            last = e
+            if i + 1 < attempts:
+                time.sleep(platform.RETRY_BACKOFF * (2 ** i))
+    raise last
 
 
 def _texts(data, n):
@@ -190,12 +199,26 @@ _DECOY_TEMPLATES = [
 ]
 
 
-def _decoys(persona, k, rng):
+def _decoys(persona, k, rng, opsec_val):
     real = set(persona.get("interests", []))
+    fam = vocab.OCCUPATION_TO_FAMILY.get(persona["attributes"]["occupation"])
     pool = [t for t in vocab.INTEREST_TAGS if t not in real]
     if not pool:
         pool = list(vocab.INTEREST_TAGS)
-    return rng.sample(pool, min(k, len(pool)))
+    near = [t for t in pool if fam and vocab.TAG_TO_FAMILY.get(t) == fam]
+    far = [t for t in pool if t not in near]
+    d = opsec_mod.topic_decoupling(opsec_val)
+
+    picked, used = [], set()
+    for _ in range(k):
+        src = far if (not near or rng.random() < d) else pool
+        avail = [t for t in src if t not in used] or [t for t in pool if t not in used]
+        if not avail:
+            break
+        t = rng.choice(avail)
+        used.add(t)
+        picked.append((t, vocab.TAG_TO_FAMILY.get(t) == fam if fam else False))
+    return picked
 
 
 def _offline_signal(persona, n):
@@ -232,26 +255,39 @@ def _gen_cover(persona, n_decoy, n_filler, decoys):
     return dec, fil
 
 
-def _generate(persona, counts, decoys, use_llm):
+def _generate(persona, counts, decoy_tags, use_llm, strict):
     n_signal, n_decoy, n_filler = counts
-    bio, sig, dec, fil = "", [], [], []
+    meta = {"source": "llm", "short": {"signal": 0, "decoy": 0, "filler": 0}}
     if use_llm:
         try:
+            bio, sig, dec, fil = "", [], [], []
             if n_signal:
                 data = _call(_system_signal(persona, n_signal), f"Write my bio and {n_signal} chirp posts now.")
                 bio, sig = str(data.get("bio", "")), _texts(data, n_signal)
             if n_decoy or n_filler:
-                dec, fil = _gen_cover(persona, n_decoy, n_filler, decoys)
-            return bio, {"signal": sig, "decoy": dec, "filler": fil}
+                dec, fil = _gen_cover(persona, n_decoy, n_filler, decoy_tags)
+            meta["short"] = {"signal": n_signal - len(sig),
+                             "decoy": n_decoy - len(dec),
+                             "filler": n_filler - len(fil)}
+            return bio, {"signal": sig, "decoy": dec, "filler": fil}, meta
         except Exception as e:
+            if strict:
+                raise RuntimeError(
+                    f"chirp generation failed for {persona['persona_id']} after "
+                    f"{platform.MAX_ATTEMPTS} attempts: {e}") from e
             print(f"  [chirp] LLM failed for {persona['persona_id']} ({e}); offline fallback")
+            meta["source"] = "offline"
+            meta["error"] = str(e)
+    else:
+        meta["source"] = "offline"
+
     bio, sig = _offline_signal(persona, n_signal)
-    dec = _offline_decoy(persona, n_decoy, decoys)
+    dec = _offline_decoy(persona, n_decoy, decoy_tags)
     fil = _offline_filler(persona, n_filler)
-    return bio, {"signal": sig, "decoy": dec, "filler": fil}
+    return bio, {"signal": sig, "decoy": dec, "filler": fil}, meta
 
 
-def emit(personas, footprint, out_dir, seed, today):
+def emit(personas, footprint, out_dir, seed, today, strict=False):
     rng = random.Random(seed)
     use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
     profiles, posts = [], []
@@ -279,11 +315,21 @@ def emit(personas, footprint, out_dir, seed, today):
                 sum(1 for d in draws if d[2] == "decoy"),
                 sum(1 for d in draws if d[2] == "filler"),
             )
-            decoys = _decoys(persona, 3, rng) if counts[1] else []
+            decoys = _decoys(persona, 3, rng, o) if counts[1] else []
+            decoy_tags = [t for t, _ in decoys]
 
-            bio, by_kind = _generate(persona, counts, decoys, use_llm)
+            bio, by_kind, gen_meta = _generate(persona, counts, decoy_tags, use_llm, strict)
             if not bio and mode in ("identity", "hint"):
-                bio = "just here [offline stub]"
+                gen_meta["bio_missing"] = True
+
+            key["account_meta"][handle] = {
+                "opsec": o,
+                "decoupling": opsec_mod.topic_decoupling(o),
+                "decoy_topics": decoy_tags,
+                "decoy_near_family": [t for t, near in decoys if near],
+                "counts": {"signal": counts[0], "decoy": counts[1], "filler": counts[2]},
+                "generation": gen_meta,
+            }
 
             paired = []
             for s, sub, kind in draws:
@@ -313,7 +359,7 @@ def emit(personas, footprint, out_dir, seed, today):
                 pc += 1
                 post_id = f"chirp_post_{pc:05d}"
                 geotag = None
-                if kind == "signal" and rng.random() < geo_chance:
+                if rng.random() < geo_chance:
                     lat = persona["geo"]["home_lat"] + rng.gauss(0, 0.03)
                     lon = persona["geo"]["home_lon"] + rng.gauss(0, 0.03)
                     geotag = f"{lat:.4f},{lon:.4f}"

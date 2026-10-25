@@ -2,6 +2,8 @@ ID = "chirp"
 CHANNEL = "social_text"
 DISPLAY_NAME = "Chirp (Twitter-like microblog)"
 MODEL = "claude-haiku-4-5"
+MAX_ATTEMPTS = 3
+RETRY_BACKOFF = 1.5
  
 MIN_WORDS = 5
 MAX_WORDS = 30
