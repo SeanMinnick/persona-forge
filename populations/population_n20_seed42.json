@@ -1,0 +1,1800 @@
+{
+  "_meta": {
+    "count": 20,
+    "seed": 42,
+    "protected_fraction": 0.2,
+    "version": "n20_seed42"
+  },
+  "pers_001": {
+    "persona_id": "pers_001",
+    "tier": "protected",
+    "opsec": 36,
+    "identity": {
+      "first_name": "Mia",
+      "last_name": "Gonzalez",
+      "sex": "female",
+      "age": 40
+    },
+    "attributes": {
+      "age": 40,
+      "sex": "female",
+      "city_country": "San Francisco, CA, USA",
+      "birth_city_country": "Roanoke, VA, USA",
+      "education": "Bachelors in Computer Science",
+      "occupation": "software engineer",
+      "income_level": "high",
+      "relationship_status": "divorced"
+    },
+    "geo": {
+      "home_city": "San Francisco, CA, USA",
+      "home_state": "CA",
+      "home_lat": 37.7749,
+      "home_lon": -122.4194,
+      "timezone": "America/Los_Angeles"
+    },
+    "interests": [
+      "kayaking",
+      "bouldering",
+      "birdwatching",
+      "woodworking"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 23,
+      "work_start_hour": 10,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Mia is a 40-year-old software engineer in San Francisco, CA, USA, originally from Roanoke, VA, USA. Currently divorced. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 36/100. [offline stub voice]",
+      "signature_tells": [
+        "catch you later",
+        "right?",
+        "same"
+      ],
+      "topics": [
+        "kayaking",
+        "bouldering",
+        "birdwatching",
+        "woodworking"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_002": {
+    "persona_id": "pers_002",
+    "tier": "protected",
+    "opsec": 37,
+    "identity": {
+      "first_name": "Sean",
+      "last_name": "Roberts",
+      "sex": "male",
+      "age": 23
+    },
+    "attributes": {
+      "age": 23,
+      "sex": "male",
+      "city_country": "Charlotte, NC, USA",
+      "birth_city_country": "Charlotte, NC, USA",
+      "education": "Associates Degree",
+      "occupation": "IT support specialist",
+      "income_level": "middle",
+      "relationship_status": "single"
+    },
+    "geo": {
+      "home_city": "Charlotte, NC, USA",
+      "home_state": "NC",
+      "home_lat": 35.2271,
+      "home_lon": -80.8431,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "meditation",
+      "rock climbing",
+      "rock balancing"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 22,
+      "work_start_hour": 10,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Sean is a 23-year-old IT support specialist in Charlotte, NC, USA, originally from Charlotte, NC, USA. Currently single. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 37/100. [offline stub voice]",
+      "signature_tells": [
+        "who else",
+        "type two fun",
+        "screaming"
+      ],
+      "topics": [
+        "meditation",
+        "rock climbing",
+        "rock balancing"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_003": {
+    "persona_id": "pers_003",
+    "tier": "protected",
+    "opsec": 77,
+    "identity": {
+      "first_name": "Rafael",
+      "last_name": "Morris",
+      "sex": "male",
+      "age": 63
+    },
+    "attributes": {
+      "age": 63,
+      "sex": "male",
+      "city_country": "Nashville, TN, USA",
+      "birth_city_country": "Fargo, ND, USA",
+      "education": "Bachelors in English",
+      "occupation": "freelance writer",
+      "income_level": "middle",
+      "relationship_status": "single"
+    },
+    "geo": {
+      "home_city": "Nashville, TN, USA",
+      "home_state": "TN",
+      "home_lat": 36.1627,
+      "home_lon": -86.7816,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "marketing",
+      "content creation",
+      "yoga",
+      "public speaking"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 0,
+      "work_start_hour": 10,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Rafael is a 63-year-old freelance writer in Nashville, TN, USA, originally from Fargo, ND, USA. Currently single. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 77/100. [offline stub voice]",
+      "signature_tells": [
+        "def"
+      ],
+      "topics": [
+        "marketing",
+        "content creation",
+        "yoga",
+        "public speaking"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_004": {
+    "persona_id": "pers_004",
+    "tier": "protected",
+    "opsec": 78,
+    "identity": {
+      "first_name": "Malik",
+      "last_name": "Phillips",
+      "sex": "male",
+      "age": 33
+    },
+    "attributes": {
+      "age": 33,
+      "sex": "male",
+      "city_country": "Seattle, WA, USA",
+      "birth_city_country": "Seattle, WA, USA",
+      "education": "Cosmetology License",
+      "occupation": "hair stylist",
+      "income_level": "low",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Seattle, WA, USA",
+      "home_state": "WA",
+      "home_lat": 47.6062,
+      "home_lon": -122.3321,
+      "timezone": "America/Los_Angeles"
+    },
+    "interests": [
+      "finance",
+      "wine tasting",
+      "local politics",
+      "marketing"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 0,
+      "work_start_hour": 10,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Malik is a 33-year-old hair stylist in Seattle, WA, USA, originally from Seattle, WA, USA. Currently in a relationship. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 78/100. [offline stub voice]",
+      "signature_tells": [
+        "living for this"
+      ],
+      "topics": [
+        "finance",
+        "wine tasting",
+        "local politics",
+        "marketing"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_005": {
+    "persona_id": "pers_005",
+    "tier": "background",
+    "opsec": 25,
+    "identity": {
+      "first_name": "Harrison",
+      "last_name": "Rossi",
+      "sex": "male",
+      "age": 64
+    },
+    "attributes": {
+      "age": 64,
+      "sex": "male",
+      "city_country": "Sacramento, CA, USA",
+      "birth_city_country": "Sacramento, CA, USA",
+      "education": "Barbering License",
+      "occupation": "barber",
+      "income_level": "low",
+      "relationship_status": "divorced"
+    },
+    "geo": {
+      "home_city": "Sacramento, CA, USA",
+      "home_state": "CA",
+      "home_lat": 38.5816,
+      "home_lon": -121.4944,
+      "timezone": "America/Los_Angeles"
+    },
+    "interests": [
+      "augmented reality",
+      "fencing",
+      "sailing",
+      "mixology"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 0,
+      "work_start_hour": 7,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    },
+    "bible": {
+      "backstory": "Harrison is a 64-year-old barber in Sacramento, CA, USA, originally from Sacramento, CA, USA. Currently divorced. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 25/100. [offline stub voice]",
+      "signature_tells": [
+        "peace out",
+        "no notes",
+        "smh"
+      ],
+      "topics": [
+        "augmented reality",
+        "fencing",
+        "sailing",
+        "mixology"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_006": {
+    "persona_id": "pers_006",
+    "tier": "background",
+    "opsec": 20,
+    "identity": {
+      "first_name": "Maria",
+      "last_name": "Clark",
+      "sex": "female",
+      "age": 61
+    },
+    "attributes": {
+      "age": 61,
+      "sex": "female",
+      "city_country": "Minneapolis, MN, USA",
+      "birth_city_country": "Boise, ID, USA",
+      "education": "Bachelors in Journalism",
+      "occupation": "journalist",
+      "income_level": "middle",
+      "relationship_status": "married"
+    },
+    "geo": {
+      "home_city": "Minneapolis, MN, USA",
+      "home_state": "MN",
+      "home_lat": 44.9778,
+      "home_lon": -93.265,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "indie games",
+      "language learning",
+      "gaming",
+      "pottery"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 22,
+      "work_start_hour": 10,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Maria is a 61-year-old journalist in Minneapolis, MN, USA, originally from Boise, ID, USA. Currently married. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 20/100. [offline stub voice]",
+      "signature_tells": [
+        "& instead of and",
+        "type two fun",
+        "obsessed"
+      ],
+      "topics": [
+        "indie games",
+        "language learning",
+        "gaming",
+        "pottery"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_007": {
+    "persona_id": "pers_007",
+    "tier": "background",
+    "opsec": 45,
+    "identity": {
+      "first_name": "Evelyn",
+      "last_name": "Stewart",
+      "sex": "female",
+      "age": 63
+    },
+    "attributes": {
+      "age": 63,
+      "sex": "female",
+      "city_country": "St. Louis, MO, USA",
+      "birth_city_country": "New Orleans, LA, USA",
+      "education": "Associates Degree",
+      "occupation": "IT support specialist",
+      "income_level": "middle",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "St. Louis, MO, USA",
+      "home_state": "MO",
+      "home_lat": 38.627,
+      "home_lon": -90.1994,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "home cooking",
+      "stand-up comedy"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 22,
+      "work_start_hour": 8,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Evelyn is a 63-year-old IT support specialist in St. Louis, MO, USA, originally from New Orleans, LA, USA. Currently in a relationship. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 45/100. [offline stub voice]",
+      "signature_tells": [
+        "not sure if anyone will see this",
+        "no apostrophes (dont, cant, wont)"
+      ],
+      "topics": [
+        "home cooking",
+        "stand-up comedy"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_008": {
+    "persona_id": "pers_008",
+    "tier": "background",
+    "opsec": 55,
+    "identity": {
+      "first_name": "Maria",
+      "last_name": "Turner",
+      "sex": "female",
+      "age": 54
+    },
+    "attributes": {
+      "age": 54,
+      "sex": "female",
+      "city_country": "Omaha, NE, USA",
+      "birth_city_country": "San Francisco, CA, USA",
+      "education": "Bachelors in Accounting",
+      "occupation": "accountant",
+      "income_level": "high",
+      "relationship_status": "married"
+    },
+    "geo": {
+      "home_city": "Omaha, NE, USA",
+      "home_state": "NE",
+      "home_lat": 41.2565,
+      "home_lon": -95.9345,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "puzzles",
+      "augmented reality",
+      "bouldering",
+      "psychology"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 23,
+      "work_start_hour": 9,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          19,
+          22
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    },
+    "bible": {
+      "backstory": "Maria is a 54-year-old accountant in Omaha, NE, USA, originally from San Francisco, CA, USA. Currently married. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 55/100. [offline stub voice]",
+      "signature_tells": [
+        "per my last email",
+        "change my mind"
+      ],
+      "topics": [
+        "puzzles",
+        "augmented reality",
+        "bouldering",
+        "psychology"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_009": {
+    "persona_id": "pers_009",
+    "tier": "background",
+    "opsec": 41,
+    "identity": {
+      "first_name": "Michael",
+      "last_name": "Baker",
+      "sex": "male",
+      "age": 44
+    },
+    "attributes": {
+      "age": 44,
+      "sex": "male",
+      "city_country": "Tucson, AZ, USA",
+      "birth_city_country": "Tucson, AZ, USA",
+      "education": "High School Diploma",
+      "occupation": "line cook",
+      "income_level": "low",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Tucson, AZ, USA",
+      "home_state": "AZ",
+      "home_lat": 32.2226,
+      "home_lon": -110.9747,
+      "timezone": "America/Phoenix"
+    },
+    "interests": [
+      "fitness",
+      "marketing"
+    ],
+    "schedule": {
+      "wake_hour": 5,
+      "sleep_hour": 23,
+      "work_start_hour": 7,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          5,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Michael is a 44-year-old line cook in Tucson, AZ, USA, originally from Tucson, AZ, USA. Currently in a relationship. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 41/100. [offline stub voice]",
+      "signature_tells": [
+        "asking for a friend",
+        "em-dash overuse"
+      ],
+      "topics": [
+        "fitness",
+        "marketing"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_010": {
+    "persona_id": "pers_010",
+    "tier": "background",
+    "opsec": 40,
+    "identity": {
+      "first_name": "Aalap",
+      "last_name": "Walker",
+      "sex": "male",
+      "age": 50
+    },
+    "attributes": {
+      "age": 50,
+      "sex": "male",
+      "city_country": "Kansas City, MO, USA",
+      "birth_city_country": "Tulsa, OK, USA",
+      "education": "Trade Certification",
+      "occupation": "electrician",
+      "income_level": "middle",
+      "relationship_status": "single"
+    },
+    "geo": {
+      "home_city": "Kansas City, MO, USA",
+      "home_state": "MO",
+      "home_lat": 39.0997,
+      "home_lon": -94.5786,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "volunteering",
+      "fitness",
+      "snowboarding",
+      "beekeeping"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 23,
+      "work_start_hour": 8,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Aalap is a 50-year-old electrician in Kansas City, MO, USA, originally from Tulsa, OK, USA. Currently single. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 40/100. [offline stub voice]",
+      "signature_tells": [
+        "double space after periods",
+        "pending labs"
+      ],
+      "topics": [
+        "volunteering",
+        "fitness",
+        "snowboarding",
+        "beekeeping"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_011": {
+    "persona_id": "pers_011",
+    "tier": "background",
+    "opsec": 24,
+    "identity": {
+      "first_name": "James",
+      "last_name": "Kim",
+      "sex": "male",
+      "age": 57
+    },
+    "attributes": {
+      "age": 57,
+      "sex": "male",
+      "city_country": "Seattle, WA, USA",
+      "birth_city_country": "Seattle, WA, USA",
+      "education": "Trade Certification",
+      "occupation": "auto mechanic",
+      "income_level": "middle",
+      "relationship_status": "married"
+    },
+    "geo": {
+      "home_city": "Seattle, WA, USA",
+      "home_state": "WA",
+      "home_lat": 47.6062,
+      "home_lon": -122.3321,
+      "timezone": "America/Los_Angeles"
+    },
+    "interests": [
+      "sailing",
+      "fitness"
+    ],
+    "schedule": {
+      "wake_hour": 8,
+      "sleep_hour": 22,
+      "work_start_hour": 10,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          10,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "James is a 57-year-old auto mechanic in Seattle, WA, USA, originally from Seattle, WA, USA. Currently married. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 24/100. [offline stub voice]",
+      "signature_tells": [
+        "change my mind",
+        "here for it",
+        "\ud83d\udc40"
+      ],
+      "topics": [
+        "sailing",
+        "fitness"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_012": {
+    "persona_id": "pers_012",
+    "tier": "background",
+    "opsec": 19,
+    "identity": {
+      "first_name": "Malik",
+      "last_name": "Johnson",
+      "sex": "male",
+      "age": 60
+    },
+    "attributes": {
+      "age": 60,
+      "sex": "male",
+      "city_country": "Billings, MT, USA",
+      "birth_city_country": "Billings, MT, USA",
+      "education": "Bachelors in Design",
+      "occupation": "graphic designer",
+      "income_level": "middle",
+      "relationship_status": "single"
+    },
+    "geo": {
+      "home_city": "Billings, MT, USA",
+      "home_state": "MT",
+      "home_lat": 45.7833,
+      "home_lon": -108.5,
+      "timezone": "America/Denver"
+    },
+    "interests": [
+      "stargazing",
+      "reading",
+      "local politics"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 0,
+      "work_start_hour": 7,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    },
+    "bible": {
+      "backstory": "Malik is a 60-year-old graphic designer in Billings, MT, USA, originally from Billings, MT, USA. Currently single. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 19/100. [offline stub voice]",
+      "signature_tells": [
+        "lowercase-everything",
+        "\ud83d\ude43",
+        "change my mind"
+      ],
+      "topics": [
+        "stargazing",
+        "reading",
+        "local politics"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_013": {
+    "persona_id": "pers_013",
+    "tier": "background",
+    "opsec": 21,
+    "identity": {
+      "first_name": "Savannah",
+      "last_name": "Wright",
+      "sex": "female",
+      "age": 60
+    },
+    "attributes": {
+      "age": 60,
+      "sex": "female",
+      "city_country": "Boston, MA, USA",
+      "birth_city_country": "Sturgis, SD, USA",
+      "education": "Culinary School Certification",
+      "occupation": "chef",
+      "income_level": "high",
+      "relationship_status": "divorced"
+    },
+    "geo": {
+      "home_city": "Boston, MA, USA",
+      "home_state": "MA",
+      "home_lat": 42.3601,
+      "home_lon": -71.0589,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "AI",
+      "augmented reality",
+      "lockpicking"
+    ],
+    "schedule": {
+      "wake_hour": 5,
+      "sleep_hour": 0,
+      "work_start_hour": 6,
+      "work_hours": 9,
+      "weekday_online_windows": [
+        [
+          5,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Savannah is a 60-year-old chef in Boston, MA, USA, originally from Sturgis, SD, USA. Currently divorced. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 21/100. [offline stub voice]",
+      "signature_tells": [
+        "story time",
+        "replacing you with u",
+        "\ud83e\udd72"
+      ],
+      "topics": [
+        "AI",
+        "augmented reality",
+        "lockpicking"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_014": {
+    "persona_id": "pers_014",
+    "tier": "background",
+    "opsec": 28,
+    "identity": {
+      "first_name": "Quinn",
+      "last_name": "Sanchez",
+      "sex": "non-binary",
+      "age": 57
+    },
+    "attributes": {
+      "age": 57,
+      "sex": "non-binary",
+      "city_country": "Sacramento, CA, USA",
+      "birth_city_country": "Sacramento, CA, USA",
+      "education": "High School Diploma",
+      "occupation": "line cook",
+      "income_level": "low",
+      "relationship_status": "married"
+    },
+    "geo": {
+      "home_city": "Sacramento, CA, USA",
+      "home_state": "CA",
+      "home_lat": 38.5816,
+      "home_lon": -121.4944,
+      "timezone": "America/Los_Angeles"
+    },
+    "interests": [
+      "machine learning",
+      "geocaching"
+    ],
+    "schedule": {
+      "wake_hour": 5,
+      "sleep_hour": 22,
+      "work_start_hour": 7,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          5,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    },
+    "bible": {
+      "backstory": "Quinn is a 57-year-old line cook in Sacramento, CA, USA, originally from Sacramento, CA, USA. Currently married. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 28/100. [offline stub voice]",
+      "signature_tells": [
+        "thoughts?",
+        "living for this",
+        "cuz"
+      ],
+      "topics": [
+        "machine learning",
+        "geocaching"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_015": {
+    "persona_id": "pers_015",
+    "tier": "background",
+    "opsec": 43,
+    "identity": {
+      "first_name": "Nathaniel",
+      "last_name": "Rossi",
+      "sex": "male",
+      "age": 29
+    },
+    "attributes": {
+      "age": 29,
+      "sex": "male",
+      "city_country": "San Antonio, TX, USA",
+      "birth_city_country": "San Antonio, TX, USA",
+      "education": "Bachelors in Information Technology",
+      "occupation": "network administrator",
+      "income_level": "high",
+      "relationship_status": "single"
+    },
+    "geo": {
+      "home_city": "San Antonio, TX, USA",
+      "home_state": "TX",
+      "home_lat": 29.4241,
+      "home_lon": -98.4936,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "politics",
+      "augmented reality",
+      "tabletop games"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 0,
+      "work_start_hour": 8,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Nathaniel is a 29-year-old network administrator in San Antonio, TX, USA, originally from San Antonio, TX, USA. Currently single. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 43/100. [offline stub voice]",
+      "signature_tells": [
+        "chef's kiss",
+        "\ud83d\ude05"
+      ],
+      "topics": [
+        "politics",
+        "augmented reality",
+        "tabletop games"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_016": {
+    "persona_id": "pers_016",
+    "tier": "background",
+    "opsec": 42,
+    "identity": {
+      "first_name": "Felix",
+      "last_name": "Scott",
+      "sex": "male",
+      "age": 58
+    },
+    "attributes": {
+      "age": 58,
+      "sex": "male",
+      "city_country": "Portland, OR, USA",
+      "birth_city_country": "Portland, OR, USA",
+      "education": "Trade Certification",
+      "occupation": "truck driver",
+      "income_level": "middle",
+      "relationship_status": "widowed"
+    },
+    "geo": {
+      "home_city": "Portland, OR, USA",
+      "home_state": "OR",
+      "home_lat": 45.5152,
+      "home_lon": -122.6784,
+      "timezone": "America/Los_Angeles"
+    },
+    "interests": [
+      "surfing",
+      "fantasy football",
+      "geocaching",
+      "knitting"
+    ],
+    "schedule": {
+      "wake_hour": 5,
+      "sleep_hour": 0,
+      "work_start_hour": 7,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          5,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    },
+    "bible": {
+      "backstory": "Felix is a 58-year-old truck driver in Portland, OR, USA, originally from Portland, OR, USA. Currently widowed. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 42/100. [offline stub voice]",
+      "signature_tells": [
+        "screaming",
+        "it is what it is"
+      ],
+      "topics": [
+        "surfing",
+        "fantasy football",
+        "geocaching",
+        "knitting"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_017": {
+    "persona_id": "pers_017",
+    "tier": "background",
+    "opsec": 12,
+    "identity": {
+      "first_name": "Aurora",
+      "last_name": "Nelson",
+      "sex": "female",
+      "age": 58
+    },
+    "attributes": {
+      "age": 58,
+      "sex": "female",
+      "city_country": "Billings, MT, USA",
+      "birth_city_country": "Billings, MT, USA",
+      "education": "High School Diploma",
+      "occupation": "construction worker",
+      "income_level": "low",
+      "relationship_status": "widowed"
+    },
+    "geo": {
+      "home_city": "Billings, MT, USA",
+      "home_state": "MT",
+      "home_lat": 45.7833,
+      "home_lon": -108.5,
+      "timezone": "America/Denver"
+    },
+    "interests": [
+      "music",
+      "ice skating"
+    ],
+    "schedule": {
+      "wake_hour": 5,
+      "sleep_hour": 0,
+      "work_start_hour": 7,
+      "work_hours": 8,
+      "weekday_online_windows": [
+        [
+          5,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 0.5
+    },
+    "bible": {
+      "backstory": "Aurora is a 58-year-old construction worker in Billings, MT, USA, originally from Billings, MT, USA. Currently widowed. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 12/100. [offline stub voice]",
+      "signature_tells": [
+        "idk man",
+        "cuz",
+        "10/10 no notes",
+        "double exclamation marks!!"
+      ],
+      "topics": [
+        "music",
+        "ice skating"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_018": {
+    "persona_id": "pers_018",
+    "tier": "background",
+    "opsec": 59,
+    "identity": {
+      "first_name": "Mason",
+      "last_name": "Davis",
+      "sex": "male",
+      "age": 53
+    },
+    "attributes": {
+      "age": 53,
+      "sex": "male",
+      "city_country": "Boise, ID, USA",
+      "birth_city_country": "Boise, ID, USA",
+      "education": "Masters in Education",
+      "occupation": "high school teacher",
+      "income_level": "middle",
+      "relationship_status": "divorced"
+    },
+    "geo": {
+      "home_city": "Boise, ID, USA",
+      "home_state": "ID",
+      "home_lat": 43.615,
+      "home_lon": -116.2023,
+      "timezone": "America/Boise"
+    },
+    "interests": [
+      "entrepreneurship",
+      "craft beer"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 0,
+      "work_start_hour": 9,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          19,
+          22
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Mason is a 53-year-old high school teacher in Boise, ID, USA, originally from Boise, ID, USA. Currently divorced. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 59/100. [offline stub voice]",
+      "signature_tells": [
+        "lmao",
+        "prolly"
+      ],
+      "topics": [
+        "entrepreneurship",
+        "craft beer"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_019": {
+    "persona_id": "pers_019",
+    "tier": "background",
+    "opsec": 35,
+    "identity": {
+      "first_name": "Ella",
+      "last_name": "Smith",
+      "sex": "female",
+      "age": 57
+    },
+    "attributes": {
+      "age": 57,
+      "sex": "female",
+      "city_country": "Dallas, TX, USA",
+      "birth_city_country": "Sacramento, CA, USA",
+      "education": "Trade Certification",
+      "occupation": "welder",
+      "income_level": "middle",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Dallas, TX, USA",
+      "home_state": "TX",
+      "home_lat": 32.7767,
+      "home_lon": -96.797,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "fantasy football",
+      "cooking classes",
+      "laser tag"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 22,
+      "work_start_hour": 8,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Ella is a 57-year-old welder in Dallas, TX, USA, originally from Sacramento, CA, USA. Currently in a relationship. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 35/100. [offline stub voice]",
+      "signature_tells": [
+        "replacing you with u",
+        "just me?",
+        "anyways"
+      ],
+      "topics": [
+        "fantasy football",
+        "cooking classes",
+        "laser tag"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_020": {
+    "persona_id": "pers_020",
+    "tier": "background",
+    "opsec": 19,
+    "identity": {
+      "first_name": "Landon",
+      "last_name": "Collins",
+      "sex": "male",
+      "age": 23
+    },
+    "attributes": {
+      "age": 23,
+      "sex": "male",
+      "city_country": "Omaha, NE, USA",
+      "birth_city_country": "Billings, MT, USA",
+      "education": "Bachelors in Journalism",
+      "occupation": "journalist",
+      "income_level": "middle",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Omaha, NE, USA",
+      "home_state": "NE",
+      "home_lat": 41.2565,
+      "home_lon": -95.9345,
+      "timezone": "America/Chicago"
+    },
+    "interests": [
+      "trivia",
+      "paintball"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 23,
+      "work_start_hour": 8,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Landon is a 23-year-old journalist in Omaha, NE, USA, originally from Billings, MT, USA. Currently in a relationship. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 19/100. [offline stub voice]",
+      "signature_tells": [
+        "back to the grind",
+        "replacing you with u",
+        "plot twist:"
+      ],
+      "topics": [
+        "trivia",
+        "paintball"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  }
+}

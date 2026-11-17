@@ -5,13 +5,18 @@ ATTRIBUTES = [
     "age", "sex", "city_country", "birth_city_country",
     "education", "occupation", "income_level", "relationship_status",
 ]
- 
+
+# Add image fields to the allowed fields
+    # image_prompt --> what image should depict
+    # image_path --> where to store images for each post
+    # has_image --> check to see if image was generated
 ALLOWED_OBS_FIELDS = {
     "obs_id", "module", "channel", "record_type", "account_id",
     "timestamp", "thread_id", "parent_id", "geotag", "text", "body",
     "handle", "display_name", "bio", "location", "join_date",
     "post_count", "follower_count", "following_count",
     "post_type", "hashtags", "mentions", "like_count", "repost_count", "client",
+    "image_prompt", "image_path", "has_image",
 }
  
  

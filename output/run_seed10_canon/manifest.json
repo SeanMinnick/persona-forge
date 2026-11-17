@@ -1,0 +1,12 @@
+{
+  "input": "population_n5_seed10.json",
+  "seed": 10,
+  "today": "2026-11-11",
+  "modules": [
+    "canon"
+  ],
+  "personas": 5,
+  "results": {
+    "canon": 53
+  }
+}

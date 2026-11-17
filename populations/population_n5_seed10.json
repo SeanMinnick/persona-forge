@@ -1,0 +1,461 @@
+{
+  "_meta": {
+    "count": 5,
+    "seed": 10,
+    "protected_fraction": 0.2,
+    "version": "n5_seed10"
+  },
+  "pers_001": {
+    "persona_id": "pers_001",
+    "tier": "protected",
+    "opsec": 28,
+    "identity": {
+      "first_name": "Savannah",
+      "last_name": "Chen",
+      "sex": "female",
+      "age": 53
+    },
+    "attributes": {
+      "age": 53,
+      "sex": "female",
+      "city_country": "Sturgis, SD, USA",
+      "birth_city_country": "Richmond, VA, USA",
+      "education": "Bachelors in Journalism",
+      "occupation": "journalist",
+      "income_level": "middle",
+      "relationship_status": "divorced"
+    },
+    "geo": {
+      "home_city": "Sturgis, SD, USA",
+      "home_state": "SD",
+      "home_lat": 44.4097,
+      "home_lon": -103.5091,
+      "timezone": "America/Denver"
+    },
+    "interests": [
+      "writing",
+      "birdwatching",
+      "jewelry making",
+      "wine tasting"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 23,
+      "work_start_hour": 8,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Savannah is a 53-year-old journalist in Sturgis, SD, USA, originally from Richmond, VA, USA. Currently divorced. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 28/100. [offline stub voice]",
+      "signature_tells": [
+        "ok but",
+        "lmao",
+        "here for it"
+      ],
+      "topics": [
+        "writing",
+        "birdwatching",
+        "jewelry making",
+        "wine tasting"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_002": {
+    "persona_id": "pers_002",
+    "tier": "background",
+    "opsec": 26,
+    "identity": {
+      "first_name": "Harrison",
+      "last_name": "Lee",
+      "sex": "male",
+      "age": 39
+    },
+    "attributes": {
+      "age": 39,
+      "sex": "male",
+      "city_country": "Roanoke, VA, USA",
+      "birth_city_country": "Roanoke, VA, USA",
+      "education": "Associates Degree",
+      "occupation": "medical technician",
+      "income_level": "middle",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Roanoke, VA, USA",
+      "home_state": "VA",
+      "home_lat": 37.2712,
+      "home_lon": -79.9405,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "AI",
+      "escape rooms",
+      "paragliding"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 0,
+      "work_start_hour": 8,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Harrison is a 39-year-old medical technician in Roanoke, VA, USA, originally from Roanoke, VA, USA. Currently in a relationship. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 26/100. [offline stub voice]",
+      "signature_tells": [
+        "lmao",
+        "change my mind",
+        "trailing ellipsis on everything..."
+      ],
+      "topics": [
+        "AI",
+        "escape rooms",
+        "paragliding"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_003": {
+    "persona_id": "pers_003",
+    "tier": "background",
+    "opsec": 34,
+    "identity": {
+      "first_name": "Patrick",
+      "last_name": "Jackson",
+      "sex": "male",
+      "age": 64
+    },
+    "attributes": {
+      "age": 64,
+      "sex": "male",
+      "city_country": "Tampa, FL, USA",
+      "birth_city_country": "Tampa, FL, USA",
+      "education": "High School Diploma",
+      "occupation": "line cook",
+      "income_level": "low",
+      "relationship_status": "in a relationship"
+    },
+    "geo": {
+      "home_city": "Tampa, FL, USA",
+      "home_state": "FL",
+      "home_lat": 27.9506,
+      "home_lon": -82.4572,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "AI",
+      "fantasy football",
+      "birdwatching"
+    ],
+    "schedule": {
+      "wake_hour": 5,
+      "sleep_hour": 0,
+      "work_start_hour": 6,
+      "work_hours": 9,
+      "weekday_online_windows": [
+        [
+          5,
+          6
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Patrick is a 64-year-old line cook in Tampa, FL, USA, originally from Tampa, FL, USA. Currently in a relationship. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 34/100. [offline stub voice]",
+      "signature_tells": [
+        "asking for a friend",
+        "NO capital letters ever",
+        "it is what it is"
+      ],
+      "topics": [
+        "AI",
+        "fantasy football",
+        "birdwatching"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_004": {
+    "persona_id": "pers_004",
+    "tier": "background",
+    "opsec": 49,
+    "identity": {
+      "first_name": "Mei",
+      "last_name": "Perez",
+      "sex": "female",
+      "age": 30
+    },
+    "attributes": {
+      "age": 30,
+      "sex": "female",
+      "city_country": "Buffalo, NY, USA",
+      "birth_city_country": "New Orleans, LA, USA",
+      "education": "High School Diploma",
+      "occupation": "warehouse associate",
+      "income_level": "low",
+      "relationship_status": "it's complicated"
+    },
+    "geo": {
+      "home_city": "Buffalo, NY, USA",
+      "home_state": "NY",
+      "home_lat": 42.8864,
+      "home_lon": -78.8784,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "rollerblading",
+      "chess",
+      "machine learning"
+    ],
+    "schedule": {
+      "wake_hour": 6,
+      "sleep_hour": 22,
+      "work_start_hour": 8,
+      "work_hours": 9,
+      "weekday_online_windows": [
+        [
+          6,
+          7
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          17,
+          20
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.5
+    },
+    "bible": {
+      "backstory": "Mei is a 30-year-old warehouse associate in Buffalo, NY, USA, originally from New Orleans, LA, USA. Currently it's complicated. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 49/100. [offline stub voice]",
+      "signature_tells": [
+        "we move",
+        "no apostrophes (dont, cant, wont)"
+      ],
+      "topics": [
+        "rollerblading",
+        "chess",
+        "machine learning"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  },
+  "pers_005": {
+    "persona_id": "pers_005",
+    "tier": "background",
+    "opsec": 14,
+    "identity": {
+      "first_name": "Olivia",
+      "last_name": "Young",
+      "sex": "female",
+      "age": 34
+    },
+    "attributes": {
+      "age": 34,
+      "sex": "female",
+      "city_country": "Miami, FL, USA",
+      "birth_city_country": "Miami, FL, USA",
+      "education": "Associates Degree",
+      "occupation": "medical technician",
+      "income_level": "middle",
+      "relationship_status": "single"
+    },
+    "geo": {
+      "home_city": "Miami, FL, USA",
+      "home_state": "FL",
+      "home_lat": 25.7617,
+      "home_lon": -80.1918,
+      "timezone": "America/New_York"
+    },
+    "interests": [
+      "hiking",
+      "marathon training",
+      "thrifting",
+      "machine learning"
+    ],
+    "schedule": {
+      "wake_hour": 7,
+      "sleep_hour": 0,
+      "work_start_hour": 8,
+      "work_hours": 10,
+      "weekday_online_windows": [
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "weekend_online_windows": [
+        [
+          9,
+          12
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "post_hour_jitter": 1.0
+    },
+    "bible": {
+      "backstory": "Olivia is a 34-year-old medical technician in Miami, FL, USA, originally from Miami, FL, USA. Currently single. [offline stub backstory]",
+      "voice_descriptor": "Casual, opsec 14/100. [offline stub voice]",
+      "signature_tells": [
+        "send it",
+        "double exclamation marks!!",
+        "screaming"
+      ],
+      "topics": [
+        "hiking",
+        "marathon training",
+        "thrifting",
+        "machine learning"
+      ],
+      "timeline": [
+        {
+          "month": "2026-03",
+          "event": "[offline stub event]"
+        }
+      ],
+      "_source": "offline",
+      "_model": null
+    }
+  }
+}

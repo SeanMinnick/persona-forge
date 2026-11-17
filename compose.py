@@ -18,7 +18,8 @@ from modules import footprint as footprint_planner
  
 HERE = os.path.dirname(os.path.abspath(__file__))
  
-AVAILABLE_MODULES = ["chirp"]
+# AVAILABLE_MODULES = ["chirp", "canon"]
+AVAILABLE_MODULES = ["canon"]
  
 def load_module(module_id):
     return importlib.import_module(f"modules.{module_id}")
