@@ -7,7 +7,7 @@ Modular generator of layered synthetic OSINT datasets.
 ```
 population_gen/   persona-generation code
 populations/      frozen population files (population_n<N>_seed<S>.json)
-modules/          contract.py footprint.py <module>/ (chirp)
+modules/          contract.py footprint.py <module>/ (chirp) (canon)
 compose.py        orchestrator (flags → footprint → module emit)
 verify.py         boundary check (no identity in observations)
 output/{run}/     observations/ answer_key/ manifest.json
@@ -88,6 +88,7 @@ account was LLM-generated, carries no template-stub text, and is not short on po
 | Flag | Module | Output |
 |---|---|---|
 | `--chirp` | Twitter/X-like microblog | `chirp_profiles.jsonl` · `chirp_posts.jsonl` |
+| `--canon` | Instagram-like microblog | `canon_profiles.jsonl` · `canon_posts.jsonl` |
  
 ## Reproducibility
  

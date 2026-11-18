@@ -34,6 +34,7 @@ def _skeleton_brief(p):
         f"income_level: {a['income_level']}\n"
         f"relationship_status: {a['relationship_status']}\n"
         f"interests: {', '.join(p['interests'])}\n"
+        f"post_photo: {a['post_photo']}\n"
         f"opsec: {p['opsec']}"
     )
  
@@ -128,11 +129,13 @@ def _offline_bible(p, rng, n_tells, tells=None):
 def generate_bible(p, model, rng, use_llm, today):
     n_tells = opsec_mod.tells_count(p["opsec"])
     tells = pick_tells(rng, n_tells)
+
     if use_llm:
         try:
             return _llm_bible(p, model, n_tells, tells, today)
         except Exception as e:
-            print(f"  [bible] LLM failed for {p['persona_id']} ({e}); offline fallback")
+            print(f"  [bible] OpenAI LLM failed for {p['persona_id']} ({e}); offline fallback")
+
     return _offline_bible(p, rng, n_tells, tells)
  
  

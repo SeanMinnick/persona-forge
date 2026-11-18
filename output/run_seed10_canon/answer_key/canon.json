@@ -1,0 +1,311 @@
+{
+  "module": "canon",
+  "account_to_persona": {
+    "savannahc": "pers_001",
+    "harrisonl": "pers_002",
+    "mei_rollerbladi": "pers_004",
+    "oliviay": "pers_005"
+  },
+  "obs_to_persona": {
+    "canon_prof_00001": "pers_001",
+    "canon_post_00002": "pers_001",
+    "canon_post_00003": "pers_001",
+    "canon_post_00004": "pers_001",
+    "canon_post_00005": "pers_001",
+    "canon_post_00006": "pers_001",
+    "canon_post_00007": "pers_001",
+    "canon_post_00008": "pers_001",
+    "canon_post_00009": "pers_001",
+    "canon_post_00010": "pers_001",
+    "canon_prof_00011": "pers_002",
+    "canon_post_00012": "pers_002",
+    "canon_post_00013": "pers_002",
+    "canon_post_00014": "pers_002",
+    "canon_post_00015": "pers_002",
+    "canon_post_00016": "pers_002",
+    "canon_post_00017": "pers_002",
+    "canon_post_00018": "pers_002",
+    "canon_post_00019": "pers_002",
+    "canon_post_00020": "pers_002",
+    "canon_post_00021": "pers_002",
+    "canon_post_00022": "pers_002",
+    "canon_post_00023": "pers_002",
+    "canon_post_00024": "pers_002",
+    "canon_post_00025": "pers_002",
+    "canon_post_00026": "pers_002",
+    "canon_post_00027": "pers_002",
+    "canon_post_00028": "pers_002",
+    "canon_post_00029": "pers_002",
+    "canon_post_00030": "pers_002",
+    "canon_post_00031": "pers_002",
+    "canon_post_00032": "pers_002",
+    "canon_post_00033": "pers_002",
+    "canon_prof_00034": "pers_004",
+    "canon_post_00035": "pers_004",
+    "canon_post_00036": "pers_004",
+    "canon_post_00037": "pers_004",
+    "canon_post_00038": "pers_004",
+    "canon_post_00039": "pers_004",
+    "canon_post_00040": "pers_004",
+    "canon_post_00041": "pers_004",
+    "canon_post_00042": "pers_004",
+    "canon_post_00043": "pers_004",
+    "canon_prof_00044": "pers_005",
+    "canon_post_00045": "pers_005",
+    "canon_post_00046": "pers_005",
+    "canon_post_00047": "pers_005",
+    "canon_post_00048": "pers_005",
+    "canon_post_00049": "pers_005",
+    "canon_post_00050": "pers_005",
+    "canon_post_00051": "pers_005",
+    "canon_post_00052": "pers_005",
+    "canon_post_00053": "pers_005"
+  },
+  "obs_signal": {
+    "canon_post_00002": {
+      "signal": 64,
+      "substance": 86,
+      "kind": "signal"
+    },
+    "canon_post_00003": {
+      "signal": 15,
+      "substance": 12,
+      "kind": "filler"
+    },
+    "canon_post_00004": {
+      "signal": 43,
+      "substance": 42,
+      "kind": "filler"
+    },
+    "canon_post_00005": {
+      "signal": 40,
+      "substance": 84,
+      "kind": "decoy"
+    },
+    "canon_post_00006": {
+      "signal": 74,
+      "substance": 69,
+      "kind": "signal"
+    },
+    "canon_post_00007": {
+      "signal": 38,
+      "substance": 53,
+      "kind": "decoy"
+    },
+    "canon_post_00008": {
+      "signal": 70,
+      "substance": 28,
+      "kind": "signal"
+    },
+    "canon_post_00009": {
+      "signal": 48,
+      "substance": 72,
+      "kind": "decoy"
+    },
+    "canon_post_00010": {
+      "signal": 38,
+      "substance": 42,
+      "kind": "filler"
+    },
+    "canon_post_00012": {
+      "signal": 72,
+      "substance": 74,
+      "kind": "signal"
+    },
+    "canon_post_00013": {
+      "signal": 67,
+      "substance": 81,
+      "kind": "signal"
+    },
+    "canon_post_00014": {
+      "signal": 45,
+      "substance": 61,
+      "kind": "decoy"
+    },
+    "canon_post_00015": {
+      "signal": 38,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "canon_post_00016": {
+      "signal": 68,
+      "substance": 97,
+      "kind": "signal"
+    },
+    "canon_post_00017": {
+      "signal": 39,
+      "substance": 61,
+      "kind": "decoy"
+    },
+    "canon_post_00018": {
+      "signal": 79,
+      "substance": 66,
+      "kind": "signal"
+    },
+    "canon_post_00019": {
+      "signal": 39,
+      "substance": 49,
+      "kind": "filler"
+    },
+    "canon_post_00020": {
+      "signal": 76,
+      "substance": 95,
+      "kind": "signal"
+    },
+    "canon_post_00021": {
+      "signal": 59,
+      "substance": 19,
+      "kind": "signal"
+    },
+    "canon_post_00022": {
+      "signal": 39,
+      "substance": 43,
+      "kind": "filler"
+    },
+    "canon_post_00023": {
+      "signal": 43,
+      "substance": 53,
+      "kind": "decoy"
+    },
+    "canon_post_00024": {
+      "signal": 18,
+      "substance": 72,
+      "kind": "decoy"
+    },
+    "canon_post_00025": {
+      "signal": 67,
+      "substance": 46,
+      "kind": "signal"
+    },
+    "canon_post_00026": {
+      "signal": 77,
+      "substance": 46,
+      "kind": "signal"
+    },
+    "canon_post_00027": {
+      "signal": 73,
+      "substance": 46,
+      "kind": "signal"
+    },
+    "canon_post_00028": {
+      "signal": 30,
+      "substance": 53,
+      "kind": "decoy"
+    },
+    "canon_post_00029": {
+      "signal": 35,
+      "substance": 61,
+      "kind": "decoy"
+    },
+    "canon_post_00030": {
+      "signal": 36,
+      "substance": 85,
+      "kind": "decoy"
+    },
+    "canon_post_00031": {
+      "signal": 51,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "canon_post_00032": {
+      "signal": 56,
+      "substance": 45,
+      "kind": "signal"
+    },
+    "canon_post_00033": {
+      "signal": 43,
+      "substance": 26,
+      "kind": "filler"
+    },
+    "canon_post_00035": {
+      "signal": 50,
+      "substance": 93,
+      "kind": "decoy"
+    },
+    "canon_post_00036": {
+      "signal": 14,
+      "substance": 76,
+      "kind": "decoy"
+    },
+    "canon_post_00037": {
+      "signal": 70,
+      "substance": 66,
+      "kind": "signal"
+    },
+    "canon_post_00038": {
+      "signal": 14,
+      "substance": 5,
+      "kind": "filler"
+    },
+    "canon_post_00039": {
+      "signal": 67,
+      "substance": 83,
+      "kind": "signal"
+    },
+    "canon_post_00040": {
+      "signal": 31,
+      "substance": 79,
+      "kind": "decoy"
+    },
+    "canon_post_00041": {
+      "signal": 62,
+      "substance": 87,
+      "kind": "signal"
+    },
+    "canon_post_00042": {
+      "signal": 21,
+      "substance": 65,
+      "kind": "decoy"
+    },
+    "canon_post_00043": {
+      "signal": 60,
+      "substance": 50,
+      "kind": "signal"
+    },
+    "canon_post_00045": {
+      "signal": 27,
+      "substance": 34,
+      "kind": "filler"
+    },
+    "canon_post_00046": {
+      "signal": 73,
+      "substance": 51,
+      "kind": "signal"
+    },
+    "canon_post_00047": {
+      "signal": 80,
+      "substance": 48,
+      "kind": "signal"
+    },
+    "canon_post_00048": {
+      "signal": 72,
+      "substance": 65,
+      "kind": "signal"
+    },
+    "canon_post_00049": {
+      "signal": 45,
+      "substance": 24,
+      "kind": "filler"
+    },
+    "canon_post_00050": {
+      "signal": 57,
+      "substance": 36,
+      "kind": "signal"
+    },
+    "canon_post_00051": {
+      "signal": 84,
+      "substance": 85,
+      "kind": "signal"
+    },
+    "canon_post_00052": {
+      "signal": 56,
+      "substance": 36,
+      "kind": "signal"
+    },
+    "canon_post_00053": {
+      "signal": 64,
+      "substance": 71,
+      "kind": "signal"
+    }
+  }
+}
