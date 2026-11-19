@@ -15,7 +15,8 @@ import vocab
 # for image generation
 import base64
 from pathlib import Path
-IMAGE_GENERATION_DISABLED = False
+IMAGE_GENERATION_DISABLED = (os.environ.get("CANON_IMAGES", "1") != "1"
+                             or os.environ.get("LLM_OFFLINE") == "1")
 
 """
 Instagram Posts:
@@ -345,8 +346,9 @@ def _gen_cover(persona, n_decoy, n_filler, decoys):
     return dec, fil
 
 
-def _generate(persona, counts, decoys, use_llm):
+def _generate(persona, counts, decoys, use_llm, strict):
     n_signal, n_decoy, n_filler = counts
+    meta = {"source": "llm", "short": {"signal": 0, "decoy": 0, "filler": 0}}
     bio, sig, dec, fil = "", [], [], []
     if use_llm:
         try:
@@ -355,18 +357,29 @@ def _generate(persona, counts, decoys, use_llm):
                 bio, sig = str(data.get("bio", "")), _texts(data, n_signal)
             if n_decoy or n_filler:
                 dec, fil = _gen_cover(persona, n_decoy, n_filler, decoys)
-            return bio, {"signal": sig, "decoy": dec, "filler": fil}
+            meta["short"] = {"signal": n_signal - len(sig),
+                             "decoy": n_decoy - len(dec),
+                             "filler": n_filler - len(fil)}
+            return bio, {"signal": sig, "decoy": dec, "filler": fil}, meta
         except Exception as e:
+            if strict:
+                raise RuntimeError(
+                    f"canon generation failed for {persona['persona_id']}: {e}") from e
             print(f"  [canon] LLM failed for {persona['persona_id']} ({e}); offline fallback")
+            meta["source"] = "offline"
+            meta["error"] = str(e)
+    else:
+        meta["source"] = "offline"
     bio, sig = _offline_signal(persona, n_signal)
     dec = _offline_decoy(persona, n_decoy, decoys)
     fil = _offline_filler(persona, n_filler)
-    return bio, {"signal": sig, "decoy": dec, "filler": fil}
+    return bio, {"signal": sig, "decoy": dec, "filler": fil}, meta
 
 
-def emit(personas, footprint, out_dir, seed, today):
+def emit(personas, footprint, out_dir, seed, today, strict=False, model=None):
     rng = random.Random(seed)
-    use_llm = bool(os.environ.get("OPENAI_API_KEY"))
+    use_llm = (bool(os.environ.get("OPENAI_API_KEY"))
+               and os.environ.get("LLM_OFFLINE") != "1")
     profiles, posts = [], []
     key = contract.new_module_key(platform.ID)
     pc = 0
@@ -394,9 +407,16 @@ def emit(personas, footprint, out_dir, seed, today):
             )
             decoys = _decoys(persona, 3, rng) if counts[1] else []
 
-            bio, by_kind = _generate(persona, counts, decoys, use_llm)
+            bio, by_kind, gen_meta = _generate(persona, counts, decoys, use_llm, strict)
             if not bio and mode in ("identity", "hint"):
                 bio = "just here [offline stub]"
+
+            key["account_meta"][handle] = {
+                "opsec": o,
+                "decoy_topics": decoys,
+                "counts": {"signal": counts[0], "decoy": counts[1], "filler": counts[2]},
+                "generation": gen_meta,
+            }
 
             paired = []
             for s, sub, kind in draws:

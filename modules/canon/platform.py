@@ -1,5 +1,5 @@
 ID = "canon"
-CHANNEL = "social_text"
+CHANNEL = "social_image"
 DISPLAY_NAME = "Canon (Instagram-like platform)"
 MODEL = "gpt-6-luna"
 # Since GPT-6 Luna does not generate images:
