@@ -1,5 +1,7 @@
+import concurrent.futures
 import datetime
 import json
+import math
 import os
 import random
 import re
@@ -7,9 +9,16 @@ import re
 import llm
 
 from .. import contract
+from . import history
 from . import platform
 import opsec as opsec_mod
 import vocab
+
+SIGNAL_CHUNK = 120
+COVER_CHUNK = 150
+MAX_OUT = 7000
+DEDUP_TAIL = 15
+FILL_ROUNDS = 3
 
 
 def _display_name(persona, mode, handle, rng):
@@ -33,22 +42,6 @@ def _location_field(persona, mode, rng):
     if mode == "generic_hint":
         return rng.choice(["", "USA", "somewhere"])
     return rng.choice(["", "the internet", "here and there"])
-
-
-def _timestamps(schedule, count, today, rng):
-    out = []
-    jitter = schedule.get("post_hour_jitter", 1.0)
-    for _ in range(count):
-        day = today - datetime.timedelta(days=rng.randint(0, platform.WINDOW_DAYS))
-        weekend = day.weekday() >= 5
-        windows = schedule.get("weekend_online_windows" if weekend else "weekday_online_windows", [[9, 22]])
-        w = rng.choice(windows) if windows else [9, 22]
-        base = rng.uniform(w[0], max(w[0] + 0.5, w[1]))
-        hour = int(min(23, max(0, base + rng.gauss(0, jitter))))
-        dt = datetime.datetime(day.year, day.month, day.day, hour, rng.randint(0, 59), rng.randint(0, 59))
-        out.append(dt)
-    out.sort()
-    return [dt.strftime("%Y-%m-%dT%H:%M:%S") for dt in out]
 
 
 def _extract_hashtags(text):
@@ -87,7 +80,17 @@ def _facts(persona):
     )
 
 
-def _system_signal(persona, n):
+def _avoid_lines(avoid):
+    if not avoid:
+        return ""
+    listed = "\n".join(f"- {t}" for t in avoid)
+    return (
+        "You have ALREADY posted the following. Do not repeat them, reuse their openings, "
+        f"or restate the same specifics:\n{listed}\n\n"
+    )
+
+
+def _system_signal(persona, n, avoid=None, with_bio=True):
     b = persona.get("bible", {})
     voice = b.get("voice_descriptor", "casual and conversational")
     topics = b.get("topics", persona.get("interests", []))
@@ -101,16 +104,18 @@ def _system_signal(persona, n):
         f"YOU POST ABOUT: {', '.join(topics)}\n"
         f"{_tell_lines(persona)}"
         f"{platform.FORMAT_HINT}\n\n"
+        f"{_avoid_lines(avoid)}"
         f"Write {n} posts that each let something real from the GROUND TRUTH above slip INDIRECTLY, "
         "through concrete lived detail of your actual job, city, commute, household, hobbies, or "
         "relationships. Do NOT invent a different job, city, or lifestyle than the ground truth. "
         "Never state your age, job, or city word-for-word. Each post distinct.\n\n"
-        'Return ONLY JSON: {"bio": "<one-line bio>", "posts": ["post 1", ...]}. '
-        "No prose outside the JSON, no code fences."
+        + ('Return ONLY JSON: {"bio": "<one-line bio>", "posts": ["post 1", ...]}. '
+           if with_bio else 'Return ONLY JSON: {"posts": ["post 1", ...]}. ')
+        + "No prose outside the JSON, no code fences."
     )
 
 
-def _system_cover(persona, n_decoy, n_filler, decoys):
+def _system_cover(persona, n_decoy, n_filler, decoys, avoid=None):
     voice = persona.get("bible", {}).get("voice_descriptor", "casual and conversational")
     sections, keys = [], []
     if n_decoy:
@@ -137,6 +142,7 @@ def _system_cover(persona, n_decoy, n_filler, decoys):
         f"YOUR VOICE: {voice}\n"
         f"{_tell_lines(persona)}"
         f"{platform.FORMAT_HINT}\n\n"
+        f"{_avoid_lines(avoid)}"
         "Write the following sets of posts:\n"
         + "\n".join(sections) + "\n\n"
         + distinct
@@ -225,13 +231,58 @@ def _offline_filler(persona, n):
     return [_FILLER[i % len(_FILLER)] for i in range(n)]
 
 
+def _cover_ask(d, f):
+    take = min(COVER_CHUNK, d + f)
+    wd = min(d, int(round(take * d / (d + f))))
+    wf = min(f, take - wd)
+    if wd + wf == 0:
+        wd, wf = (1, 0) if d else (0, 1)
+    return wd, wf
+
+
+def _rounds(n, chunk):
+    return int(math.ceil(n / float(chunk))) + FILL_ROUNDS
+
+
+def _gen_signal(persona, n, model=None):
+    bio, out, rounds, asked_bio = "", [], 0, False
+    limit = _rounds(n, SIGNAL_CHUNK)
+    while len(out) < n and rounds < limit:
+        want = min(SIGNAL_CHUNK, n - len(out))
+        first = not asked_bio
+        user = (f"Write my bio and {want} chirp posts now." if first
+                else f"Write {want} more chirp posts now.")
+        data = llm.complete_json(
+            _system_signal(persona, want, avoid=out[-DEDUP_TAIL:], with_bio=first),
+            user, MAX_OUT, role=platform.MODEL_ROLE, model=model)
+        if first:
+            bio = str(data.get("bio", ""))
+        asked_bio = True
+        rounds += 1
+        got = _texts(data, want)
+        if not got:
+            break
+        out.extend(got)
+    return bio, out[:n]
+
+
 def _gen_cover(persona, n_decoy, n_filler, decoys, model=None):
-    data = llm.complete_json(_system_cover(persona, n_decoy, n_filler, decoys),
-                             "Write the posts now.", 2000,
-                             role=platform.MODEL_ROLE, model=model)
-    dec = [str(p).strip() for p in data.get("decoy", []) if str(p).strip()][:n_decoy]
-    fil = [str(p).strip() for p in data.get("filler", []) if str(p).strip()][:n_filler]
-    return dec, fil
+    dec, fil, rounds = [], [], 0
+    limit = _rounds(n_decoy + n_filler, COVER_CHUNK)
+    while (len(dec) < n_decoy or len(fil) < n_filler) and rounds < limit:
+        wd, wf = _cover_ask(n_decoy - len(dec), n_filler - len(fil))
+        avoid = dec[-DEDUP_TAIL:] + fil[-DEDUP_TAIL:]
+        data = llm.complete_json(_system_cover(persona, wd, wf, decoys, avoid=avoid),
+                                 "Write the posts now.", MAX_OUT,
+                                 role=platform.MODEL_ROLE, model=model)
+        gd = [str(p).strip() for p in data.get("decoy", []) if str(p).strip()][:wd]
+        gf = [str(p).strip() for p in data.get("filler", []) if str(p).strip()][:wf]
+        rounds += 1
+        if not gd and not gf:
+            break
+        dec.extend(gd)
+        fil.extend(gf)
+    return dec[:n_decoy], fil[:n_filler]
 
 
 def _generate(persona, counts, decoy_tags, use_llm, strict, model=None):
@@ -241,10 +292,7 @@ def _generate(persona, counts, decoy_tags, use_llm, strict, model=None):
         try:
             bio, sig, dec, fil = "", [], [], []
             if n_signal:
-                data = llm.complete_json(_system_signal(persona, n_signal),
-                                         f"Write my bio and {n_signal} chirp posts now.", 2000,
-                                         role=platform.MODEL_ROLE, model=model)
-                bio, sig = str(data.get("bio", "")), _texts(data, n_signal)
+                bio, sig = _gen_signal(persona, n_signal, model=model)
             if n_decoy or n_filler:
                 dec, fil = _gen_cover(persona, n_decoy, n_filler, decoy_tags, model=model)
             meta["short"] = {"signal": n_signal - len(sig),
@@ -268,93 +316,128 @@ def _generate(persona, counts, decoy_tags, use_llm, strict, model=None):
     return bio, {"signal": sig, "decoy": dec, "filler": fil}, meta
 
 
-def emit(personas, footprint, out_dir, seed, today, strict=False, model=None):
-    rng = random.Random(seed)
+def _derive_rng(seed, persona_id, index):
+    return random.Random(f"{seed}:{persona_id}:{index}")
+
+
+def _plan_account(persona, persona_id, handle, index, seed, today):
+    o = persona["opsec"]
+    rng = _derive_rng(seed, persona_id, index)
+    hist = history.plan(persona, today, rng)
+    draws = []
+    for _ in range(len(hist["times"])):
+        sig = opsec_mod.sample_signal(rng, o)
+        sub = opsec_mod.sample_substance(rng)
+        draws.append((sig, sub, opsec_mod.route_post(sig, sub)))
+    counts = (
+        sum(1 for d in draws if d[2] == "signal"),
+        sum(1 for d in draws if d[2] == "decoy"),
+        sum(1 for d in draws if d[2] == "filler"),
+    )
+    decoys = _decoys(persona, 3, rng, o) if counts[1] else []
+    return {"persona_id": persona_id, "persona": persona, "handle": handle,
+            "index": index, "rng": rng,
+            "opsec": o, "history": hist, "draws": draws, "counts": counts,
+            "decoys": decoys, "decoy_tags": [t for t, _ in decoys]}
+
+
+def emit(personas, footprint, out_dir, seed, today, strict=False, model=None, workers=1):
     use_llm = llm.available()
     profiles, posts = [], []
     key = contract.new_module_key(platform.ID)
     pc = 0
 
-    for persona_id, handles in footprint.get(platform.ID, {}).items():
-        persona = personas[persona_id]
-        o = persona["opsec"]
+    jobs = []
+    assigned = footprint.get(platform.ID, {})
+    for persona_id in sorted(assigned):
+        for index, handle in enumerate(assigned[persona_id]):
+            jobs.append(_plan_account(personas[persona_id], persona_id, handle,
+                                      index, seed, today))
+
+    def run(job):
+        job["gen"] = _generate(job["persona"], job["counts"], job["decoy_tags"],
+                               use_llm, strict, model=model)
+        return job
+
+    n_workers = max(1, int(workers))
+    if n_workers > 1 and use_llm and len(jobs) > 1:
+        print(f"  [chirp] {len(jobs)} accounts over {n_workers} workers")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=n_workers) as ex:
+            list(ex.map(run, jobs))
+    else:
+        for job in jobs:
+            run(job)
+
+    for job in jobs:
+        persona = job["persona"]
+        persona_id = job["persona_id"]
+        handle = job["handle"]
+        rng = job["rng"]
+        o = job["opsec"]
+        hist = job["history"]
+        counts = job["counts"]
         mode = opsec_mod.handle_mode(o)
         schedule = persona.get("schedule", {})
+        bio, by_kind, gen_meta = job["gen"]
 
-        for handle in handles:
-            key["account_to_persona"][handle] = persona_id
-            n = rng.randint(platform.POST_MIN, platform.POST_MAX)
+        key["account_to_persona"][handle] = persona_id
+        if not bio and mode in ("identity", "hint"):
+            gen_meta["bio_missing"] = True
 
-            draws = []
-            for _ in range(n):
-                s = opsec_mod.sample_signal(rng, o)
-                sub = opsec_mod.sample_substance(rng)
-                draws.append((s, sub, opsec_mod.route_post(s, sub)))
+        key["account_meta"][handle] = {
+            "opsec": o,
+            "decoupling": opsec_mod.topic_decoupling(o),
+            "decoy_topics": job["decoy_tags"],
+            "decoy_near_family": [t for t, near in job["decoys"] if near],
+            "counts": {"signal": counts[0], "decoy": counts[1], "filler": counts[2]},
+            "generation": gen_meta,
+            "history": {k: v for k, v in hist.items() if k != "times"},
+        }
 
-            counts = (
-                sum(1 for d in draws if d[2] == "signal"),
-                sum(1 for d in draws if d[2] == "decoy"),
-                sum(1 for d in draws if d[2] == "filler"),
-            )
-            decoys = _decoys(persona, 3, rng, o) if counts[1] else []
-            decoy_tags = [t for t, _ in decoys]
+        paired, times = [], []
+        for (sig, sub, kind), t in zip(job["draws"], hist["times"]):
+            bucket = by_kind.get(kind, [])
+            if not bucket:
+                continue
+            paired.append((bucket.pop(0), sig, sub, kind))
+            times.append(t)
 
-            bio, by_kind, gen_meta = _generate(persona, counts, decoy_tags, use_llm, strict,
-                                               model=model)
-            if not bio and mode in ("identity", "hint"):
-                gen_meta["bio_missing"] = True
+        pc += 1
+        prof_id = f"chirp_prof_{pc:05d}"
+        join = today - datetime.timedelta(days=hist["tenure_days"])
+        profiles.append(contract.make_record(
+            prof_id, platform.ID, handle, channel=platform.CHANNEL, record_type="profile",
+            handle=f"@{handle}",
+            display_name=_display_name(persona, mode, handle, rng),
+            bio=bio,
+            location=_location_field(persona, mode, rng),
+            join_date=join.strftime("%Y-%m"),
+            post_count=max(hist["lifetime_posts"], len(paired)),
+            follower_count=rng.randint(20, 3000),
+            following_count=rng.randint(30, 1500),
+        ))
+        key["obs_to_persona"][prof_id] = persona_id
 
-            key["account_meta"][handle] = {
-                "opsec": o,
-                "decoupling": opsec_mod.topic_decoupling(o),
-                "decoy_topics": decoy_tags,
-                "decoy_near_family": [t for t, near in decoys if near],
-                "counts": {"signal": counts[0], "decoy": counts[1], "filler": counts[2]},
-                "generation": gen_meta,
-            }
-
-            paired = []
-            for s, sub, kind in draws:
-                bucket = by_kind.get(kind, [])
-                if not bucket:
-                    continue
-                paired.append((bucket.pop(0), s, sub, kind))
-
+        stamps = history.to_datetimes(times, hist["window_days"], today, schedule, rng)
+        geo_chance = opsec_mod.geotag_chance(o)
+        for (text, sig, sub, kind), ts in zip(paired, stamps):
             pc += 1
-            prof_id = f"chirp_prof_{pc:05d}"
-            profiles.append(contract.make_record(
-                prof_id, platform.ID, handle, channel=platform.CHANNEL, record_type="profile",
-                handle=f"@{handle}",
-                display_name=_display_name(persona, mode, handle, rng),
-                bio=bio,
-                location=_location_field(persona, mode, rng),
-                join_date=f"{rng.randint(2015, 2024)}-{rng.randint(1, 12):02d}",
-                post_count=rng.randint(max(1, len(paired)), 4000),
-                follower_count=rng.randint(20, 3000),
-                following_count=rng.randint(30, 1500),
+            post_id = f"chirp_post_{pc:05d}"
+            geotag = None
+            if rng.random() < geo_chance:
+                lat = persona["geo"]["home_lat"] + rng.gauss(0, 0.03)
+                lon = persona["geo"]["home_lon"] + rng.gauss(0, 0.03)
+                geotag = f"{lat:.4f},{lon:.4f}"
+            posts.append(contract.make_record(
+                post_id, platform.ID, handle, channel=platform.CHANNEL, record_type="post",
+                text=text, timestamp=ts.strftime("%Y-%m-%dT%H:%M:%S"), post_type="original",
+                hashtags=_extract_hashtags(text), mentions=[],
+                like_count=rng.randint(0, 200), repost_count=rng.randint(0, 40),
+                client=rng.choice(platform.CLIENTS), geotag=geotag,
+                thread_id=None, parent_id=None,
             ))
-            key["obs_to_persona"][prof_id] = persona_id
-
-            stamps = _timestamps(schedule, len(paired), today, rng)
-            geo_chance = opsec_mod.geotag_chance(o)
-            for (text, s, sub, kind), ts in zip(paired, stamps):
-                pc += 1
-                post_id = f"chirp_post_{pc:05d}"
-                geotag = None
-                if rng.random() < geo_chance:
-                    lat = persona["geo"]["home_lat"] + rng.gauss(0, 0.03)
-                    lon = persona["geo"]["home_lon"] + rng.gauss(0, 0.03)
-                    geotag = f"{lat:.4f},{lon:.4f}"
-                posts.append(contract.make_record(
-                    post_id, platform.ID, handle, channel=platform.CHANNEL, record_type="post",
-                    text=text, timestamp=ts, post_type="original",
-                    hashtags=_extract_hashtags(text), mentions=[],
-                    like_count=rng.randint(0, 200), repost_count=rng.randint(0, 40),
-                    client=rng.choice(platform.CLIENTS), geotag=geotag,
-                    thread_id=None, parent_id=None,
-                ))
-                key["obs_to_persona"][post_id] = persona_id
-                key["obs_signal"][post_id] = {"signal": s, "substance": sub, "kind": kind}
+            key["obs_to_persona"][post_id] = persona_id
+            key["obs_signal"][post_id] = {"signal": sig, "substance": sub, "kind": kind}
 
     prof_path = contract.write_observation_file(out_dir, "chirp_profiles.jsonl", profiles)
     post_path = contract.write_observation_file(out_dir, "chirp_posts.jsonl", posts)

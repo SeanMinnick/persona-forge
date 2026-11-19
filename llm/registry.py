@@ -19,8 +19,8 @@ MODELS = {
 }
 
 ROLES = {
-    "writer": "sonnet-4.5",
-    "bible": "sonnet-4.5",
+    "writer": "sonnet-4.6",
+    "bible": "sonnet-4.6",
     "handle": "gpt-4o",
     "profiler": "sonnet-4.6",
 }

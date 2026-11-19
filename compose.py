@@ -9,6 +9,7 @@ compose.py - composes the dataset based on a population file within /populations
 import argparse
 import datetime
 import importlib
+import inspect
 import json
 import os
  
@@ -30,6 +31,8 @@ def main():
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--today", default=None)
     ap.add_argument("--strict", action="store_true")
+    ap.add_argument("--workers", type=int, default=1,
+                    help="threads for per-account LLM generation (modules that support it)")
     ap.add_argument("--model", action="append", default=[], metavar="ROLE=NAME",
                     help="pin a role to a model alias, e.g. --model writer=sonnet-4.6")
     for m in AVAILABLE_MODULES:
@@ -69,13 +72,17 @@ def main():
     results = {}
     for module_id in requested:
         mod = load_module(module_id)
-        results[module_id] = mod.emit(personas, footprint, out_dir, args.seed, today, strict=args.strict)
+        kw = {"strict": args.strict}
+        if "workers" in inspect.signature(mod.emit).parameters:
+            kw["workers"] = args.workers
+        results[module_id] = mod.emit(personas, footprint, out_dir, args.seed, today, **kw)
  
     manifest = {
         "input": os.path.basename(args.input),
         "seed": args.seed,
         "today": today.isoformat(),
         "strict": args.strict,
+        "workers": args.workers,
         "llm": llm.describe(),
         "modules": requested,
         "personas": len(personas),

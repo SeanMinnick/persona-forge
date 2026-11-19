@@ -1,0 +1,43 @@
+{
+  "input": "population_n5_seed10.json",
+  "seed": 32,
+  "today": "2026-11-19",
+  "strict": true,
+  "workers": 4,
+  "llm": {
+    "available": true,
+    "roles": {
+      "bible": {
+        "alias": "sonnet-4.6",
+        "id": "claude-sonnet-4-6",
+        "kind": "anthropic",
+        "tpm": 50000
+      },
+      "handle": {
+        "alias": "gpt-4o",
+        "id": "gpt-4o",
+        "kind": "openai",
+        "tpm": 50000
+      },
+      "profiler": {
+        "alias": "sonnet-4.6",
+        "id": "claude-sonnet-4-6",
+        "kind": "anthropic",
+        "tpm": 50000
+      },
+      "writer": {
+        "alias": "sonnet-4.6",
+        "id": "claude-sonnet-4-6",
+        "kind": "anthropic",
+        "tpm": 50000
+      }
+    }
+  },
+  "modules": [
+    "chirp"
+  ],
+  "personas": 5,
+  "results": {
+    "chirp": 639
+  }
+}

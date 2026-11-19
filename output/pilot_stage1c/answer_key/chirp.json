@@ -1,0 +1,4037 @@
+{
+  "module": "chirp",
+  "account_to_persona": {
+    "savwritesbirds": "pers_001",
+    "savchenwrites": "pers_001",
+    "harrison_ai": "pers_002",
+    "aifootybird": "pers_003",
+    "skatecode": "pers_004"
+  },
+  "obs_to_persona": {
+    "chirp_prof_00001": "pers_001",
+    "chirp_post_00002": "pers_001",
+    "chirp_post_00003": "pers_001",
+    "chirp_post_00004": "pers_001",
+    "chirp_post_00005": "pers_001",
+    "chirp_post_00006": "pers_001",
+    "chirp_post_00007": "pers_001",
+    "chirp_post_00008": "pers_001",
+    "chirp_post_00009": "pers_001",
+    "chirp_post_00010": "pers_001",
+    "chirp_post_00011": "pers_001",
+    "chirp_post_00012": "pers_001",
+    "chirp_post_00013": "pers_001",
+    "chirp_post_00014": "pers_001",
+    "chirp_post_00015": "pers_001",
+    "chirp_post_00016": "pers_001",
+    "chirp_post_00017": "pers_001",
+    "chirp_post_00018": "pers_001",
+    "chirp_post_00019": "pers_001",
+    "chirp_post_00020": "pers_001",
+    "chirp_post_00021": "pers_001",
+    "chirp_post_00022": "pers_001",
+    "chirp_post_00023": "pers_001",
+    "chirp_post_00024": "pers_001",
+    "chirp_post_00025": "pers_001",
+    "chirp_post_00026": "pers_001",
+    "chirp_post_00027": "pers_001",
+    "chirp_post_00028": "pers_001",
+    "chirp_post_00029": "pers_001",
+    "chirp_post_00030": "pers_001",
+    "chirp_post_00031": "pers_001",
+    "chirp_post_00032": "pers_001",
+    "chirp_post_00033": "pers_001",
+    "chirp_post_00034": "pers_001",
+    "chirp_post_00035": "pers_001",
+    "chirp_post_00036": "pers_001",
+    "chirp_post_00037": "pers_001",
+    "chirp_post_00038": "pers_001",
+    "chirp_post_00039": "pers_001",
+    "chirp_post_00040": "pers_001",
+    "chirp_post_00041": "pers_001",
+    "chirp_post_00042": "pers_001",
+    "chirp_post_00043": "pers_001",
+    "chirp_post_00044": "pers_001",
+    "chirp_post_00045": "pers_001",
+    "chirp_post_00046": "pers_001",
+    "chirp_post_00047": "pers_001",
+    "chirp_post_00048": "pers_001",
+    "chirp_post_00049": "pers_001",
+    "chirp_post_00050": "pers_001",
+    "chirp_post_00051": "pers_001",
+    "chirp_post_00052": "pers_001",
+    "chirp_post_00053": "pers_001",
+    "chirp_post_00054": "pers_001",
+    "chirp_post_00055": "pers_001",
+    "chirp_post_00056": "pers_001",
+    "chirp_post_00057": "pers_001",
+    "chirp_post_00058": "pers_001",
+    "chirp_post_00059": "pers_001",
+    "chirp_post_00060": "pers_001",
+    "chirp_post_00061": "pers_001",
+    "chirp_post_00062": "pers_001",
+    "chirp_post_00063": "pers_001",
+    "chirp_post_00064": "pers_001",
+    "chirp_post_00065": "pers_001",
+    "chirp_post_00066": "pers_001",
+    "chirp_post_00067": "pers_001",
+    "chirp_post_00068": "pers_001",
+    "chirp_post_00069": "pers_001",
+    "chirp_post_00070": "pers_001",
+    "chirp_post_00071": "pers_001",
+    "chirp_post_00072": "pers_001",
+    "chirp_post_00073": "pers_001",
+    "chirp_post_00074": "pers_001",
+    "chirp_post_00075": "pers_001",
+    "chirp_post_00076": "pers_001",
+    "chirp_post_00077": "pers_001",
+    "chirp_post_00078": "pers_001",
+    "chirp_post_00079": "pers_001",
+    "chirp_post_00080": "pers_001",
+    "chirp_post_00081": "pers_001",
+    "chirp_post_00082": "pers_001",
+    "chirp_post_00083": "pers_001",
+    "chirp_post_00084": "pers_001",
+    "chirp_post_00085": "pers_001",
+    "chirp_post_00086": "pers_001",
+    "chirp_post_00087": "pers_001",
+    "chirp_post_00088": "pers_001",
+    "chirp_post_00089": "pers_001",
+    "chirp_post_00090": "pers_001",
+    "chirp_post_00091": "pers_001",
+    "chirp_post_00092": "pers_001",
+    "chirp_post_00093": "pers_001",
+    "chirp_post_00094": "pers_001",
+    "chirp_post_00095": "pers_001",
+    "chirp_post_00096": "pers_001",
+    "chirp_post_00097": "pers_001",
+    "chirp_post_00098": "pers_001",
+    "chirp_post_00099": "pers_001",
+    "chirp_post_00100": "pers_001",
+    "chirp_post_00101": "pers_001",
+    "chirp_post_00102": "pers_001",
+    "chirp_post_00103": "pers_001",
+    "chirp_post_00104": "pers_001",
+    "chirp_post_00105": "pers_001",
+    "chirp_post_00106": "pers_001",
+    "chirp_post_00107": "pers_001",
+    "chirp_post_00108": "pers_001",
+    "chirp_post_00109": "pers_001",
+    "chirp_post_00110": "pers_001",
+    "chirp_post_00111": "pers_001",
+    "chirp_post_00112": "pers_001",
+    "chirp_post_00113": "pers_001",
+    "chirp_post_00114": "pers_001",
+    "chirp_prof_00115": "pers_001",
+    "chirp_post_00116": "pers_001",
+    "chirp_post_00117": "pers_001",
+    "chirp_post_00118": "pers_001",
+    "chirp_post_00119": "pers_001",
+    "chirp_post_00120": "pers_001",
+    "chirp_post_00121": "pers_001",
+    "chirp_post_00122": "pers_001",
+    "chirp_post_00123": "pers_001",
+    "chirp_post_00124": "pers_001",
+    "chirp_post_00125": "pers_001",
+    "chirp_post_00126": "pers_001",
+    "chirp_post_00127": "pers_001",
+    "chirp_post_00128": "pers_001",
+    "chirp_post_00129": "pers_001",
+    "chirp_post_00130": "pers_001",
+    "chirp_post_00131": "pers_001",
+    "chirp_post_00132": "pers_001",
+    "chirp_post_00133": "pers_001",
+    "chirp_post_00134": "pers_001",
+    "chirp_post_00135": "pers_001",
+    "chirp_post_00136": "pers_001",
+    "chirp_post_00137": "pers_001",
+    "chirp_post_00138": "pers_001",
+    "chirp_post_00139": "pers_001",
+    "chirp_post_00140": "pers_001",
+    "chirp_post_00141": "pers_001",
+    "chirp_post_00142": "pers_001",
+    "chirp_post_00143": "pers_001",
+    "chirp_post_00144": "pers_001",
+    "chirp_post_00145": "pers_001",
+    "chirp_post_00146": "pers_001",
+    "chirp_post_00147": "pers_001",
+    "chirp_post_00148": "pers_001",
+    "chirp_post_00149": "pers_001",
+    "chirp_post_00150": "pers_001",
+    "chirp_post_00151": "pers_001",
+    "chirp_post_00152": "pers_001",
+    "chirp_post_00153": "pers_001",
+    "chirp_post_00154": "pers_001",
+    "chirp_post_00155": "pers_001",
+    "chirp_post_00156": "pers_001",
+    "chirp_post_00157": "pers_001",
+    "chirp_post_00158": "pers_001",
+    "chirp_post_00159": "pers_001",
+    "chirp_post_00160": "pers_001",
+    "chirp_post_00161": "pers_001",
+    "chirp_post_00162": "pers_001",
+    "chirp_post_00163": "pers_001",
+    "chirp_post_00164": "pers_001",
+    "chirp_post_00165": "pers_001",
+    "chirp_post_00166": "pers_001",
+    "chirp_post_00167": "pers_001",
+    "chirp_post_00168": "pers_001",
+    "chirp_post_00169": "pers_001",
+    "chirp_post_00170": "pers_001",
+    "chirp_post_00171": "pers_001",
+    "chirp_post_00172": "pers_001",
+    "chirp_post_00173": "pers_001",
+    "chirp_post_00174": "pers_001",
+    "chirp_post_00175": "pers_001",
+    "chirp_post_00176": "pers_001",
+    "chirp_post_00177": "pers_001",
+    "chirp_post_00178": "pers_001",
+    "chirp_post_00179": "pers_001",
+    "chirp_post_00180": "pers_001",
+    "chirp_post_00181": "pers_001",
+    "chirp_post_00182": "pers_001",
+    "chirp_post_00183": "pers_001",
+    "chirp_post_00184": "pers_001",
+    "chirp_post_00185": "pers_001",
+    "chirp_post_00186": "pers_001",
+    "chirp_post_00187": "pers_001",
+    "chirp_post_00188": "pers_001",
+    "chirp_post_00189": "pers_001",
+    "chirp_post_00190": "pers_001",
+    "chirp_post_00191": "pers_001",
+    "chirp_post_00192": "pers_001",
+    "chirp_post_00193": "pers_001",
+    "chirp_post_00194": "pers_001",
+    "chirp_post_00195": "pers_001",
+    "chirp_post_00196": "pers_001",
+    "chirp_post_00197": "pers_001",
+    "chirp_post_00198": "pers_001",
+    "chirp_post_00199": "pers_001",
+    "chirp_post_00200": "pers_001",
+    "chirp_post_00201": "pers_001",
+    "chirp_post_00202": "pers_001",
+    "chirp_post_00203": "pers_001",
+    "chirp_post_00204": "pers_001",
+    "chirp_post_00205": "pers_001",
+    "chirp_post_00206": "pers_001",
+    "chirp_post_00207": "pers_001",
+    "chirp_post_00208": "pers_001",
+    "chirp_post_00209": "pers_001",
+    "chirp_post_00210": "pers_001",
+    "chirp_post_00211": "pers_001",
+    "chirp_post_00212": "pers_001",
+    "chirp_post_00213": "pers_001",
+    "chirp_post_00214": "pers_001",
+    "chirp_post_00215": "pers_001",
+    "chirp_prof_00216": "pers_002",
+    "chirp_post_00217": "pers_002",
+    "chirp_post_00218": "pers_002",
+    "chirp_post_00219": "pers_002",
+    "chirp_post_00220": "pers_002",
+    "chirp_post_00221": "pers_002",
+    "chirp_post_00222": "pers_002",
+    "chirp_post_00223": "pers_002",
+    "chirp_post_00224": "pers_002",
+    "chirp_post_00225": "pers_002",
+    "chirp_post_00226": "pers_002",
+    "chirp_post_00227": "pers_002",
+    "chirp_post_00228": "pers_002",
+    "chirp_post_00229": "pers_002",
+    "chirp_post_00230": "pers_002",
+    "chirp_post_00231": "pers_002",
+    "chirp_post_00232": "pers_002",
+    "chirp_post_00233": "pers_002",
+    "chirp_post_00234": "pers_002",
+    "chirp_post_00235": "pers_002",
+    "chirp_post_00236": "pers_002",
+    "chirp_post_00237": "pers_002",
+    "chirp_post_00238": "pers_002",
+    "chirp_post_00239": "pers_002",
+    "chirp_post_00240": "pers_002",
+    "chirp_post_00241": "pers_002",
+    "chirp_post_00242": "pers_002",
+    "chirp_post_00243": "pers_002",
+    "chirp_post_00244": "pers_002",
+    "chirp_post_00245": "pers_002",
+    "chirp_post_00246": "pers_002",
+    "chirp_post_00247": "pers_002",
+    "chirp_post_00248": "pers_002",
+    "chirp_post_00249": "pers_002",
+    "chirp_post_00250": "pers_002",
+    "chirp_post_00251": "pers_002",
+    "chirp_post_00252": "pers_002",
+    "chirp_post_00253": "pers_002",
+    "chirp_post_00254": "pers_002",
+    "chirp_post_00255": "pers_002",
+    "chirp_post_00256": "pers_002",
+    "chirp_post_00257": "pers_002",
+    "chirp_post_00258": "pers_002",
+    "chirp_post_00259": "pers_002",
+    "chirp_post_00260": "pers_002",
+    "chirp_post_00261": "pers_002",
+    "chirp_post_00262": "pers_002",
+    "chirp_post_00263": "pers_002",
+    "chirp_post_00264": "pers_002",
+    "chirp_post_00265": "pers_002",
+    "chirp_post_00266": "pers_002",
+    "chirp_post_00267": "pers_002",
+    "chirp_post_00268": "pers_002",
+    "chirp_post_00269": "pers_002",
+    "chirp_post_00270": "pers_002",
+    "chirp_post_00271": "pers_002",
+    "chirp_post_00272": "pers_002",
+    "chirp_post_00273": "pers_002",
+    "chirp_post_00274": "pers_002",
+    "chirp_post_00275": "pers_002",
+    "chirp_post_00276": "pers_002",
+    "chirp_post_00277": "pers_002",
+    "chirp_post_00278": "pers_002",
+    "chirp_post_00279": "pers_002",
+    "chirp_post_00280": "pers_002",
+    "chirp_post_00281": "pers_002",
+    "chirp_post_00282": "pers_002",
+    "chirp_post_00283": "pers_002",
+    "chirp_post_00284": "pers_002",
+    "chirp_post_00285": "pers_002",
+    "chirp_post_00286": "pers_002",
+    "chirp_post_00287": "pers_002",
+    "chirp_post_00288": "pers_002",
+    "chirp_post_00289": "pers_002",
+    "chirp_post_00290": "pers_002",
+    "chirp_post_00291": "pers_002",
+    "chirp_post_00292": "pers_002",
+    "chirp_post_00293": "pers_002",
+    "chirp_post_00294": "pers_002",
+    "chirp_post_00295": "pers_002",
+    "chirp_post_00296": "pers_002",
+    "chirp_post_00297": "pers_002",
+    "chirp_post_00298": "pers_002",
+    "chirp_post_00299": "pers_002",
+    "chirp_post_00300": "pers_002",
+    "chirp_post_00301": "pers_002",
+    "chirp_post_00302": "pers_002",
+    "chirp_post_00303": "pers_002",
+    "chirp_post_00304": "pers_002",
+    "chirp_post_00305": "pers_002",
+    "chirp_post_00306": "pers_002",
+    "chirp_post_00307": "pers_002",
+    "chirp_post_00308": "pers_002",
+    "chirp_post_00309": "pers_002",
+    "chirp_post_00310": "pers_002",
+    "chirp_post_00311": "pers_002",
+    "chirp_post_00312": "pers_002",
+    "chirp_post_00313": "pers_002",
+    "chirp_post_00314": "pers_002",
+    "chirp_post_00315": "pers_002",
+    "chirp_post_00316": "pers_002",
+    "chirp_post_00317": "pers_002",
+    "chirp_post_00318": "pers_002",
+    "chirp_post_00319": "pers_002",
+    "chirp_post_00320": "pers_002",
+    "chirp_post_00321": "pers_002",
+    "chirp_post_00322": "pers_002",
+    "chirp_post_00323": "pers_002",
+    "chirp_post_00324": "pers_002",
+    "chirp_post_00325": "pers_002",
+    "chirp_post_00326": "pers_002",
+    "chirp_post_00327": "pers_002",
+    "chirp_post_00328": "pers_002",
+    "chirp_post_00329": "pers_002",
+    "chirp_post_00330": "pers_002",
+    "chirp_post_00331": "pers_002",
+    "chirp_post_00332": "pers_002",
+    "chirp_post_00333": "pers_002",
+    "chirp_post_00334": "pers_002",
+    "chirp_post_00335": "pers_002",
+    "chirp_post_00336": "pers_002",
+    "chirp_post_00337": "pers_002",
+    "chirp_post_00338": "pers_002",
+    "chirp_post_00339": "pers_002",
+    "chirp_post_00340": "pers_002",
+    "chirp_post_00341": "pers_002",
+    "chirp_post_00342": "pers_002",
+    "chirp_post_00343": "pers_002",
+    "chirp_post_00344": "pers_002",
+    "chirp_post_00345": "pers_002",
+    "chirp_post_00346": "pers_002",
+    "chirp_post_00347": "pers_002",
+    "chirp_post_00348": "pers_002",
+    "chirp_post_00349": "pers_002",
+    "chirp_post_00350": "pers_002",
+    "chirp_post_00351": "pers_002",
+    "chirp_post_00352": "pers_002",
+    "chirp_post_00353": "pers_002",
+    "chirp_post_00354": "pers_002",
+    "chirp_post_00355": "pers_002",
+    "chirp_post_00356": "pers_002",
+    "chirp_post_00357": "pers_002",
+    "chirp_post_00358": "pers_002",
+    "chirp_post_00359": "pers_002",
+    "chirp_post_00360": "pers_002",
+    "chirp_post_00361": "pers_002",
+    "chirp_post_00362": "pers_002",
+    "chirp_post_00363": "pers_002",
+    "chirp_post_00364": "pers_002",
+    "chirp_post_00365": "pers_002",
+    "chirp_post_00366": "pers_002",
+    "chirp_post_00367": "pers_002",
+    "chirp_post_00368": "pers_002",
+    "chirp_post_00369": "pers_002",
+    "chirp_post_00370": "pers_002",
+    "chirp_post_00371": "pers_002",
+    "chirp_post_00372": "pers_002",
+    "chirp_post_00373": "pers_002",
+    "chirp_post_00374": "pers_002",
+    "chirp_post_00375": "pers_002",
+    "chirp_post_00376": "pers_002",
+    "chirp_post_00377": "pers_002",
+    "chirp_post_00378": "pers_002",
+    "chirp_post_00379": "pers_002",
+    "chirp_post_00380": "pers_002",
+    "chirp_post_00381": "pers_002",
+    "chirp_post_00382": "pers_002",
+    "chirp_post_00383": "pers_002",
+    "chirp_post_00384": "pers_002",
+    "chirp_post_00385": "pers_002",
+    "chirp_post_00386": "pers_002",
+    "chirp_post_00387": "pers_002",
+    "chirp_post_00388": "pers_002",
+    "chirp_post_00389": "pers_002",
+    "chirp_post_00390": "pers_002",
+    "chirp_post_00391": "pers_002",
+    "chirp_post_00392": "pers_002",
+    "chirp_post_00393": "pers_002",
+    "chirp_post_00394": "pers_002",
+    "chirp_post_00395": "pers_002",
+    "chirp_post_00396": "pers_002",
+    "chirp_post_00397": "pers_002",
+    "chirp_post_00398": "pers_002",
+    "chirp_post_00399": "pers_002",
+    "chirp_post_00400": "pers_002",
+    "chirp_post_00401": "pers_002",
+    "chirp_post_00402": "pers_002",
+    "chirp_post_00403": "pers_002",
+    "chirp_post_00404": "pers_002",
+    "chirp_post_00405": "pers_002",
+    "chirp_post_00406": "pers_002",
+    "chirp_post_00407": "pers_002",
+    "chirp_post_00408": "pers_002",
+    "chirp_post_00409": "pers_002",
+    "chirp_post_00410": "pers_002",
+    "chirp_post_00411": "pers_002",
+    "chirp_post_00412": "pers_002",
+    "chirp_post_00413": "pers_002",
+    "chirp_post_00414": "pers_002",
+    "chirp_post_00415": "pers_002",
+    "chirp_post_00416": "pers_002",
+    "chirp_post_00417": "pers_002",
+    "chirp_post_00418": "pers_002",
+    "chirp_post_00419": "pers_002",
+    "chirp_post_00420": "pers_002",
+    "chirp_post_00421": "pers_002",
+    "chirp_post_00422": "pers_002",
+    "chirp_post_00423": "pers_002",
+    "chirp_post_00424": "pers_002",
+    "chirp_post_00425": "pers_002",
+    "chirp_post_00426": "pers_002",
+    "chirp_post_00427": "pers_002",
+    "chirp_post_00428": "pers_002",
+    "chirp_post_00429": "pers_002",
+    "chirp_post_00430": "pers_002",
+    "chirp_post_00431": "pers_002",
+    "chirp_post_00432": "pers_002",
+    "chirp_post_00433": "pers_002",
+    "chirp_post_00434": "pers_002",
+    "chirp_post_00435": "pers_002",
+    "chirp_post_00436": "pers_002",
+    "chirp_post_00437": "pers_002",
+    "chirp_post_00438": "pers_002",
+    "chirp_post_00439": "pers_002",
+    "chirp_post_00440": "pers_002",
+    "chirp_post_00441": "pers_002",
+    "chirp_post_00442": "pers_002",
+    "chirp_post_00443": "pers_002",
+    "chirp_post_00444": "pers_002",
+    "chirp_post_00445": "pers_002",
+    "chirp_post_00446": "pers_002",
+    "chirp_post_00447": "pers_002",
+    "chirp_post_00448": "pers_002",
+    "chirp_post_00449": "pers_002",
+    "chirp_post_00450": "pers_002",
+    "chirp_post_00451": "pers_002",
+    "chirp_post_00452": "pers_002",
+    "chirp_post_00453": "pers_002",
+    "chirp_post_00454": "pers_002",
+    "chirp_post_00455": "pers_002",
+    "chirp_post_00456": "pers_002",
+    "chirp_post_00457": "pers_002",
+    "chirp_post_00458": "pers_002",
+    "chirp_post_00459": "pers_002",
+    "chirp_post_00460": "pers_002",
+    "chirp_post_00461": "pers_002",
+    "chirp_post_00462": "pers_002",
+    "chirp_post_00463": "pers_002",
+    "chirp_post_00464": "pers_002",
+    "chirp_post_00465": "pers_002",
+    "chirp_post_00466": "pers_002",
+    "chirp_post_00467": "pers_002",
+    "chirp_post_00468": "pers_002",
+    "chirp_post_00469": "pers_002",
+    "chirp_post_00470": "pers_002",
+    "chirp_post_00471": "pers_002",
+    "chirp_post_00472": "pers_002",
+    "chirp_post_00473": "pers_002",
+    "chirp_post_00474": "pers_002",
+    "chirp_post_00475": "pers_002",
+    "chirp_post_00476": "pers_002",
+    "chirp_post_00477": "pers_002",
+    "chirp_post_00478": "pers_002",
+    "chirp_post_00479": "pers_002",
+    "chirp_post_00480": "pers_002",
+    "chirp_post_00481": "pers_002",
+    "chirp_post_00482": "pers_002",
+    "chirp_post_00483": "pers_002",
+    "chirp_post_00484": "pers_002",
+    "chirp_post_00485": "pers_002",
+    "chirp_post_00486": "pers_002",
+    "chirp_post_00487": "pers_002",
+    "chirp_post_00488": "pers_002",
+    "chirp_post_00489": "pers_002",
+    "chirp_post_00490": "pers_002",
+    "chirp_post_00491": "pers_002",
+    "chirp_post_00492": "pers_002",
+    "chirp_post_00493": "pers_002",
+    "chirp_post_00494": "pers_002",
+    "chirp_post_00495": "pers_002",
+    "chirp_post_00496": "pers_002",
+    "chirp_post_00497": "pers_002",
+    "chirp_post_00498": "pers_002",
+    "chirp_post_00499": "pers_002",
+    "chirp_post_00500": "pers_002",
+    "chirp_post_00501": "pers_002",
+    "chirp_post_00502": "pers_002",
+    "chirp_post_00503": "pers_002",
+    "chirp_post_00504": "pers_002",
+    "chirp_post_00505": "pers_002",
+    "chirp_post_00506": "pers_002",
+    "chirp_post_00507": "pers_002",
+    "chirp_post_00508": "pers_002",
+    "chirp_post_00509": "pers_002",
+    "chirp_post_00510": "pers_002",
+    "chirp_post_00511": "pers_002",
+    "chirp_post_00512": "pers_002",
+    "chirp_post_00513": "pers_002",
+    "chirp_post_00514": "pers_002",
+    "chirp_post_00515": "pers_002",
+    "chirp_post_00516": "pers_002",
+    "chirp_post_00517": "pers_002",
+    "chirp_post_00518": "pers_002",
+    "chirp_post_00519": "pers_002",
+    "chirp_post_00520": "pers_002",
+    "chirp_post_00521": "pers_002",
+    "chirp_post_00522": "pers_002",
+    "chirp_post_00523": "pers_002",
+    "chirp_post_00524": "pers_002",
+    "chirp_post_00525": "pers_002",
+    "chirp_post_00526": "pers_002",
+    "chirp_post_00527": "pers_002",
+    "chirp_post_00528": "pers_002",
+    "chirp_post_00529": "pers_002",
+    "chirp_post_00530": "pers_002",
+    "chirp_post_00531": "pers_002",
+    "chirp_post_00532": "pers_002",
+    "chirp_post_00533": "pers_002",
+    "chirp_post_00534": "pers_002",
+    "chirp_post_00535": "pers_002",
+    "chirp_post_00536": "pers_002",
+    "chirp_post_00537": "pers_002",
+    "chirp_post_00538": "pers_002",
+    "chirp_post_00539": "pers_002",
+    "chirp_post_00540": "pers_002",
+    "chirp_post_00541": "pers_002",
+    "chirp_post_00542": "pers_002",
+    "chirp_post_00543": "pers_002",
+    "chirp_post_00544": "pers_002",
+    "chirp_post_00545": "pers_002",
+    "chirp_post_00546": "pers_002",
+    "chirp_post_00547": "pers_002",
+    "chirp_post_00548": "pers_002",
+    "chirp_post_00549": "pers_002",
+    "chirp_post_00550": "pers_002",
+    "chirp_post_00551": "pers_002",
+    "chirp_post_00552": "pers_002",
+    "chirp_post_00553": "pers_002",
+    "chirp_post_00554": "pers_002",
+    "chirp_post_00555": "pers_002",
+    "chirp_post_00556": "pers_002",
+    "chirp_prof_00557": "pers_003",
+    "chirp_post_00558": "pers_003",
+    "chirp_post_00559": "pers_003",
+    "chirp_post_00560": "pers_003",
+    "chirp_post_00561": "pers_003",
+    "chirp_post_00562": "pers_003",
+    "chirp_post_00563": "pers_003",
+    "chirp_post_00564": "pers_003",
+    "chirp_post_00565": "pers_003",
+    "chirp_post_00566": "pers_003",
+    "chirp_post_00567": "pers_003",
+    "chirp_post_00568": "pers_003",
+    "chirp_post_00569": "pers_003",
+    "chirp_post_00570": "pers_003",
+    "chirp_post_00571": "pers_003",
+    "chirp_post_00572": "pers_003",
+    "chirp_post_00573": "pers_003",
+    "chirp_post_00574": "pers_003",
+    "chirp_post_00575": "pers_003",
+    "chirp_post_00576": "pers_003",
+    "chirp_post_00577": "pers_003",
+    "chirp_post_00578": "pers_003",
+    "chirp_post_00579": "pers_003",
+    "chirp_post_00580": "pers_003",
+    "chirp_post_00581": "pers_003",
+    "chirp_post_00582": "pers_003",
+    "chirp_post_00583": "pers_003",
+    "chirp_post_00584": "pers_003",
+    "chirp_post_00585": "pers_003",
+    "chirp_post_00586": "pers_003",
+    "chirp_post_00587": "pers_003",
+    "chirp_post_00588": "pers_003",
+    "chirp_post_00589": "pers_003",
+    "chirp_post_00590": "pers_003",
+    "chirp_post_00591": "pers_003",
+    "chirp_post_00592": "pers_003",
+    "chirp_post_00593": "pers_003",
+    "chirp_post_00594": "pers_003",
+    "chirp_post_00595": "pers_003",
+    "chirp_post_00596": "pers_003",
+    "chirp_post_00597": "pers_003",
+    "chirp_post_00598": "pers_003",
+    "chirp_post_00599": "pers_003",
+    "chirp_post_00600": "pers_003",
+    "chirp_post_00601": "pers_003",
+    "chirp_post_00602": "pers_003",
+    "chirp_post_00603": "pers_003",
+    "chirp_post_00604": "pers_003",
+    "chirp_post_00605": "pers_003",
+    "chirp_post_00606": "pers_003",
+    "chirp_post_00607": "pers_003",
+    "chirp_post_00608": "pers_003",
+    "chirp_post_00609": "pers_003",
+    "chirp_post_00610": "pers_003",
+    "chirp_post_00611": "pers_003",
+    "chirp_post_00612": "pers_003",
+    "chirp_post_00613": "pers_003",
+    "chirp_post_00614": "pers_003",
+    "chirp_post_00615": "pers_003",
+    "chirp_post_00616": "pers_003",
+    "chirp_post_00617": "pers_003",
+    "chirp_post_00618": "pers_003",
+    "chirp_prof_00619": "pers_004",
+    "chirp_post_00620": "pers_004",
+    "chirp_post_00621": "pers_004",
+    "chirp_post_00622": "pers_004",
+    "chirp_post_00623": "pers_004",
+    "chirp_post_00624": "pers_004",
+    "chirp_post_00625": "pers_004",
+    "chirp_post_00626": "pers_004",
+    "chirp_post_00627": "pers_004",
+    "chirp_post_00628": "pers_004",
+    "chirp_post_00629": "pers_004",
+    "chirp_post_00630": "pers_004",
+    "chirp_post_00631": "pers_004",
+    "chirp_post_00632": "pers_004",
+    "chirp_post_00633": "pers_004",
+    "chirp_post_00634": "pers_004",
+    "chirp_post_00635": "pers_004",
+    "chirp_post_00636": "pers_004",
+    "chirp_post_00637": "pers_004",
+    "chirp_post_00638": "pers_004",
+    "chirp_post_00639": "pers_004"
+  },
+  "obs_signal": {
+    "chirp_post_00002": {
+      "signal": 79,
+      "substance": 36,
+      "kind": "signal"
+    },
+    "chirp_post_00003": {
+      "signal": 42,
+      "substance": 45,
+      "kind": "filler"
+    },
+    "chirp_post_00004": {
+      "signal": 77,
+      "substance": 74,
+      "kind": "signal"
+    },
+    "chirp_post_00005": {
+      "signal": 65,
+      "substance": 17,
+      "kind": "signal"
+    },
+    "chirp_post_00006": {
+      "signal": 41,
+      "substance": 30,
+      "kind": "filler"
+    },
+    "chirp_post_00007": {
+      "signal": 70,
+      "substance": 94,
+      "kind": "signal"
+    },
+    "chirp_post_00008": {
+      "signal": 15,
+      "substance": 15,
+      "kind": "filler"
+    },
+    "chirp_post_00009": {
+      "signal": 51,
+      "substance": 12,
+      "kind": "filler"
+    },
+    "chirp_post_00010": {
+      "signal": 63,
+      "substance": 48,
+      "kind": "signal"
+    },
+    "chirp_post_00011": {
+      "signal": 39,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00012": {
+      "signal": 52,
+      "substance": 79,
+      "kind": "decoy"
+    },
+    "chirp_post_00013": {
+      "signal": 64,
+      "substance": 76,
+      "kind": "signal"
+    },
+    "chirp_post_00014": {
+      "signal": 72,
+      "substance": 41,
+      "kind": "signal"
+    },
+    "chirp_post_00015": {
+      "signal": 47,
+      "substance": 51,
+      "kind": "decoy"
+    },
+    "chirp_post_00016": {
+      "signal": 79,
+      "substance": 76,
+      "kind": "signal"
+    },
+    "chirp_post_00017": {
+      "signal": 46,
+      "substance": 38,
+      "kind": "filler"
+    },
+    "chirp_post_00018": {
+      "signal": 58,
+      "substance": 89,
+      "kind": "signal"
+    },
+    "chirp_post_00019": {
+      "signal": 53,
+      "substance": 18,
+      "kind": "filler"
+    },
+    "chirp_post_00020": {
+      "signal": 38,
+      "substance": 69,
+      "kind": "decoy"
+    },
+    "chirp_post_00021": {
+      "signal": 52,
+      "substance": 67,
+      "kind": "decoy"
+    },
+    "chirp_post_00022": {
+      "signal": 48,
+      "substance": 67,
+      "kind": "decoy"
+    },
+    "chirp_post_00023": {
+      "signal": 71,
+      "substance": 71,
+      "kind": "signal"
+    },
+    "chirp_post_00024": {
+      "signal": 75,
+      "substance": 31,
+      "kind": "signal"
+    },
+    "chirp_post_00025": {
+      "signal": 60,
+      "substance": 49,
+      "kind": "signal"
+    },
+    "chirp_post_00026": {
+      "signal": 29,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00027": {
+      "signal": 70,
+      "substance": 53,
+      "kind": "signal"
+    },
+    "chirp_post_00028": {
+      "signal": 74,
+      "substance": 44,
+      "kind": "signal"
+    },
+    "chirp_post_00029": {
+      "signal": 59,
+      "substance": 72,
+      "kind": "signal"
+    },
+    "chirp_post_00030": {
+      "signal": 42,
+      "substance": 78,
+      "kind": "decoy"
+    },
+    "chirp_post_00031": {
+      "signal": 36,
+      "substance": 28,
+      "kind": "filler"
+    },
+    "chirp_post_00032": {
+      "signal": 46,
+      "substance": 27,
+      "kind": "filler"
+    },
+    "chirp_post_00033": {
+      "signal": 35,
+      "substance": 16,
+      "kind": "filler"
+    },
+    "chirp_post_00034": {
+      "signal": 73,
+      "substance": 19,
+      "kind": "signal"
+    },
+    "chirp_post_00035": {
+      "signal": 74,
+      "substance": 57,
+      "kind": "signal"
+    },
+    "chirp_post_00036": {
+      "signal": 30,
+      "substance": 17,
+      "kind": "filler"
+    },
+    "chirp_post_00037": {
+      "signal": 31,
+      "substance": 19,
+      "kind": "filler"
+    },
+    "chirp_post_00038": {
+      "signal": 70,
+      "substance": 33,
+      "kind": "signal"
+    },
+    "chirp_post_00039": {
+      "signal": 33,
+      "substance": 29,
+      "kind": "filler"
+    },
+    "chirp_post_00040": {
+      "signal": 67,
+      "substance": 60,
+      "kind": "signal"
+    },
+    "chirp_post_00041": {
+      "signal": 58,
+      "substance": 55,
+      "kind": "signal"
+    },
+    "chirp_post_00042": {
+      "signal": 74,
+      "substance": 41,
+      "kind": "signal"
+    },
+    "chirp_post_00043": {
+      "signal": 37,
+      "substance": 31,
+      "kind": "filler"
+    },
+    "chirp_post_00044": {
+      "signal": 76,
+      "substance": 67,
+      "kind": "signal"
+    },
+    "chirp_post_00045": {
+      "signal": 68,
+      "substance": 38,
+      "kind": "signal"
+    },
+    "chirp_post_00046": {
+      "signal": 43,
+      "substance": 72,
+      "kind": "decoy"
+    },
+    "chirp_post_00047": {
+      "signal": 46,
+      "substance": 68,
+      "kind": "decoy"
+    },
+    "chirp_post_00048": {
+      "signal": 49,
+      "substance": 68,
+      "kind": "decoy"
+    },
+    "chirp_post_00049": {
+      "signal": 50,
+      "substance": 31,
+      "kind": "filler"
+    },
+    "chirp_post_00050": {
+      "signal": 58,
+      "substance": 67,
+      "kind": "signal"
+    },
+    "chirp_post_00051": {
+      "signal": 44,
+      "substance": 53,
+      "kind": "decoy"
+    },
+    "chirp_post_00052": {
+      "signal": 58,
+      "substance": 84,
+      "kind": "signal"
+    },
+    "chirp_post_00053": {
+      "signal": 83,
+      "substance": 24,
+      "kind": "signal"
+    },
+    "chirp_post_00054": {
+      "signal": 77,
+      "substance": 79,
+      "kind": "signal"
+    },
+    "chirp_post_00055": {
+      "signal": 33,
+      "substance": 90,
+      "kind": "decoy"
+    },
+    "chirp_post_00056": {
+      "signal": 40,
+      "substance": 42,
+      "kind": "filler"
+    },
+    "chirp_post_00057": {
+      "signal": 71,
+      "substance": 61,
+      "kind": "signal"
+    },
+    "chirp_post_00058": {
+      "signal": 11,
+      "substance": 75,
+      "kind": "decoy"
+    },
+    "chirp_post_00059": {
+      "signal": 74,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00060": {
+      "signal": 25,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00061": {
+      "signal": 42,
+      "substance": 76,
+      "kind": "decoy"
+    },
+    "chirp_post_00062": {
+      "signal": 79,
+      "substance": 84,
+      "kind": "signal"
+    },
+    "chirp_post_00063": {
+      "signal": 37,
+      "substance": 3,
+      "kind": "filler"
+    },
+    "chirp_post_00064": {
+      "signal": 43,
+      "substance": 28,
+      "kind": "filler"
+    },
+    "chirp_post_00065": {
+      "signal": 21,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00066": {
+      "signal": 29,
+      "substance": 12,
+      "kind": "filler"
+    },
+    "chirp_post_00067": {
+      "signal": 69,
+      "substance": 71,
+      "kind": "signal"
+    },
+    "chirp_post_00068": {
+      "signal": 77,
+      "substance": 67,
+      "kind": "signal"
+    },
+    "chirp_post_00069": {
+      "signal": 53,
+      "substance": 23,
+      "kind": "filler"
+    },
+    "chirp_post_00070": {
+      "signal": 31,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "chirp_post_00071": {
+      "signal": 89,
+      "substance": 59,
+      "kind": "signal"
+    },
+    "chirp_post_00072": {
+      "signal": 32,
+      "substance": 38,
+      "kind": "filler"
+    },
+    "chirp_post_00073": {
+      "signal": 51,
+      "substance": 20,
+      "kind": "filler"
+    },
+    "chirp_post_00074": {
+      "signal": 84,
+      "substance": 34,
+      "kind": "signal"
+    },
+    "chirp_post_00075": {
+      "signal": 90,
+      "substance": 63,
+      "kind": "signal"
+    },
+    "chirp_post_00076": {
+      "signal": 51,
+      "substance": 38,
+      "kind": "filler"
+    },
+    "chirp_post_00077": {
+      "signal": 65,
+      "substance": 71,
+      "kind": "signal"
+    },
+    "chirp_post_00078": {
+      "signal": 51,
+      "substance": 27,
+      "kind": "filler"
+    },
+    "chirp_post_00079": {
+      "signal": 34,
+      "substance": 28,
+      "kind": "filler"
+    },
+    "chirp_post_00080": {
+      "signal": 42,
+      "substance": 61,
+      "kind": "decoy"
+    },
+    "chirp_post_00081": {
+      "signal": 56,
+      "substance": 53,
+      "kind": "signal"
+    },
+    "chirp_post_00082": {
+      "signal": 43,
+      "substance": 11,
+      "kind": "filler"
+    },
+    "chirp_post_00083": {
+      "signal": 57,
+      "substance": 73,
+      "kind": "signal"
+    },
+    "chirp_post_00084": {
+      "signal": 32,
+      "substance": 38,
+      "kind": "filler"
+    },
+    "chirp_post_00085": {
+      "signal": 65,
+      "substance": 87,
+      "kind": "signal"
+    },
+    "chirp_post_00086": {
+      "signal": 67,
+      "substance": 71,
+      "kind": "signal"
+    },
+    "chirp_post_00087": {
+      "signal": 69,
+      "substance": 18,
+      "kind": "signal"
+    },
+    "chirp_post_00088": {
+      "signal": 58,
+      "substance": 81,
+      "kind": "signal"
+    },
+    "chirp_post_00089": {
+      "signal": 42,
+      "substance": 77,
+      "kind": "decoy"
+    },
+    "chirp_post_00090": {
+      "signal": 68,
+      "substance": 32,
+      "kind": "signal"
+    },
+    "chirp_post_00091": {
+      "signal": 49,
+      "substance": 80,
+      "kind": "decoy"
+    },
+    "chirp_post_00092": {
+      "signal": 43,
+      "substance": 26,
+      "kind": "filler"
+    },
+    "chirp_post_00093": {
+      "signal": 84,
+      "substance": 34,
+      "kind": "signal"
+    },
+    "chirp_post_00094": {
+      "signal": 35,
+      "substance": 81,
+      "kind": "decoy"
+    },
+    "chirp_post_00095": {
+      "signal": 95,
+      "substance": 21,
+      "kind": "signal"
+    },
+    "chirp_post_00096": {
+      "signal": 23,
+      "substance": 87,
+      "kind": "decoy"
+    },
+    "chirp_post_00097": {
+      "signal": 8,
+      "substance": 71,
+      "kind": "decoy"
+    },
+    "chirp_post_00098": {
+      "signal": 67,
+      "substance": 88,
+      "kind": "signal"
+    },
+    "chirp_post_00099": {
+      "signal": 75,
+      "substance": 83,
+      "kind": "signal"
+    },
+    "chirp_post_00100": {
+      "signal": 21,
+      "substance": 31,
+      "kind": "filler"
+    },
+    "chirp_post_00101": {
+      "signal": 33,
+      "substance": 23,
+      "kind": "filler"
+    },
+    "chirp_post_00102": {
+      "signal": 43,
+      "substance": 35,
+      "kind": "filler"
+    },
+    "chirp_post_00103": {
+      "signal": 53,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00104": {
+      "signal": 6,
+      "substance": 14,
+      "kind": "filler"
+    },
+    "chirp_post_00105": {
+      "signal": 67,
+      "substance": 71,
+      "kind": "signal"
+    },
+    "chirp_post_00106": {
+      "signal": 18,
+      "substance": 65,
+      "kind": "decoy"
+    },
+    "chirp_post_00107": {
+      "signal": 52,
+      "substance": 85,
+      "kind": "decoy"
+    },
+    "chirp_post_00108": {
+      "signal": 50,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "chirp_post_00109": {
+      "signal": 37,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00110": {
+      "signal": 39,
+      "substance": 51,
+      "kind": "decoy"
+    },
+    "chirp_post_00111": {
+      "signal": 91,
+      "substance": 22,
+      "kind": "signal"
+    },
+    "chirp_post_00112": {
+      "signal": 70,
+      "substance": 34,
+      "kind": "signal"
+    },
+    "chirp_post_00113": {
+      "signal": 58,
+      "substance": 34,
+      "kind": "signal"
+    },
+    "chirp_post_00114": {
+      "signal": 37,
+      "substance": 76,
+      "kind": "decoy"
+    },
+    "chirp_post_00116": {
+      "signal": 13,
+      "substance": 74,
+      "kind": "decoy"
+    },
+    "chirp_post_00117": {
+      "signal": 72,
+      "substance": 79,
+      "kind": "signal"
+    },
+    "chirp_post_00118": {
+      "signal": 85,
+      "substance": 24,
+      "kind": "signal"
+    },
+    "chirp_post_00119": {
+      "signal": 90,
+      "substance": 19,
+      "kind": "signal"
+    },
+    "chirp_post_00120": {
+      "signal": 36,
+      "substance": 67,
+      "kind": "decoy"
+    },
+    "chirp_post_00121": {
+      "signal": 21,
+      "substance": 74,
+      "kind": "decoy"
+    },
+    "chirp_post_00122": {
+      "signal": 89,
+      "substance": 44,
+      "kind": "signal"
+    },
+    "chirp_post_00123": {
+      "signal": 47,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00124": {
+      "signal": 81,
+      "substance": 84,
+      "kind": "signal"
+    },
+    "chirp_post_00125": {
+      "signal": 62,
+      "substance": 35,
+      "kind": "signal"
+    },
+    "chirp_post_00126": {
+      "signal": 45,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00127": {
+      "signal": 82,
+      "substance": 88,
+      "kind": "signal"
+    },
+    "chirp_post_00128": {
+      "signal": 58,
+      "substance": 66,
+      "kind": "signal"
+    },
+    "chirp_post_00129": {
+      "signal": 79,
+      "substance": 49,
+      "kind": "signal"
+    },
+    "chirp_post_00130": {
+      "signal": 33,
+      "substance": 45,
+      "kind": "filler"
+    },
+    "chirp_post_00131": {
+      "signal": 53,
+      "substance": 69,
+      "kind": "decoy"
+    },
+    "chirp_post_00132": {
+      "signal": 62,
+      "substance": 46,
+      "kind": "signal"
+    },
+    "chirp_post_00133": {
+      "signal": 58,
+      "substance": 36,
+      "kind": "signal"
+    },
+    "chirp_post_00134": {
+      "signal": 47,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "chirp_post_00135": {
+      "signal": 52,
+      "substance": 64,
+      "kind": "decoy"
+    },
+    "chirp_post_00136": {
+      "signal": 65,
+      "substance": 9,
+      "kind": "signal"
+    },
+    "chirp_post_00137": {
+      "signal": 51,
+      "substance": 66,
+      "kind": "decoy"
+    },
+    "chirp_post_00138": {
+      "signal": 23,
+      "substance": 73,
+      "kind": "decoy"
+    },
+    "chirp_post_00139": {
+      "signal": 36,
+      "substance": 56,
+      "kind": "decoy"
+    },
+    "chirp_post_00140": {
+      "signal": 64,
+      "substance": 13,
+      "kind": "signal"
+    },
+    "chirp_post_00141": {
+      "signal": 56,
+      "substance": 65,
+      "kind": "signal"
+    },
+    "chirp_post_00142": {
+      "signal": 66,
+      "substance": 47,
+      "kind": "signal"
+    },
+    "chirp_post_00143": {
+      "signal": 79,
+      "substance": 80,
+      "kind": "signal"
+    },
+    "chirp_post_00144": {
+      "signal": 64,
+      "substance": 14,
+      "kind": "signal"
+    },
+    "chirp_post_00145": {
+      "signal": 86,
+      "substance": 25,
+      "kind": "signal"
+    },
+    "chirp_post_00146": {
+      "signal": 23,
+      "substance": 23,
+      "kind": "filler"
+    },
+    "chirp_post_00147": {
+      "signal": 41,
+      "substance": 35,
+      "kind": "filler"
+    },
+    "chirp_post_00148": {
+      "signal": 74,
+      "substance": 17,
+      "kind": "signal"
+    },
+    "chirp_post_00149": {
+      "signal": 51,
+      "substance": 97,
+      "kind": "decoy"
+    },
+    "chirp_post_00150": {
+      "signal": 71,
+      "substance": 26,
+      "kind": "signal"
+    },
+    "chirp_post_00151": {
+      "signal": 25,
+      "substance": 72,
+      "kind": "decoy"
+    },
+    "chirp_post_00152": {
+      "signal": 18,
+      "substance": 34,
+      "kind": "filler"
+    },
+    "chirp_post_00153": {
+      "signal": 67,
+      "substance": 63,
+      "kind": "signal"
+    },
+    "chirp_post_00154": {
+      "signal": 70,
+      "substance": 53,
+      "kind": "signal"
+    },
+    "chirp_post_00155": {
+      "signal": 74,
+      "substance": 82,
+      "kind": "signal"
+    },
+    "chirp_post_00156": {
+      "signal": 82,
+      "substance": 53,
+      "kind": "signal"
+    },
+    "chirp_post_00157": {
+      "signal": 60,
+      "substance": 93,
+      "kind": "signal"
+    },
+    "chirp_post_00158": {
+      "signal": 64,
+      "substance": 47,
+      "kind": "signal"
+    },
+    "chirp_post_00159": {
+      "signal": 47,
+      "substance": 22,
+      "kind": "filler"
+    },
+    "chirp_post_00160": {
+      "signal": 21,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00161": {
+      "signal": 63,
+      "substance": 72,
+      "kind": "signal"
+    },
+    "chirp_post_00162": {
+      "signal": 90,
+      "substance": 30,
+      "kind": "signal"
+    },
+    "chirp_post_00163": {
+      "signal": 19,
+      "substance": 70,
+      "kind": "decoy"
+    },
+    "chirp_post_00164": {
+      "signal": 52,
+      "substance": 23,
+      "kind": "filler"
+    },
+    "chirp_post_00165": {
+      "signal": 78,
+      "substance": 41,
+      "kind": "signal"
+    },
+    "chirp_post_00166": {
+      "signal": 50,
+      "substance": 89,
+      "kind": "decoy"
+    },
+    "chirp_post_00167": {
+      "signal": 61,
+      "substance": 91,
+      "kind": "signal"
+    },
+    "chirp_post_00168": {
+      "signal": 67,
+      "substance": 12,
+      "kind": "signal"
+    },
+    "chirp_post_00169": {
+      "signal": 55,
+      "substance": 55,
+      "kind": "signal"
+    },
+    "chirp_post_00170": {
+      "signal": 65,
+      "substance": 71,
+      "kind": "signal"
+    },
+    "chirp_post_00171": {
+      "signal": 61,
+      "substance": 36,
+      "kind": "signal"
+    },
+    "chirp_post_00172": {
+      "signal": 43,
+      "substance": 89,
+      "kind": "decoy"
+    },
+    "chirp_post_00173": {
+      "signal": 42,
+      "substance": 43,
+      "kind": "filler"
+    },
+    "chirp_post_00174": {
+      "signal": 22,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00175": {
+      "signal": 47,
+      "substance": 69,
+      "kind": "decoy"
+    },
+    "chirp_post_00176": {
+      "signal": 20,
+      "substance": 12,
+      "kind": "filler"
+    },
+    "chirp_post_00177": {
+      "signal": 91,
+      "substance": 94,
+      "kind": "signal"
+    },
+    "chirp_post_00178": {
+      "signal": 45,
+      "substance": 15,
+      "kind": "filler"
+    },
+    "chirp_post_00179": {
+      "signal": 13,
+      "substance": 67,
+      "kind": "decoy"
+    },
+    "chirp_post_00180": {
+      "signal": 44,
+      "substance": 81,
+      "kind": "decoy"
+    },
+    "chirp_post_00181": {
+      "signal": 36,
+      "substance": 92,
+      "kind": "decoy"
+    },
+    "chirp_post_00182": {
+      "signal": 21,
+      "substance": 40,
+      "kind": "filler"
+    },
+    "chirp_post_00183": {
+      "signal": 51,
+      "substance": 33,
+      "kind": "filler"
+    },
+    "chirp_post_00184": {
+      "signal": 37,
+      "substance": 26,
+      "kind": "filler"
+    },
+    "chirp_post_00185": {
+      "signal": 38,
+      "substance": 24,
+      "kind": "filler"
+    },
+    "chirp_post_00186": {
+      "signal": 88,
+      "substance": 47,
+      "kind": "signal"
+    },
+    "chirp_post_00187": {
+      "signal": 44,
+      "substance": 11,
+      "kind": "filler"
+    },
+    "chirp_post_00188": {
+      "signal": 57,
+      "substance": 37,
+      "kind": "signal"
+    },
+    "chirp_post_00189": {
+      "signal": 80,
+      "substance": 27,
+      "kind": "signal"
+    },
+    "chirp_post_00190": {
+      "signal": 21,
+      "substance": 43,
+      "kind": "filler"
+    },
+    "chirp_post_00191": {
+      "signal": 59,
+      "substance": 40,
+      "kind": "signal"
+    },
+    "chirp_post_00192": {
+      "signal": 22,
+      "substance": 85,
+      "kind": "decoy"
+    },
+    "chirp_post_00193": {
+      "signal": 39,
+      "substance": 65,
+      "kind": "decoy"
+    },
+    "chirp_post_00194": {
+      "signal": 72,
+      "substance": 63,
+      "kind": "signal"
+    },
+    "chirp_post_00195": {
+      "signal": 29,
+      "substance": 65,
+      "kind": "decoy"
+    },
+    "chirp_post_00196": {
+      "signal": 45,
+      "substance": 11,
+      "kind": "filler"
+    },
+    "chirp_post_00197": {
+      "signal": 89,
+      "substance": 29,
+      "kind": "signal"
+    },
+    "chirp_post_00198": {
+      "signal": 48,
+      "substance": 40,
+      "kind": "filler"
+    },
+    "chirp_post_00199": {
+      "signal": 76,
+      "substance": 52,
+      "kind": "signal"
+    },
+    "chirp_post_00200": {
+      "signal": 35,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00201": {
+      "signal": 62,
+      "substance": 86,
+      "kind": "signal"
+    },
+    "chirp_post_00202": {
+      "signal": 50,
+      "substance": 24,
+      "kind": "filler"
+    },
+    "chirp_post_00203": {
+      "signal": 56,
+      "substance": 35,
+      "kind": "signal"
+    },
+    "chirp_post_00204": {
+      "signal": 47,
+      "substance": 59,
+      "kind": "decoy"
+    },
+    "chirp_post_00205": {
+      "signal": 71,
+      "substance": 46,
+      "kind": "signal"
+    },
+    "chirp_post_00206": {
+      "signal": 64,
+      "substance": 41,
+      "kind": "signal"
+    },
+    "chirp_post_00207": {
+      "signal": 22,
+      "substance": 50,
+      "kind": "decoy"
+    },
+    "chirp_post_00208": {
+      "signal": 86,
+      "substance": 78,
+      "kind": "signal"
+    },
+    "chirp_post_00209": {
+      "signal": 47,
+      "substance": 11,
+      "kind": "filler"
+    },
+    "chirp_post_00210": {
+      "signal": 62,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00211": {
+      "signal": 44,
+      "substance": 81,
+      "kind": "decoy"
+    },
+    "chirp_post_00212": {
+      "signal": 35,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "chirp_post_00213": {
+      "signal": 39,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00214": {
+      "signal": 47,
+      "substance": 28,
+      "kind": "filler"
+    },
+    "chirp_post_00215": {
+      "signal": 53,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00217": {
+      "signal": 19,
+      "substance": 31,
+      "kind": "filler"
+    },
+    "chirp_post_00218": {
+      "signal": 54,
+      "substance": 79,
+      "kind": "decoy"
+    },
+    "chirp_post_00219": {
+      "signal": 66,
+      "substance": 78,
+      "kind": "signal"
+    },
+    "chirp_post_00220": {
+      "signal": 36,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00221": {
+      "signal": 42,
+      "substance": 36,
+      "kind": "filler"
+    },
+    "chirp_post_00222": {
+      "signal": 73,
+      "substance": 76,
+      "kind": "signal"
+    },
+    "chirp_post_00223": {
+      "signal": 54,
+      "substance": 58,
+      "kind": "decoy"
+    },
+    "chirp_post_00224": {
+      "signal": 50,
+      "substance": 50,
+      "kind": "decoy"
+    },
+    "chirp_post_00225": {
+      "signal": 77,
+      "substance": 73,
+      "kind": "signal"
+    },
+    "chirp_post_00226": {
+      "signal": 24,
+      "substance": 79,
+      "kind": "decoy"
+    },
+    "chirp_post_00227": {
+      "signal": 37,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00228": {
+      "signal": 29,
+      "substance": 75,
+      "kind": "decoy"
+    },
+    "chirp_post_00229": {
+      "signal": 69,
+      "substance": 21,
+      "kind": "signal"
+    },
+    "chirp_post_00230": {
+      "signal": 9,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00231": {
+      "signal": 46,
+      "substance": 80,
+      "kind": "decoy"
+    },
+    "chirp_post_00232": {
+      "signal": 27,
+      "substance": 44,
+      "kind": "filler"
+    },
+    "chirp_post_00233": {
+      "signal": 62,
+      "substance": 72,
+      "kind": "signal"
+    },
+    "chirp_post_00234": {
+      "signal": 76,
+      "substance": 10,
+      "kind": "signal"
+    },
+    "chirp_post_00235": {
+      "signal": 11,
+      "substance": 60,
+      "kind": "decoy"
+    },
+    "chirp_post_00236": {
+      "signal": 67,
+      "substance": 74,
+      "kind": "signal"
+    },
+    "chirp_post_00237": {
+      "signal": 45,
+      "substance": 34,
+      "kind": "filler"
+    },
+    "chirp_post_00238": {
+      "signal": 63,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00239": {
+      "signal": 35,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00240": {
+      "signal": 34,
+      "substance": 25,
+      "kind": "filler"
+    },
+    "chirp_post_00241": {
+      "signal": 42,
+      "substance": 82,
+      "kind": "decoy"
+    },
+    "chirp_post_00242": {
+      "signal": 40,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00243": {
+      "signal": 61,
+      "substance": 67,
+      "kind": "signal"
+    },
+    "chirp_post_00244": {
+      "signal": 67,
+      "substance": 67,
+      "kind": "signal"
+    },
+    "chirp_post_00245": {
+      "signal": 46,
+      "substance": 91,
+      "kind": "decoy"
+    },
+    "chirp_post_00246": {
+      "signal": 73,
+      "substance": 11,
+      "kind": "signal"
+    },
+    "chirp_post_00247": {
+      "signal": 60,
+      "substance": 13,
+      "kind": "signal"
+    },
+    "chirp_post_00248": {
+      "signal": 41,
+      "substance": 45,
+      "kind": "filler"
+    },
+    "chirp_post_00249": {
+      "signal": 67,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00250": {
+      "signal": 66,
+      "substance": 72,
+      "kind": "signal"
+    },
+    "chirp_post_00251": {
+      "signal": 68,
+      "substance": 69,
+      "kind": "signal"
+    },
+    "chirp_post_00252": {
+      "signal": 49,
+      "substance": 83,
+      "kind": "decoy"
+    },
+    "chirp_post_00253": {
+      "signal": 69,
+      "substance": 54,
+      "kind": "signal"
+    },
+    "chirp_post_00254": {
+      "signal": 45,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00255": {
+      "signal": 32,
+      "substance": 63,
+      "kind": "decoy"
+    },
+    "chirp_post_00256": {
+      "signal": 35,
+      "substance": 60,
+      "kind": "decoy"
+    },
+    "chirp_post_00257": {
+      "signal": 58,
+      "substance": 43,
+      "kind": "signal"
+    },
+    "chirp_post_00258": {
+      "signal": 55,
+      "substance": 64,
+      "kind": "signal"
+    },
+    "chirp_post_00259": {
+      "signal": 46,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00260": {
+      "signal": 53,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00261": {
+      "signal": 22,
+      "substance": 94,
+      "kind": "decoy"
+    },
+    "chirp_post_00262": {
+      "signal": 88,
+      "substance": 65,
+      "kind": "signal"
+    },
+    "chirp_post_00263": {
+      "signal": 59,
+      "substance": 57,
+      "kind": "signal"
+    },
+    "chirp_post_00264": {
+      "signal": 45,
+      "substance": 16,
+      "kind": "filler"
+    },
+    "chirp_post_00265": {
+      "signal": 92,
+      "substance": 28,
+      "kind": "signal"
+    },
+    "chirp_post_00266": {
+      "signal": 91,
+      "substance": 88,
+      "kind": "signal"
+    },
+    "chirp_post_00267": {
+      "signal": 55,
+      "substance": 84,
+      "kind": "signal"
+    },
+    "chirp_post_00268": {
+      "signal": 83,
+      "substance": 16,
+      "kind": "signal"
+    },
+    "chirp_post_00269": {
+      "signal": 37,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00270": {
+      "signal": 66,
+      "substance": 62,
+      "kind": "signal"
+    },
+    "chirp_post_00271": {
+      "signal": 69,
+      "substance": 17,
+      "kind": "signal"
+    },
+    "chirp_post_00272": {
+      "signal": 44,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00273": {
+      "signal": 8,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00274": {
+      "signal": 91,
+      "substance": 64,
+      "kind": "signal"
+    },
+    "chirp_post_00275": {
+      "signal": 52,
+      "substance": 19,
+      "kind": "filler"
+    },
+    "chirp_post_00276": {
+      "signal": 86,
+      "substance": 64,
+      "kind": "signal"
+    },
+    "chirp_post_00277": {
+      "signal": 79,
+      "substance": 88,
+      "kind": "signal"
+    },
+    "chirp_post_00278": {
+      "signal": 35,
+      "substance": 46,
+      "kind": "filler"
+    },
+    "chirp_post_00279": {
+      "signal": 60,
+      "substance": 51,
+      "kind": "signal"
+    },
+    "chirp_post_00280": {
+      "signal": 65,
+      "substance": 79,
+      "kind": "signal"
+    },
+    "chirp_post_00281": {
+      "signal": 40,
+      "substance": 39,
+      "kind": "filler"
+    },
+    "chirp_post_00282": {
+      "signal": 41,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00283": {
+      "signal": 45,
+      "substance": 32,
+      "kind": "filler"
+    },
+    "chirp_post_00284": {
+      "signal": 54,
+      "substance": 40,
+      "kind": "filler"
+    },
+    "chirp_post_00285": {
+      "signal": 61,
+      "substance": 41,
+      "kind": "signal"
+    },
+    "chirp_post_00286": {
+      "signal": 75,
+      "substance": 26,
+      "kind": "signal"
+    },
+    "chirp_post_00287": {
+      "signal": 53,
+      "substance": 62,
+      "kind": "decoy"
+    },
+    "chirp_post_00288": {
+      "signal": 46,
+      "substance": 66,
+      "kind": "decoy"
+    },
+    "chirp_post_00289": {
+      "signal": 66,
+      "substance": 57,
+      "kind": "signal"
+    },
+    "chirp_post_00290": {
+      "signal": 87,
+      "substance": 36,
+      "kind": "signal"
+    },
+    "chirp_post_00291": {
+      "signal": 11,
+      "substance": 36,
+      "kind": "filler"
+    },
+    "chirp_post_00292": {
+      "signal": 32,
+      "substance": 15,
+      "kind": "filler"
+    },
+    "chirp_post_00293": {
+      "signal": 87,
+      "substance": 21,
+      "kind": "signal"
+    },
+    "chirp_post_00294": {
+      "signal": 34,
+      "substance": 46,
+      "kind": "filler"
+    },
+    "chirp_post_00295": {
+      "signal": 55,
+      "substance": 74,
+      "kind": "signal"
+    },
+    "chirp_post_00296": {
+      "signal": 35,
+      "substance": 72,
+      "kind": "decoy"
+    },
+    "chirp_post_00297": {
+      "signal": 25,
+      "substance": 61,
+      "kind": "decoy"
+    },
+    "chirp_post_00298": {
+      "signal": 20,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00299": {
+      "signal": 44,
+      "substance": 83,
+      "kind": "decoy"
+    },
+    "chirp_post_00300": {
+      "signal": 45,
+      "substance": 77,
+      "kind": "decoy"
+    },
+    "chirp_post_00301": {
+      "signal": 37,
+      "substance": 80,
+      "kind": "decoy"
+    },
+    "chirp_post_00302": {
+      "signal": 83,
+      "substance": 48,
+      "kind": "signal"
+    },
+    "chirp_post_00303": {
+      "signal": 53,
+      "substance": 44,
+      "kind": "filler"
+    },
+    "chirp_post_00304": {
+      "signal": 57,
+      "substance": 52,
+      "kind": "signal"
+    },
+    "chirp_post_00305": {
+      "signal": 62,
+      "substance": 63,
+      "kind": "signal"
+    },
+    "chirp_post_00306": {
+      "signal": 29,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00307": {
+      "signal": 52,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00308": {
+      "signal": 27,
+      "substance": 24,
+      "kind": "filler"
+    },
+    "chirp_post_00309": {
+      "signal": 19,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00310": {
+      "signal": 37,
+      "substance": 29,
+      "kind": "filler"
+    },
+    "chirp_post_00311": {
+      "signal": 66,
+      "substance": 28,
+      "kind": "signal"
+    },
+    "chirp_post_00312": {
+      "signal": 69,
+      "substance": 42,
+      "kind": "signal"
+    },
+    "chirp_post_00313": {
+      "signal": 67,
+      "substance": 51,
+      "kind": "signal"
+    },
+    "chirp_post_00314": {
+      "signal": 78,
+      "substance": 54,
+      "kind": "signal"
+    },
+    "chirp_post_00315": {
+      "signal": 24,
+      "substance": 33,
+      "kind": "filler"
+    },
+    "chirp_post_00316": {
+      "signal": 53,
+      "substance": 58,
+      "kind": "decoy"
+    },
+    "chirp_post_00317": {
+      "signal": 77,
+      "substance": 94,
+      "kind": "signal"
+    },
+    "chirp_post_00318": {
+      "signal": 53,
+      "substance": 45,
+      "kind": "filler"
+    },
+    "chirp_post_00319": {
+      "signal": 79,
+      "substance": 97,
+      "kind": "signal"
+    },
+    "chirp_post_00320": {
+      "signal": 47,
+      "substance": 91,
+      "kind": "decoy"
+    },
+    "chirp_post_00321": {
+      "signal": 76,
+      "substance": 34,
+      "kind": "signal"
+    },
+    "chirp_post_00322": {
+      "signal": 67,
+      "substance": 55,
+      "kind": "signal"
+    },
+    "chirp_post_00323": {
+      "signal": 38,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00324": {
+      "signal": 25,
+      "substance": 71,
+      "kind": "decoy"
+    },
+    "chirp_post_00325": {
+      "signal": 30,
+      "substance": 73,
+      "kind": "decoy"
+    },
+    "chirp_post_00326": {
+      "signal": 17,
+      "substance": 34,
+      "kind": "filler"
+    },
+    "chirp_post_00327": {
+      "signal": 40,
+      "substance": 56,
+      "kind": "decoy"
+    },
+    "chirp_post_00328": {
+      "signal": 48,
+      "substance": 3,
+      "kind": "filler"
+    },
+    "chirp_post_00329": {
+      "signal": 23,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00330": {
+      "signal": 34,
+      "substance": 32,
+      "kind": "filler"
+    },
+    "chirp_post_00331": {
+      "signal": 61,
+      "substance": 10,
+      "kind": "signal"
+    },
+    "chirp_post_00332": {
+      "signal": 77,
+      "substance": 57,
+      "kind": "signal"
+    },
+    "chirp_post_00333": {
+      "signal": 94,
+      "substance": 65,
+      "kind": "signal"
+    },
+    "chirp_post_00334": {
+      "signal": 47,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "chirp_post_00335": {
+      "signal": 44,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00336": {
+      "signal": 71,
+      "substance": 14,
+      "kind": "signal"
+    },
+    "chirp_post_00337": {
+      "signal": 69,
+      "substance": 20,
+      "kind": "signal"
+    },
+    "chirp_post_00338": {
+      "signal": 21,
+      "substance": 42,
+      "kind": "filler"
+    },
+    "chirp_post_00339": {
+      "signal": 24,
+      "substance": 44,
+      "kind": "filler"
+    },
+    "chirp_post_00340": {
+      "signal": 38,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00341": {
+      "signal": 85,
+      "substance": 44,
+      "kind": "signal"
+    },
+    "chirp_post_00342": {
+      "signal": 40,
+      "substance": 33,
+      "kind": "filler"
+    },
+    "chirp_post_00343": {
+      "signal": 54,
+      "substance": 49,
+      "kind": "filler"
+    },
+    "chirp_post_00344": {
+      "signal": 54,
+      "substance": 71,
+      "kind": "decoy"
+    },
+    "chirp_post_00345": {
+      "signal": 50,
+      "substance": 50,
+      "kind": "decoy"
+    },
+    "chirp_post_00346": {
+      "signal": 70,
+      "substance": 33,
+      "kind": "signal"
+    },
+    "chirp_post_00347": {
+      "signal": 49,
+      "substance": 78,
+      "kind": "decoy"
+    },
+    "chirp_post_00348": {
+      "signal": 45,
+      "substance": 82,
+      "kind": "decoy"
+    },
+    "chirp_post_00349": {
+      "signal": 9,
+      "substance": 74,
+      "kind": "decoy"
+    },
+    "chirp_post_00350": {
+      "signal": 58,
+      "substance": 49,
+      "kind": "signal"
+    },
+    "chirp_post_00351": {
+      "signal": 55,
+      "substance": 37,
+      "kind": "signal"
+    },
+    "chirp_post_00352": {
+      "signal": 39,
+      "substance": 64,
+      "kind": "decoy"
+    },
+    "chirp_post_00353": {
+      "signal": 72,
+      "substance": 76,
+      "kind": "signal"
+    },
+    "chirp_post_00354": {
+      "signal": 50,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00355": {
+      "signal": 54,
+      "substance": 85,
+      "kind": "decoy"
+    },
+    "chirp_post_00356": {
+      "signal": 55,
+      "substance": 65,
+      "kind": "signal"
+    },
+    "chirp_post_00357": {
+      "signal": 52,
+      "substance": 51,
+      "kind": "decoy"
+    },
+    "chirp_post_00358": {
+      "signal": 49,
+      "substance": 33,
+      "kind": "filler"
+    },
+    "chirp_post_00359": {
+      "signal": 53,
+      "substance": 91,
+      "kind": "decoy"
+    },
+    "chirp_post_00360": {
+      "signal": 51,
+      "substance": 44,
+      "kind": "filler"
+    },
+    "chirp_post_00361": {
+      "signal": 63,
+      "substance": 37,
+      "kind": "signal"
+    },
+    "chirp_post_00362": {
+      "signal": 25,
+      "substance": 74,
+      "kind": "decoy"
+    },
+    "chirp_post_00363": {
+      "signal": 55,
+      "substance": 42,
+      "kind": "signal"
+    },
+    "chirp_post_00364": {
+      "signal": 80,
+      "substance": 79,
+      "kind": "signal"
+    },
+    "chirp_post_00365": {
+      "signal": 53,
+      "substance": 12,
+      "kind": "filler"
+    },
+    "chirp_post_00366": {
+      "signal": 26,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00367": {
+      "signal": 37,
+      "substance": 15,
+      "kind": "filler"
+    },
+    "chirp_post_00368": {
+      "signal": 24,
+      "substance": 69,
+      "kind": "decoy"
+    },
+    "chirp_post_00369": {
+      "signal": 57,
+      "substance": 20,
+      "kind": "signal"
+    },
+    "chirp_post_00370": {
+      "signal": 34,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00371": {
+      "signal": 57,
+      "substance": 64,
+      "kind": "signal"
+    },
+    "chirp_post_00372": {
+      "signal": 89,
+      "substance": 25,
+      "kind": "signal"
+    },
+    "chirp_post_00373": {
+      "signal": 48,
+      "substance": 65,
+      "kind": "decoy"
+    },
+    "chirp_post_00374": {
+      "signal": 77,
+      "substance": 12,
+      "kind": "signal"
+    },
+    "chirp_post_00375": {
+      "signal": 66,
+      "substance": 56,
+      "kind": "signal"
+    },
+    "chirp_post_00376": {
+      "signal": 70,
+      "substance": 45,
+      "kind": "signal"
+    },
+    "chirp_post_00377": {
+      "signal": 56,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00378": {
+      "signal": 42,
+      "substance": 36,
+      "kind": "filler"
+    },
+    "chirp_post_00379": {
+      "signal": 76,
+      "substance": 25,
+      "kind": "signal"
+    },
+    "chirp_post_00380": {
+      "signal": 48,
+      "substance": 29,
+      "kind": "filler"
+    },
+    "chirp_post_00381": {
+      "signal": 22,
+      "substance": 27,
+      "kind": "filler"
+    },
+    "chirp_post_00382": {
+      "signal": 90,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00383": {
+      "signal": 96,
+      "substance": 16,
+      "kind": "signal"
+    },
+    "chirp_post_00384": {
+      "signal": 36,
+      "substance": 73,
+      "kind": "decoy"
+    },
+    "chirp_post_00385": {
+      "signal": 27,
+      "substance": 5,
+      "kind": "filler"
+    },
+    "chirp_post_00386": {
+      "signal": 50,
+      "substance": 46,
+      "kind": "filler"
+    },
+    "chirp_post_00387": {
+      "signal": 75,
+      "substance": 44,
+      "kind": "signal"
+    },
+    "chirp_post_00388": {
+      "signal": 72,
+      "substance": 82,
+      "kind": "signal"
+    },
+    "chirp_post_00389": {
+      "signal": 39,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00390": {
+      "signal": 48,
+      "substance": 33,
+      "kind": "filler"
+    },
+    "chirp_post_00391": {
+      "signal": 40,
+      "substance": 67,
+      "kind": "decoy"
+    },
+    "chirp_post_00392": {
+      "signal": 75,
+      "substance": 34,
+      "kind": "signal"
+    },
+    "chirp_post_00393": {
+      "signal": 86,
+      "substance": 17,
+      "kind": "signal"
+    },
+    "chirp_post_00394": {
+      "signal": 31,
+      "substance": 25,
+      "kind": "filler"
+    },
+    "chirp_post_00395": {
+      "signal": 26,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00396": {
+      "signal": 92,
+      "substance": 74,
+      "kind": "signal"
+    },
+    "chirp_post_00397": {
+      "signal": 51,
+      "substance": 68,
+      "kind": "decoy"
+    },
+    "chirp_post_00398": {
+      "signal": 71,
+      "substance": 60,
+      "kind": "signal"
+    },
+    "chirp_post_00399": {
+      "signal": 74,
+      "substance": 18,
+      "kind": "signal"
+    },
+    "chirp_post_00400": {
+      "signal": 63,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00401": {
+      "signal": 72,
+      "substance": 39,
+      "kind": "signal"
+    },
+    "chirp_post_00402": {
+      "signal": 43,
+      "substance": 77,
+      "kind": "decoy"
+    },
+    "chirp_post_00403": {
+      "signal": 46,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00404": {
+      "signal": 37,
+      "substance": 17,
+      "kind": "filler"
+    },
+    "chirp_post_00405": {
+      "signal": 86,
+      "substance": 64,
+      "kind": "signal"
+    },
+    "chirp_post_00406": {
+      "signal": 70,
+      "substance": 16,
+      "kind": "signal"
+    },
+    "chirp_post_00407": {
+      "signal": 52,
+      "substance": 92,
+      "kind": "decoy"
+    },
+    "chirp_post_00408": {
+      "signal": 44,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00409": {
+      "signal": 57,
+      "substance": 31,
+      "kind": "signal"
+    },
+    "chirp_post_00410": {
+      "signal": 49,
+      "substance": 45,
+      "kind": "filler"
+    },
+    "chirp_post_00411": {
+      "signal": 45,
+      "substance": 93,
+      "kind": "decoy"
+    },
+    "chirp_post_00412": {
+      "signal": 71,
+      "substance": 22,
+      "kind": "signal"
+    },
+    "chirp_post_00413": {
+      "signal": 47,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00414": {
+      "signal": 80,
+      "substance": 56,
+      "kind": "signal"
+    },
+    "chirp_post_00415": {
+      "signal": 81,
+      "substance": 12,
+      "kind": "signal"
+    },
+    "chirp_post_00416": {
+      "signal": 29,
+      "substance": 14,
+      "kind": "filler"
+    },
+    "chirp_post_00417": {
+      "signal": 14,
+      "substance": 30,
+      "kind": "filler"
+    },
+    "chirp_post_00418": {
+      "signal": 41,
+      "substance": 86,
+      "kind": "decoy"
+    },
+    "chirp_post_00419": {
+      "signal": 69,
+      "substance": 81,
+      "kind": "signal"
+    },
+    "chirp_post_00420": {
+      "signal": 33,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "chirp_post_00421": {
+      "signal": 45,
+      "substance": 44,
+      "kind": "filler"
+    },
+    "chirp_post_00422": {
+      "signal": 61,
+      "substance": 70,
+      "kind": "signal"
+    },
+    "chirp_post_00423": {
+      "signal": 80,
+      "substance": 42,
+      "kind": "signal"
+    },
+    "chirp_post_00424": {
+      "signal": 37,
+      "substance": 65,
+      "kind": "decoy"
+    },
+    "chirp_post_00425": {
+      "signal": 62,
+      "substance": 54,
+      "kind": "signal"
+    },
+    "chirp_post_00426": {
+      "signal": 41,
+      "substance": 6,
+      "kind": "filler"
+    },
+    "chirp_post_00427": {
+      "signal": 56,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00428": {
+      "signal": 65,
+      "substance": 36,
+      "kind": "signal"
+    },
+    "chirp_post_00429": {
+      "signal": 86,
+      "substance": 43,
+      "kind": "signal"
+    },
+    "chirp_post_00430": {
+      "signal": 55,
+      "substance": 99,
+      "kind": "signal"
+    },
+    "chirp_post_00431": {
+      "signal": 14,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00432": {
+      "signal": 65,
+      "substance": 69,
+      "kind": "signal"
+    },
+    "chirp_post_00433": {
+      "signal": 29,
+      "substance": 51,
+      "kind": "decoy"
+    },
+    "chirp_post_00434": {
+      "signal": 72,
+      "substance": 24,
+      "kind": "signal"
+    },
+    "chirp_post_00435": {
+      "signal": 52,
+      "substance": 43,
+      "kind": "filler"
+    },
+    "chirp_post_00436": {
+      "signal": 36,
+      "substance": 60,
+      "kind": "decoy"
+    },
+    "chirp_post_00437": {
+      "signal": 75,
+      "substance": 11,
+      "kind": "signal"
+    },
+    "chirp_post_00438": {
+      "signal": 89,
+      "substance": 90,
+      "kind": "signal"
+    },
+    "chirp_post_00439": {
+      "signal": 49,
+      "substance": 45,
+      "kind": "filler"
+    },
+    "chirp_post_00440": {
+      "signal": 71,
+      "substance": 71,
+      "kind": "signal"
+    },
+    "chirp_post_00441": {
+      "signal": 67,
+      "substance": 22,
+      "kind": "signal"
+    },
+    "chirp_post_00442": {
+      "signal": 69,
+      "substance": 7,
+      "kind": "signal"
+    },
+    "chirp_post_00443": {
+      "signal": 3,
+      "substance": 83,
+      "kind": "decoy"
+    },
+    "chirp_post_00444": {
+      "signal": 36,
+      "substance": 49,
+      "kind": "filler"
+    },
+    "chirp_post_00445": {
+      "signal": 49,
+      "substance": 76,
+      "kind": "decoy"
+    },
+    "chirp_post_00446": {
+      "signal": 47,
+      "substance": 29,
+      "kind": "filler"
+    },
+    "chirp_post_00447": {
+      "signal": 33,
+      "substance": 87,
+      "kind": "decoy"
+    },
+    "chirp_post_00448": {
+      "signal": 56,
+      "substance": 78,
+      "kind": "signal"
+    },
+    "chirp_post_00449": {
+      "signal": 63,
+      "substance": 68,
+      "kind": "signal"
+    },
+    "chirp_post_00450": {
+      "signal": 26,
+      "substance": 72,
+      "kind": "decoy"
+    },
+    "chirp_post_00451": {
+      "signal": 67,
+      "substance": 48,
+      "kind": "signal"
+    },
+    "chirp_post_00452": {
+      "signal": 40,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00453": {
+      "signal": 39,
+      "substance": 39,
+      "kind": "filler"
+    },
+    "chirp_post_00454": {
+      "signal": 38,
+      "substance": 86,
+      "kind": "decoy"
+    },
+    "chirp_post_00455": {
+      "signal": 53,
+      "substance": 70,
+      "kind": "decoy"
+    },
+    "chirp_post_00456": {
+      "signal": 58,
+      "substance": 39,
+      "kind": "signal"
+    },
+    "chirp_post_00457": {
+      "signal": 95,
+      "substance": 25,
+      "kind": "signal"
+    },
+    "chirp_post_00458": {
+      "signal": 56,
+      "substance": 86,
+      "kind": "signal"
+    },
+    "chirp_post_00459": {
+      "signal": 33,
+      "substance": 23,
+      "kind": "filler"
+    },
+    "chirp_post_00460": {
+      "signal": 67,
+      "substance": 78,
+      "kind": "signal"
+    },
+    "chirp_post_00461": {
+      "signal": 55,
+      "substance": 56,
+      "kind": "signal"
+    },
+    "chirp_post_00462": {
+      "signal": 56,
+      "substance": 78,
+      "kind": "signal"
+    },
+    "chirp_post_00463": {
+      "signal": 69,
+      "substance": 43,
+      "kind": "signal"
+    },
+    "chirp_post_00464": {
+      "signal": 72,
+      "substance": 14,
+      "kind": "signal"
+    },
+    "chirp_post_00465": {
+      "signal": 35,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00466": {
+      "signal": 43,
+      "substance": 51,
+      "kind": "decoy"
+    },
+    "chirp_post_00467": {
+      "signal": 89,
+      "substance": 32,
+      "kind": "signal"
+    },
+    "chirp_post_00468": {
+      "signal": 34,
+      "substance": 60,
+      "kind": "decoy"
+    },
+    "chirp_post_00469": {
+      "signal": 57,
+      "substance": 30,
+      "kind": "signal"
+    },
+    "chirp_post_00470": {
+      "signal": 48,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00471": {
+      "signal": 52,
+      "substance": 30,
+      "kind": "filler"
+    },
+    "chirp_post_00472": {
+      "signal": 47,
+      "substance": 4,
+      "kind": "filler"
+    },
+    "chirp_post_00473": {
+      "signal": 84,
+      "substance": 56,
+      "kind": "signal"
+    },
+    "chirp_post_00474": {
+      "signal": 57,
+      "substance": 94,
+      "kind": "signal"
+    },
+    "chirp_post_00475": {
+      "signal": 56,
+      "substance": 63,
+      "kind": "signal"
+    },
+    "chirp_post_00476": {
+      "signal": 54,
+      "substance": 28,
+      "kind": "filler"
+    },
+    "chirp_post_00477": {
+      "signal": 70,
+      "substance": 13,
+      "kind": "signal"
+    },
+    "chirp_post_00478": {
+      "signal": 83,
+      "substance": 21,
+      "kind": "signal"
+    },
+    "chirp_post_00479": {
+      "signal": 40,
+      "substance": 79,
+      "kind": "decoy"
+    },
+    "chirp_post_00480": {
+      "signal": 36,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00481": {
+      "signal": 75,
+      "substance": 31,
+      "kind": "signal"
+    },
+    "chirp_post_00482": {
+      "signal": 56,
+      "substance": 64,
+      "kind": "signal"
+    },
+    "chirp_post_00483": {
+      "signal": 80,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00484": {
+      "signal": 29,
+      "substance": 49,
+      "kind": "filler"
+    },
+    "chirp_post_00485": {
+      "signal": 71,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00486": {
+      "signal": 62,
+      "substance": 58,
+      "kind": "signal"
+    },
+    "chirp_post_00487": {
+      "signal": 63,
+      "substance": 96,
+      "kind": "signal"
+    },
+    "chirp_post_00488": {
+      "signal": 34,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00489": {
+      "signal": 79,
+      "substance": 6,
+      "kind": "signal"
+    },
+    "chirp_post_00490": {
+      "signal": 86,
+      "substance": 23,
+      "kind": "signal"
+    },
+    "chirp_post_00491": {
+      "signal": 50,
+      "substance": 63,
+      "kind": "decoy"
+    },
+    "chirp_post_00492": {
+      "signal": 49,
+      "substance": 56,
+      "kind": "decoy"
+    },
+    "chirp_post_00493": {
+      "signal": 55,
+      "substance": 24,
+      "kind": "signal"
+    },
+    "chirp_post_00494": {
+      "signal": 32,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00495": {
+      "signal": 21,
+      "substance": 50,
+      "kind": "decoy"
+    },
+    "chirp_post_00496": {
+      "signal": 35,
+      "substance": 59,
+      "kind": "decoy"
+    },
+    "chirp_post_00497": {
+      "signal": 81,
+      "substance": 6,
+      "kind": "signal"
+    },
+    "chirp_post_00498": {
+      "signal": 41,
+      "substance": 46,
+      "kind": "filler"
+    },
+    "chirp_post_00499": {
+      "signal": 86,
+      "substance": 72,
+      "kind": "signal"
+    },
+    "chirp_post_00500": {
+      "signal": 27,
+      "substance": 97,
+      "kind": "decoy"
+    },
+    "chirp_post_00501": {
+      "signal": 61,
+      "substance": 80,
+      "kind": "signal"
+    },
+    "chirp_post_00502": {
+      "signal": 51,
+      "substance": 18,
+      "kind": "filler"
+    },
+    "chirp_post_00503": {
+      "signal": 55,
+      "substance": 56,
+      "kind": "signal"
+    },
+    "chirp_post_00504": {
+      "signal": 48,
+      "substance": 13,
+      "kind": "filler"
+    },
+    "chirp_post_00505": {
+      "signal": 70,
+      "substance": 23,
+      "kind": "signal"
+    },
+    "chirp_post_00506": {
+      "signal": 61,
+      "substance": 52,
+      "kind": "signal"
+    },
+    "chirp_post_00507": {
+      "signal": 58,
+      "substance": 39,
+      "kind": "signal"
+    },
+    "chirp_post_00508": {
+      "signal": 81,
+      "substance": 78,
+      "kind": "signal"
+    },
+    "chirp_post_00509": {
+      "signal": 69,
+      "substance": 25,
+      "kind": "signal"
+    },
+    "chirp_post_00510": {
+      "signal": 33,
+      "substance": 36,
+      "kind": "filler"
+    },
+    "chirp_post_00511": {
+      "signal": 27,
+      "substance": 63,
+      "kind": "decoy"
+    },
+    "chirp_post_00512": {
+      "signal": 34,
+      "substance": 75,
+      "kind": "decoy"
+    },
+    "chirp_post_00513": {
+      "signal": 67,
+      "substance": 6,
+      "kind": "signal"
+    },
+    "chirp_post_00514": {
+      "signal": 86,
+      "substance": 44,
+      "kind": "signal"
+    },
+    "chirp_post_00515": {
+      "signal": 45,
+      "substance": 40,
+      "kind": "filler"
+    },
+    "chirp_post_00516": {
+      "signal": 29,
+      "substance": 39,
+      "kind": "filler"
+    },
+    "chirp_post_00517": {
+      "signal": 67,
+      "substance": 28,
+      "kind": "signal"
+    },
+    "chirp_post_00518": {
+      "signal": 42,
+      "substance": 64,
+      "kind": "decoy"
+    },
+    "chirp_post_00519": {
+      "signal": 15,
+      "substance": 20,
+      "kind": "filler"
+    },
+    "chirp_post_00520": {
+      "signal": 55,
+      "substance": 80,
+      "kind": "signal"
+    },
+    "chirp_post_00521": {
+      "signal": 38,
+      "substance": 73,
+      "kind": "decoy"
+    },
+    "chirp_post_00522": {
+      "signal": 61,
+      "substance": 29,
+      "kind": "signal"
+    },
+    "chirp_post_00523": {
+      "signal": 49,
+      "substance": 41,
+      "kind": "filler"
+    },
+    "chirp_post_00524": {
+      "signal": 85,
+      "substance": 47,
+      "kind": "signal"
+    },
+    "chirp_post_00525": {
+      "signal": 74,
+      "substance": 65,
+      "kind": "signal"
+    },
+    "chirp_post_00526": {
+      "signal": 71,
+      "substance": 88,
+      "kind": "signal"
+    },
+    "chirp_post_00527": {
+      "signal": 71,
+      "substance": 3,
+      "kind": "signal"
+    },
+    "chirp_post_00528": {
+      "signal": 59,
+      "substance": 69,
+      "kind": "signal"
+    },
+    "chirp_post_00529": {
+      "signal": 25,
+      "substance": 55,
+      "kind": "decoy"
+    },
+    "chirp_post_00530": {
+      "signal": 84,
+      "substance": 41,
+      "kind": "signal"
+    },
+    "chirp_post_00531": {
+      "signal": 30,
+      "substance": 35,
+      "kind": "filler"
+    },
+    "chirp_post_00532": {
+      "signal": 72,
+      "substance": 50,
+      "kind": "signal"
+    },
+    "chirp_post_00533": {
+      "signal": 37,
+      "substance": 75,
+      "kind": "decoy"
+    },
+    "chirp_post_00534": {
+      "signal": 72,
+      "substance": 31,
+      "kind": "signal"
+    },
+    "chirp_post_00535": {
+      "signal": 37,
+      "substance": 31,
+      "kind": "filler"
+    },
+    "chirp_post_00536": {
+      "signal": 44,
+      "substance": 78,
+      "kind": "decoy"
+    },
+    "chirp_post_00537": {
+      "signal": 68,
+      "substance": 61,
+      "kind": "signal"
+    },
+    "chirp_post_00538": {
+      "signal": 43,
+      "substance": 71,
+      "kind": "decoy"
+    },
+    "chirp_post_00539": {
+      "signal": 71,
+      "substance": 52,
+      "kind": "signal"
+    },
+    "chirp_post_00540": {
+      "signal": 66,
+      "substance": 50,
+      "kind": "signal"
+    },
+    "chirp_post_00541": {
+      "signal": 59,
+      "substance": 17,
+      "kind": "signal"
+    },
+    "chirp_post_00542": {
+      "signal": 36,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00543": {
+      "signal": 38,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00544": {
+      "signal": 66,
+      "substance": 69,
+      "kind": "signal"
+    },
+    "chirp_post_00545": {
+      "signal": 76,
+      "substance": 57,
+      "kind": "signal"
+    },
+    "chirp_post_00546": {
+      "signal": 46,
+      "substance": 8,
+      "kind": "filler"
+    },
+    "chirp_post_00547": {
+      "signal": 38,
+      "substance": 9,
+      "kind": "filler"
+    },
+    "chirp_post_00548": {
+      "signal": 94,
+      "substance": 62,
+      "kind": "signal"
+    },
+    "chirp_post_00549": {
+      "signal": 43,
+      "substance": 16,
+      "kind": "filler"
+    },
+    "chirp_post_00550": {
+      "signal": 27,
+      "substance": 36,
+      "kind": "filler"
+    },
+    "chirp_post_00551": {
+      "signal": 23,
+      "substance": 40,
+      "kind": "filler"
+    },
+    "chirp_post_00552": {
+      "signal": 68,
+      "substance": 78,
+      "kind": "signal"
+    },
+    "chirp_post_00553": {
+      "signal": 52,
+      "substance": 46,
+      "kind": "filler"
+    },
+    "chirp_post_00554": {
+      "signal": 63,
+      "substance": 37,
+      "kind": "signal"
+    },
+    "chirp_post_00555": {
+      "signal": 54,
+      "substance": 64,
+      "kind": "decoy"
+    },
+    "chirp_post_00556": {
+      "signal": 82,
+      "substance": 39,
+      "kind": "signal"
+    },
+    "chirp_post_00558": {
+      "signal": 83,
+      "substance": 93,
+      "kind": "signal"
+    },
+    "chirp_post_00559": {
+      "signal": 54,
+      "substance": 60,
+      "kind": "decoy"
+    },
+    "chirp_post_00560": {
+      "signal": 48,
+      "substance": 87,
+      "kind": "decoy"
+    },
+    "chirp_post_00561": {
+      "signal": 51,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00562": {
+      "signal": 19,
+      "substance": 18,
+      "kind": "filler"
+    },
+    "chirp_post_00563": {
+      "signal": 27,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00564": {
+      "signal": 25,
+      "substance": 51,
+      "kind": "decoy"
+    },
+    "chirp_post_00565": {
+      "signal": 54,
+      "substance": 76,
+      "kind": "decoy"
+    },
+    "chirp_post_00566": {
+      "signal": 20,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00567": {
+      "signal": 75,
+      "substance": 81,
+      "kind": "signal"
+    },
+    "chirp_post_00568": {
+      "signal": 63,
+      "substance": 56,
+      "kind": "signal"
+    },
+    "chirp_post_00569": {
+      "signal": 77,
+      "substance": 38,
+      "kind": "signal"
+    },
+    "chirp_post_00570": {
+      "signal": 41,
+      "substance": 72,
+      "kind": "decoy"
+    },
+    "chirp_post_00571": {
+      "signal": 20,
+      "substance": 80,
+      "kind": "decoy"
+    },
+    "chirp_post_00572": {
+      "signal": 42,
+      "substance": 62,
+      "kind": "decoy"
+    },
+    "chirp_post_00573": {
+      "signal": 72,
+      "substance": 51,
+      "kind": "signal"
+    },
+    "chirp_post_00574": {
+      "signal": 72,
+      "substance": 73,
+      "kind": "signal"
+    },
+    "chirp_post_00575": {
+      "signal": 33,
+      "substance": 89,
+      "kind": "decoy"
+    },
+    "chirp_post_00576": {
+      "signal": 34,
+      "substance": 18,
+      "kind": "filler"
+    },
+    "chirp_post_00577": {
+      "signal": 46,
+      "substance": 86,
+      "kind": "decoy"
+    },
+    "chirp_post_00578": {
+      "signal": 53,
+      "substance": 16,
+      "kind": "filler"
+    },
+    "chirp_post_00579": {
+      "signal": 36,
+      "substance": 7,
+      "kind": "filler"
+    },
+    "chirp_post_00580": {
+      "signal": 27,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00581": {
+      "signal": 34,
+      "substance": 70,
+      "kind": "decoy"
+    },
+    "chirp_post_00582": {
+      "signal": 66,
+      "substance": 18,
+      "kind": "signal"
+    },
+    "chirp_post_00583": {
+      "signal": 15,
+      "substance": 37,
+      "kind": "filler"
+    },
+    "chirp_post_00584": {
+      "signal": 56,
+      "substance": 54,
+      "kind": "signal"
+    },
+    "chirp_post_00585": {
+      "signal": 70,
+      "substance": 68,
+      "kind": "signal"
+    },
+    "chirp_post_00586": {
+      "signal": 15,
+      "substance": 56,
+      "kind": "decoy"
+    },
+    "chirp_post_00587": {
+      "signal": 15,
+      "substance": 40,
+      "kind": "filler"
+    },
+    "chirp_post_00588": {
+      "signal": 42,
+      "substance": 87,
+      "kind": "decoy"
+    },
+    "chirp_post_00589": {
+      "signal": 80,
+      "substance": 12,
+      "kind": "signal"
+    },
+    "chirp_post_00590": {
+      "signal": 44,
+      "substance": 32,
+      "kind": "filler"
+    },
+    "chirp_post_00591": {
+      "signal": 73,
+      "substance": 76,
+      "kind": "signal"
+    },
+    "chirp_post_00592": {
+      "signal": 67,
+      "substance": 76,
+      "kind": "signal"
+    },
+    "chirp_post_00593": {
+      "signal": 60,
+      "substance": 50,
+      "kind": "signal"
+    },
+    "chirp_post_00594": {
+      "signal": 37,
+      "substance": 44,
+      "kind": "filler"
+    },
+    "chirp_post_00595": {
+      "signal": 29,
+      "substance": 64,
+      "kind": "decoy"
+    },
+    "chirp_post_00596": {
+      "signal": 30,
+      "substance": 92,
+      "kind": "decoy"
+    },
+    "chirp_post_00597": {
+      "signal": 36,
+      "substance": 17,
+      "kind": "filler"
+    },
+    "chirp_post_00598": {
+      "signal": 47,
+      "substance": 44,
+      "kind": "filler"
+    },
+    "chirp_post_00599": {
+      "signal": 57,
+      "substance": 4,
+      "kind": "signal"
+    },
+    "chirp_post_00600": {
+      "signal": 28,
+      "substance": 17,
+      "kind": "filler"
+    },
+    "chirp_post_00601": {
+      "signal": 73,
+      "substance": 63,
+      "kind": "signal"
+    },
+    "chirp_post_00602": {
+      "signal": 7,
+      "substance": 34,
+      "kind": "filler"
+    },
+    "chirp_post_00603": {
+      "signal": 78,
+      "substance": 10,
+      "kind": "signal"
+    },
+    "chirp_post_00604": {
+      "signal": 44,
+      "substance": 5,
+      "kind": "filler"
+    },
+    "chirp_post_00605": {
+      "signal": 65,
+      "substance": 54,
+      "kind": "signal"
+    },
+    "chirp_post_00606": {
+      "signal": 17,
+      "substance": 82,
+      "kind": "decoy"
+    },
+    "chirp_post_00607": {
+      "signal": 54,
+      "substance": 54,
+      "kind": "decoy"
+    },
+    "chirp_post_00608": {
+      "signal": 33,
+      "substance": 56,
+      "kind": "decoy"
+    },
+    "chirp_post_00609": {
+      "signal": 18,
+      "substance": 4,
+      "kind": "filler"
+    },
+    "chirp_post_00610": {
+      "signal": 63,
+      "substance": 52,
+      "kind": "signal"
+    },
+    "chirp_post_00611": {
+      "signal": 42,
+      "substance": 93,
+      "kind": "decoy"
+    },
+    "chirp_post_00612": {
+      "signal": 70,
+      "substance": 47,
+      "kind": "signal"
+    },
+    "chirp_post_00613": {
+      "signal": 44,
+      "substance": 7,
+      "kind": "filler"
+    },
+    "chirp_post_00614": {
+      "signal": 57,
+      "substance": 49,
+      "kind": "signal"
+    },
+    "chirp_post_00615": {
+      "signal": 47,
+      "substance": 57,
+      "kind": "decoy"
+    },
+    "chirp_post_00616": {
+      "signal": 63,
+      "substance": 66,
+      "kind": "signal"
+    },
+    "chirp_post_00617": {
+      "signal": 21,
+      "substance": 40,
+      "kind": "filler"
+    },
+    "chirp_post_00618": {
+      "signal": 62,
+      "substance": 43,
+      "kind": "signal"
+    },
+    "chirp_post_00620": {
+      "signal": 24,
+      "substance": 20,
+      "kind": "filler"
+    },
+    "chirp_post_00621": {
+      "signal": 20,
+      "substance": 48,
+      "kind": "filler"
+    },
+    "chirp_post_00622": {
+      "signal": 16,
+      "substance": 76,
+      "kind": "decoy"
+    },
+    "chirp_post_00623": {
+      "signal": 26,
+      "substance": 47,
+      "kind": "filler"
+    },
+    "chirp_post_00624": {
+      "signal": 55,
+      "substance": 25,
+      "kind": "signal"
+    },
+    "chirp_post_00625": {
+      "signal": 56,
+      "substance": 28,
+      "kind": "signal"
+    },
+    "chirp_post_00626": {
+      "signal": 32,
+      "substance": 82,
+      "kind": "decoy"
+    },
+    "chirp_post_00627": {
+      "signal": 62,
+      "substance": 53,
+      "kind": "signal"
+    },
+    "chirp_post_00628": {
+      "signal": 24,
+      "substance": 50,
+      "kind": "decoy"
+    },
+    "chirp_post_00629": {
+      "signal": 82,
+      "substance": 57,
+      "kind": "signal"
+    },
+    "chirp_post_00630": {
+      "signal": 65,
+      "substance": 65,
+      "kind": "signal"
+    },
+    "chirp_post_00631": {
+      "signal": 61,
+      "substance": 75,
+      "kind": "signal"
+    },
+    "chirp_post_00632": {
+      "signal": 38,
+      "substance": 60,
+      "kind": "decoy"
+    },
+    "chirp_post_00633": {
+      "signal": 5,
+      "substance": 53,
+      "kind": "decoy"
+    },
+    "chirp_post_00634": {
+      "signal": 38,
+      "substance": 51,
+      "kind": "decoy"
+    },
+    "chirp_post_00635": {
+      "signal": 23,
+      "substance": 52,
+      "kind": "decoy"
+    },
+    "chirp_post_00636": {
+      "signal": 52,
+      "substance": 9,
+      "kind": "filler"
+    },
+    "chirp_post_00637": {
+      "signal": 46,
+      "substance": 66,
+      "kind": "decoy"
+    },
+    "chirp_post_00638": {
+      "signal": 33,
+      "substance": 90,
+      "kind": "decoy"
+    },
+    "chirp_post_00639": {
+      "signal": 40,
+      "substance": 84,
+      "kind": "decoy"
+    }
+  },
+  "account_meta": {
+    "savwritesbirds": {
+      "opsec": 28,
+      "decoupling": 0.041,
+      "decoy_topics": [
+        "cycling",
+        "volunteering",
+        "painting"
+      ],
+      "decoy_near_family": [],
+      "counts": {
+        "signal": 51,
+        "decoy": 28,
+        "filler": 34
+      },
+      "generation": {
+        "source": "llm",
+        "short": {
+          "signal": 0,
+          "decoy": 0,
+          "filler": 0
+        }
+      },
+      "history": {
+        "tenure_days": 3748,
+        "window_days": 730.0,
+        "post_rate": 0.307677,
+        "mu": 0.090193,
+        "gamma": -0.1955,
+        "lift": 0.5692,
+        "immigrants": 58,
+        "realised": 113,
+        "capped": false,
+        "events": [
+          {
+            "offset": 481.0,
+            "month": "2026-03",
+            "event": "[offline stub event]"
+          }
+        ],
+        "lifetime_posts": 656
+      }
+    },
+    "savchenwrites": {
+      "opsec": 28,
+      "decoupling": 0.041,
+      "decoy_topics": [
+        "augmented reality",
+        "fitness",
+        "bouldering"
+      ],
+      "decoy_near_family": [],
+      "counts": {
+        "signal": 48,
+        "decoy": 28,
+        "filler": 24
+      },
+      "generation": {
+        "source": "llm",
+        "short": {
+          "signal": 0,
+          "decoy": 0,
+          "filler": 0
+        }
+      },
+      "history": {
+        "tenure_days": 2609,
+        "window_days": 730.0,
+        "post_rate": 0.307677,
+        "mu": 0.078601,
+        "gamma": -0.3111,
+        "lift": 0.4961,
+        "immigrants": 47,
+        "realised": 100,
+        "capped": false,
+        "events": [
+          {
+            "offset": 481.0,
+            "month": "2026-03",
+            "event": "[offline stub event]"
+          }
+        ],
+        "lifetime_posts": 398
+      }
+    },
+    "harrison_ai": {
+      "opsec": 26,
+      "decoupling": 0.034,
+      "decoy_topics": [
+        "data science",
+        "kiteboarding",
+        "crafts"
+      ],
+      "decoy_near_family": [],
+      "counts": {
+        "signal": 161,
+        "decoy": 87,
+        "filler": 92
+      },
+      "generation": {
+        "source": "llm",
+        "short": {
+          "signal": 0,
+          "decoy": 0,
+          "filler": 0
+        }
+      },
+      "history": {
+        "tenure_days": 3849,
+        "window_days": 730.0,
+        "post_rate": 0.32691,
+        "mu": 0.233594,
+        "gamma": 0.4276,
+        "lift": 1.3875,
+        "immigrants": 188,
+        "realised": 340,
+        "capped": false,
+        "events": [
+          {
+            "offset": 481.0,
+            "month": "2026-03",
+            "event": "[offline stub event]"
+          }
+        ],
+        "lifetime_posts": 1746
+      }
+    },
+    "aifootybird": {
+      "opsec": 34,
+      "decoupling": 0.067,
+      "decoy_topics": [
+        "ice skating",
+        "jewelry making",
+        "homebrewing"
+      ],
+      "decoy_near_family": [
+        "homebrewing"
+      ],
+      "counts": {
+        "signal": 22,
+        "decoy": 19,
+        "filler": 20
+      },
+      "generation": {
+        "source": "llm",
+        "short": {
+          "signal": 0,
+          "decoy": 0,
+          "filler": 0
+        }
+      },
+      "history": {
+        "tenure_days": 4182,
+        "window_days": 730.0,
+        "post_rate": 0.251118,
+        "mu": 0.031483,
+        "gamma": -0.6171,
+        "lift": 0.2434,
+        "immigrants": 29,
+        "realised": 61,
+        "capped": false,
+        "events": [
+          {
+            "offset": 481.0,
+            "month": "2026-03",
+            "event": "[offline stub event]"
+          }
+        ],
+        "lifetime_posts": 256
+      }
+    },
+    "skatecode": {
+      "opsec": 49,
+      "decoupling": 0.168,
+      "decoy_topics": [
+        "stargazing",
+        "cryptocurrency",
+        "videography"
+      ],
+      "decoy_near_family": [],
+      "counts": {
+        "signal": 6,
+        "decoy": 10,
+        "filler": 4
+      },
+      "generation": {
+        "source": "llm",
+        "short": {
+          "signal": 0,
+          "decoy": 0,
+          "filler": 0
+        }
+      },
+      "history": {
+        "tenure_days": 1957,
+        "window_days": 730.0,
+        "post_rate": 0.132296,
+        "mu": 0.012434,
+        "gamma": -0.1328,
+        "lift": 0.1825,
+        "immigrants": 11,
+        "realised": 20,
+        "capped": false,
+        "events": [
+          {
+            "offset": 481.0,
+            "month": "2026-03",
+            "event": "[offline stub event]"
+          }
+        ],
+        "lifetime_posts": 47
+      }
+    }
+  }
+}
